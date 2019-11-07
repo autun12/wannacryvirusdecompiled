@@ -460,8 +460,6 @@ typedef struct _s_CatchableTypeArray CatchableTypeArray;
 typedef struct _s_CatchableType _s_CatchableType, *P_s_CatchableType;
 
 typedef struct _s_CatchableType CatchableType;
-
-
 // WARNING! conflicting data type names: /ehdata.h/TypeDescriptor - /TypeDescriptor
 
 typedef struct PMD PMD, *PPMD;
@@ -1277,8 +1275,6 @@ typedef struct HBRUSH__ * HBRUSH;
 typedef DWORD COLORREF;
 
 typedef struct HFONT__ * HFONT;
-
-
 // WARNING! conflicting data type names: /WinDef.h/ULONG - /wtypes.h/ULONG
 
 typedef UINT_PTR WPARAM;
@@ -1554,12 +1550,7 @@ typedef struct _SHELLEXECUTEINFOA SHELLEXECUTEINFOA;
 
 typedef struct IUnknown * LPUNKNOWN;
 
-
-
-
-undefined4 * __thiscall FUN_00401000(void *this,CWnd *param_1)
-
-{
+undefined4 * __thiscall FUN_00401000(void *this,CWnd *param_1) {
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
@@ -1582,19 +1573,11 @@ undefined4 * __thiscall FUN_00401000(void *this,CWnd *param_1)
   return (undefined4 *)this;
 }
 
-
-
-void FUN_00401080(void)
-
-{
+void FUN_00401080(void) {
   return;
 }
 
-
-
-CDialog * __thiscall FUN_004010a0(void *this,byte param_1)
-
-{
+CDialog * __thiscall FUN_004010a0(void *this,byte param_1) {
   FUN_004010c0((CDialog *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
@@ -1602,11 +1585,7 @@ CDialog * __thiscall FUN_004010a0(void *this,byte param_1)
   return (CDialog *)this;
 }
 
-
-
-void __fastcall FUN_004010c0(CDialog *param_1)
-
-{
+void __fastcall FUN_004010c0(CDialog *param_1) {
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
@@ -1623,11 +1602,7 @@ void __fastcall FUN_004010c0(CDialog *param_1)
   return;
 }
 
-
-
-void __fastcall FUN_004012e0(int param_1)
-
-{
+void __fastcall FUN_004012e0(int param_1) {
   DWORD DVar1;
   int iVar2;
   FILE *_File;
@@ -1745,11 +1720,7 @@ LAB_004015d8:
   return;
 }
 
-
-
-void __thiscall FUN_00401970(void *this,char *param_1)
-
-{
+void __thiscall FUN_00401970(void *this,char *param_1) {
   CWnd *this_00;
   undefined4 *in_FS_OFFSET;
   char *pcVar1;
@@ -1770,11 +1741,7 @@ void __thiscall FUN_00401970(void *this,char *param_1)
   return;
 }
 
-
-
-CProgressCtrl * __thiscall FUN_004019f0(void *this,byte param_1)
-
-{
+CProgressCtrl * __thiscall FUN_004019f0(void *this,byte param_1) {
   _CProgressCtrl((CProgressCtrl *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
@@ -1782,11 +1749,7 @@ CProgressCtrl * __thiscall FUN_004019f0(void *this,byte param_1)
   return (CProgressCtrl *)this;
 }
 
-
-
-undefined4 __cdecl FUN_00401a10(void *param_1,int param_2)
-
-{
+undefined4 __cdecl FUN_00401a10(void *param_1,int param_2) {
   FILE *_File;
   size_t sVar1;
   char **_Mode;
@@ -1814,11 +1777,7 @@ undefined4 __cdecl FUN_00401a10(void *param_1,int param_2)
   return 0;
 }
 
-
-
-undefined4 __cdecl FUN_00401a90(LPSTR param_1,DWORD param_2,LPDWORD param_3)
-
-{
+undefined4 __cdecl FUN_00401a90(LPSTR param_1,DWORD param_2,LPDWORD param_3) {
   BOOL BVar1;
   DWORD DVar2;
   int iVar3;
@@ -1860,11 +1819,7 @@ undefined4 __cdecl FUN_00401a90(LPSTR param_1,DWORD param_2,LPDWORD param_3)
   return 0;
 }
 
-
-
-uint __cdecl FUN_00401b50(LPCSTR param_1,LPCSTR param_2,int param_3)
-
-{
+uint __cdecl FUN_00401b50(LPCSTR param_1,LPCSTR param_2,int param_3) {
   BOOL BVar1;
   int iVar2;
   ULONG *pUVar3;
@@ -1888,11 +1843,7 @@ uint __cdecl FUN_00401b50(LPCSTR param_1,LPCSTR param_2,int param_3)
   return (uint)(BVar1 == 1);
 }
 
-
-
-BOOL FUN_00401bb0(void)
-
-{
+BOOL FUN_00401bb0(void) {
   BOOL BVar1;
   BOOL local_10;
   PSID local_c;
@@ -1918,11 +1869,7 @@ BOOL FUN_00401bb0(void)
   return local_10;
 }
 
-
-
-undefined4 * __cdecl FUN_00401c30(undefined4 param_1,undefined4 *param_2)
-
-{
+undefined4 * __cdecl FUN_00401c30(undefined4 param_1,undefined4 *param_2) {
   char cVar1;
   uint uVar2;
   uint uVar3;
@@ -1962,11 +1909,7 @@ undefined4 * __cdecl FUN_00401c30(undefined4 param_1,undefined4 *param_2)
   return param_2;
 }
 
-
-
-undefined4 __cdecl FUN_00401c70(int param_1)
-
-{
+undefined4 __cdecl FUN_00401c70(int param_1) {
   BYTE BVar1;
   LSTATUS LVar2;
   int iVar3;
@@ -2058,21 +2001,13 @@ undefined4 __cdecl FUN_00401c70(int param_1)
   } while( true );
 }
 
-
-
-char * __cdecl FUN_00401de0(ushort *param_1,char *param_2)
-
-{
+char * __cdecl FUN_00401de0(ushort *param_1,char *param_2) {
   sprintf(param_2,s__04d__02d__02d__02d__02d__02d_0041fdf4,(uint)*param_1,(uint)param_1[1],
           (uint)param_1[3],(uint)param_1[4],(uint)param_1[5],(uint)param_1[6]);
   return param_2;
 }
 
-
-
-void __cdecl FUN_00401e30(int param_1,char *param_2)
-
-{
+void __cdecl FUN_00401e30(int param_1,char *param_2) {
   ushort local_10 [8];
   
   FUN_00401e60(param_1,local_10);
@@ -2080,22 +2015,14 @@ void __cdecl FUN_00401e30(int param_1,char *param_2)
   return;
 }
 
-
-
-void __cdecl FUN_00401e60(int param_1,undefined4 param_2)
-
-{
+void __cdecl FUN_00401e60(int param_1,undefined4 param_2) {
   Ordinal_185((double)param_1 * 0.00001157 + 25569.00000000,param_2);
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-undefined4 * __fastcall FUN_00401e90(undefined4 *param_1)
-
-{
+undefined4 * __fastcall FUN_00401e90(undefined4 *param_1) {
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
@@ -2119,11 +2046,7 @@ undefined4 * __fastcall FUN_00401e90(undefined4 *param_1)
   return param_1;
 }
 
-
-
-undefined4 * __thiscall FUN_00401f10(void *this,byte param_1)
-
-{
+undefined4 * __thiscall FUN_00401f10(void *this,byte param_1) {
   FUN_00401f30((undefined4 *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
@@ -2131,13 +2054,9 @@ undefined4 * __thiscall FUN_00401f10(void *this,byte param_1)
   return (undefined4 *)this;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-void __fastcall FUN_00401f30(undefined4 *param_1)
-
-{
+void __fastcall FUN_00401f30(undefined4 *param_1) {
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
@@ -2159,11 +2078,7 @@ void __fastcall FUN_00401f30(undefined4 *param_1)
   return;
 }
 
-
-
-undefined4 __fastcall FUN_00401fa0(int param_1)
-
-{
+undefined4 __fastcall FUN_00401fa0(int param_1) {
   undefined *puVar1;
   int iVar2;
   
@@ -2194,11 +2109,7 @@ undefined4 __fastcall FUN_00401fa0(int param_1)
   return 1;
 }
 
-
-
-undefined4 __thiscall FUN_00402020(void *this,LPCSTR param_1,undefined4 param_2,undefined4 param_3)
-
-{
+undefined4 __thiscall FUN_00402020(void *this,LPCSTR param_1,undefined4 param_2,undefined4 param_3) {
   int iVar1;
   HGLOBAL pvVar2;
   
@@ -2224,13 +2135,9 @@ undefined4 __thiscall FUN_00402020(void *this,LPCSTR param_1,undefined4 param_2,
   return 1;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 __thiscall FUN_004020a0(void *this,undefined4 param_1,undefined4 param_2)
-
-{
+undefined4 __thiscall FUN_004020a0(void *this,undefined4 param_1,undefined4 param_2) {
   int iVar1;
   HANDLE hFile;
   int *piVar2;
@@ -2379,11 +2286,7 @@ LAB_00402452:
   return 0;
 }
 
-
-
-undefined4 FUN_00402560(wchar_t *param_1)
-
-{
+undefined4 FUN_00402560(wchar_t *param_1) {
   bool bVar1;
   wchar_t *_Str1;
   int iVar2;
@@ -2424,11 +2327,7 @@ LAB_004025c9:
   return 0;
 }
 
-
-
-void FUN_00402650(LPCSTR param_1)
-
-{
+void FUN_00402650(LPCSTR param_1) {
   int iVar1;
   undefined4 *puVar2;
   wchar_t local_2d0;
@@ -2448,14 +2347,10 @@ void FUN_00402650(LPCSTR param_1)
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
 undefined4 __thiscall
-FUN_004026b0(void *this,wchar_t *param_1,undefined4 param_2,undefined4 param_3,wchar_t *param_4)
-
-{
+FUN_004026b0(void *this,wchar_t *param_1,undefined4 param_2,undefined4 param_3,wchar_t *param_4) {
   int **ppiVar1;
   int iVar2;
   DWORD DVar3;
@@ -2622,11 +2517,7 @@ LAB_00402957:
   return local_56c;
 }
 
-
-
-uint FUN_00402af0(wchar_t *param_1,wchar_t *param_2)
-
-{
+uint FUN_00402af0(wchar_t *param_1,wchar_t *param_2) {
   int iVar1;
   wchar_t *pwVar2;
   
@@ -2680,13 +2571,9 @@ uint FUN_00402af0(wchar_t *param_1,wchar_t *param_2)
   return (uint)(iVar1 == 0);
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined4 FUN_00402c40(void)
-
-{
+undefined4 FUN_00402c40(void) {
   int iVar1;
   HMODULE hModule;
   
@@ -2715,11 +2602,7 @@ undefined4 FUN_00402c40(void)
   return 0;
 }
 
-
-
-void __thiscall FUN_00402d90(void *this,undefined4 *param_1)
-
-{
+void __thiscall FUN_00402d90(void *this,undefined4 *param_1) {
   undefined4 *puVar1;
   
   puVar1 = *(undefined4 **)this;
@@ -2728,15 +2611,11 @@ void __thiscall FUN_00402d90(void *this,undefined4 *param_1)
   return;
 }
 
-
-
 void __thiscall
 FUN_00402da0(void *this,void **param_1,void *param_2,
                         
             basic_string_unsigned_short_struct_std__char_traits_unsigned_short__class_std__allocator_unsigned_short___
-            *param_3)
-
-{
+            *param_3) {
   void **ppvVar1;
   void **ppvVar2;
   void **ppvVar3;
@@ -2762,11 +2641,7 @@ FUN_00402da0(void *this,void **param_1,void *param_2,
   return;
 }
 
-
-
-void __thiscall FUN_00402e00(void *this,int **param_1,int *param_2,int *param_3)
-
-{
+void __thiscall FUN_00402e00(void *this,int **param_1,int *param_2,int *param_3) {
   char cVar1;
   int *piVar2;
   int iVar3;
@@ -2800,11 +2675,7 @@ void __thiscall FUN_00402e00(void *this,int **param_1,int *param_2,int *param_3)
   return;
 }
 
-
-
-void __thiscall FUN_00402e90(void *this,int *param_1,int *param_2)
-
-{
+void __thiscall FUN_00402e90(void *this,int *param_1,int *param_2) {
   char cVar1;
   int iVar2;
   int iVar3;
@@ -2831,17 +2702,13 @@ void __thiscall FUN_00402e90(void *this,int *param_1,int *param_2)
   return;
 }
 
-
-
 void __cdecl
 FUN_00402f10(
              basic_string_unsigned_short_struct_std__char_traits_unsigned_short__class_std__allocator_unsigned_short___
              *param_1,
                         
             basic_string_unsigned_short_struct_std__char_traits_unsigned_short__class_std__allocator_unsigned_short___
-            *param_2)
-
-{
+            *param_2) {
     
   basic_string_unsigned_short_struct_std__char_traits_unsigned_short__class_std__allocator_unsigned_short___
   bVar1;
@@ -2942,11 +2809,7 @@ FUN_00402f10(
   return;
 }
 
-
-
-void __cdecl FUN_00403090(undefined2 *param_1,undefined2 *param_2,int param_3)
-
-{
+void __cdecl FUN_00403090(undefined2 *param_1,undefined2 *param_2,int param_3) {
   undefined2 *puVar1;
   undefined2 uVar2;
   undefined2 *puVar3;
@@ -2978,13 +2841,9 @@ void __cdecl FUN_00403090(undefined2 *param_1,undefined2 *param_2,int param_3)
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-undefined4 * __thiscall FUN_004030e0(void *this,CWnd *param_1)
-
-{
+undefined4 * __thiscall FUN_004030e0(void *this,CWnd *param_1) {
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
@@ -3011,11 +2870,7 @@ undefined4 * __thiscall FUN_004030e0(void *this,CWnd *param_1)
   return (undefined4 *)this;
 }
 
-
-
-CDialog * __thiscall FUN_00403180(void *this,byte param_1)
-
-{
+CDialog * __thiscall FUN_00403180(void *this,byte param_1) {
   FUN_004031a0((CDialog *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
@@ -3023,13 +2878,9 @@ CDialog * __thiscall FUN_00403180(void *this,byte param_1)
   return (CDialog *)this;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
-void __fastcall FUN_004031a0(CDialog *param_1)
-
-{
+void __fastcall FUN_004031a0(CDialog *param_1) {
   undefined4 *this;
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
@@ -3060,21 +2911,13 @@ void __fastcall FUN_004031a0(CDialog *param_1)
   return;
 }
 
-
-
-void __thiscall FUN_00403280(void *this,CDataExchange *param_1)
-
-{
+void __thiscall FUN_00403280(void *this,CDataExchange *param_1) {
   DDX_Control(param_1,0x40d,(CWnd *)((int)this + 0x60));
   DDX_Control(param_1,0x407,(CWnd *)((int)this + 0xa0));
   return;
 }
 
-
-
-undefined4 __fastcall FUN_004032c0(CDialog *param_1)
-
-{
+undefined4 __fastcall FUN_004032c0(CDialog *param_1) {
   COLORREF color;
   HBRUSH pHVar1;
   HFONT pHVar2;
@@ -3127,11 +2970,7 @@ undefined4 __fastcall FUN_004032c0(CDialog *param_1)
   return 1;
 }
 
-
-
-BOOL __thiscall FUN_004034a0(void *this,CDC *param_1)
-
-{
+BOOL __thiscall FUN_004034a0(void *this,CDC *param_1) {
   CBrush *pCVar1;
   BOOL BVar2;
   undefined4 *in_FS_OFFSET;
@@ -3159,11 +2998,7 @@ BOOL __thiscall FUN_004034a0(void *this,CDC *param_1)
   return BVar2;
 }
 
-
-
-void __fastcall FUN_004035a0(int param_1)
-
-{
+void __fastcall FUN_004035a0(int param_1) {
   CString CVar1;
   LRESULT LVar2;
   BOOL BVar3;
@@ -3285,11 +3120,7 @@ void __fastcall FUN_004035a0(int param_1)
   return;
 }
 
-
-
-void __fastcall FUN_00403860(LPVOID param_1)
-
-{
+void __fastcall FUN_00403860(LPVOID param_1) {
   WPARAM wParam;
   LRESULT LVar1;
   HANDLE pvVar2;
@@ -3309,11 +3140,7 @@ void __fastcall FUN_00403860(LPVOID param_1)
   return;
 }
 
-
-
-void __fastcall FUN_004038f0(void *param_1)
-
-{
+void __fastcall FUN_004038f0(void *param_1) {
   WPARAM wParam;
   LRESULT LVar1;
   int iVar2;
@@ -3364,8 +3191,6 @@ LAB_004039e1:
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
 undefined4 FUN_00403a20(void *param_1,int param_2)
@@ -3409,8 +3234,6 @@ undefined4 FUN_00403a20(void *param_1,int param_2)
   }
   return 1;
 }
-
-
 
 uint FUN_00403af0(void)
 
@@ -3532,8 +3355,6 @@ LAB_00403c55:
   goto joined_r0x00403ba4;
 }
 
-
-
 undefined4 __fastcall FUN_00403cb0(int param_1)
 
 {
@@ -3609,8 +3430,6 @@ undefined4 __fastcall FUN_00403cb0(int param_1)
   } while( true );
 }
 
-
-
 void __thiscall FUN_00403e60(void *this,char *param_1)
 
 {
@@ -3622,8 +3441,6 @@ void __thiscall FUN_00403e60(void *this,char *param_1)
   SendMessageA(*(HWND *)((int)this + 0x80),0x1013,wParam,1);
   return;
 }
-
-
 
 void __thiscall FUN_00403eb0(void *this,int param_1)
 
@@ -3642,8 +3459,6 @@ void __thiscall FUN_00403eb0(void *this,int param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00403f00(void *this,byte param_1)
 
 {
@@ -3653,8 +3468,6 @@ undefined4 * __thiscall FUN_00403f00(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_00403f20(undefined4 *param_1)
 
@@ -3675,8 +3488,6 @@ void __fastcall FUN_00403f20(undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00403f70(void *this,byte param_1)
 
 {
@@ -3686,8 +3497,6 @@ undefined4 * __thiscall FUN_00403f70(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_00403f90(undefined4 *param_1)
 
@@ -3708,8 +3517,6 @@ void __fastcall FUN_00403f90(undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00403fe0(void *this,byte param_1)
 
 {
@@ -3719,8 +3526,6 @@ undefined4 * __thiscall FUN_00403fe0(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_00404000(undefined4 *param_1)
 
@@ -3741,8 +3546,6 @@ void __fastcall FUN_00404000(undefined4 *param_1)
   return;
 }
 
-
-
 CComboBox * __thiscall FUN_00404050(void *this,byte param_1)
 
 {
@@ -3753,8 +3556,6 @@ CComboBox * __thiscall FUN_00404050(void *this,byte param_1)
   return (CComboBox *)this;
 }
 
-
-
 CListCtrl * __thiscall FUN_00404070(void *this,byte param_1)
 
 {
@@ -3764,8 +3565,6 @@ CListCtrl * __thiscall FUN_00404070(void *this,byte param_1)
   }
   return (CListCtrl *)this;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -3807,8 +3606,6 @@ undefined4 * __fastcall FUN_00404090(undefined4 *param_1)
   return param_1;
 }
 
-
-
 undefined4 * __thiscall FUN_00404150(void *this,byte param_1)
 
 {
@@ -3818,8 +3615,6 @@ undefined4 * __thiscall FUN_00404150(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -3852,8 +3647,6 @@ void __fastcall FUN_00404170(undefined4 *param_1)
   return;
 }
 
-
-
 void __fastcall FUN_00404210(int param_1,undefined param_2,undefined1 param_3)
 
 {
@@ -3873,8 +3666,6 @@ void __fastcall FUN_00404210(int param_1,undefined param_2,undefined1 param_3)
   return;
 }
 
-
-
 void __thiscall FUN_00404260(void *this,undefined4 param_1)
 
 {
@@ -3882,16 +3673,12 @@ void __thiscall FUN_00404260(void *this,undefined4 param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00404270(void *this,CGdiObject *param_1)
 
 {
   FUN_004044c0(this,param_1);
   return;
 }
-
-
 
 void __fastcall FUN_00404280(CWnd *param_1,undefined param_2,undefined param_3,undefined1 param_4)
 
@@ -3924,8 +3711,6 @@ void __fastcall FUN_00404280(CWnd *param_1,undefined param_2,undefined param_3,u
   return;
 }
 
-
-
 void __fastcall FUN_004043c0(CWnd *param_1)
 
 {
@@ -3933,8 +3718,6 @@ void __fastcall FUN_004043c0(CWnd *param_1)
   DeleteObject((CGdiObject *)(param_1 + 0x48));
   return;
 }
-
-
 
 void __thiscall FUN_004044c0(void *this,CGdiObject *param_1)
 
@@ -3961,8 +3744,6 @@ void __thiscall FUN_004044c0(void *this,CGdiObject *param_1)
   *(undefined *)((int)this + 0x58) = 1;
   return;
 }
-
-
 
 void __fastcall FUN_00404530(CWnd *param_1)
 
@@ -3998,8 +3779,6 @@ void __fastcall FUN_00404530(CWnd *param_1)
   return;
 }
 
-
-
 uint __thiscall FUN_004045e0(int param_1,int *param_1_00)
 
 {
@@ -4015,8 +3794,6 @@ uint __thiscall FUN_004045e0(int param_1,int *param_1_00)
   return 0;
 }
 
-
-
 CStatic * __thiscall FUN_00404620(void *this,byte param_1)
 
 {
@@ -4026,8 +3803,6 @@ CStatic * __thiscall FUN_00404620(void *this,byte param_1)
   }
   return (CStatic *)this;
 }
-
-
 
 undefined4 * __fastcall FUN_00404640(undefined4 *param_1)
 
@@ -4040,8 +3815,6 @@ undefined4 * __fastcall FUN_00404640(undefined4 *param_1)
   return param_1;
 }
 
-
-
 undefined4 * __thiscall FUN_00404670(void *this,byte param_1)
 
 {
@@ -4052,8 +3825,6 @@ undefined4 * __thiscall FUN_00404670(void *this,byte param_1)
   return (undefined4 *)this;
 }
 
-
-
 void __fastcall FUN_00404690(undefined4 *param_1)
 
 {
@@ -4061,8 +3832,6 @@ void __fastcall FUN_00404690(undefined4 *param_1)
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 4));
   return;
 }
-
-
 
 undefined4 __fastcall FUN_004046b0(int param_1)
 
@@ -4080,8 +3849,6 @@ undefined4 __fastcall FUN_004046b0(int param_1)
   } while (iVar2 < 2);
   return 0;
 }
-
-
 
 undefined4 __thiscall FUN_004046f0(void *this,LPCSTR param_1)
 
@@ -4110,8 +3877,6 @@ undefined4 __thiscall FUN_004046f0(void *this,LPCSTR param_1)
   return 1;
 }
 
-
-
 undefined4 __fastcall FUN_00404770(int param_1)
 
 {
@@ -4129,8 +3894,6 @@ undefined4 __fastcall FUN_00404770(int param_1)
   }
   return 1;
 }
-
-
 
 undefined4 __thiscall FUN_004047c0(void *this,LPCSTR param_1,LPCSTR param_2)
 
@@ -4245,8 +4008,6 @@ LAB_004048f3:
   return 0;
 }
 
-
-
 void FUN_004049a6(void)
 
 {
@@ -4255,8 +4016,6 @@ void FUN_004049a6(void)
   FUN_00404770(unaff_EBX);
   return;
 }
-
-
 
 undefined4 __cdecl FUN_004049b0(undefined4 param_1,undefined4 param_2,LPCSTR param_3)
 
@@ -4309,8 +4068,6 @@ LAB_00404ac7:
   return 0;
 }
 
-
-
 undefined4 __thiscall FUN_00404af0(void *this,undefined4 *param_1)
 
 {
@@ -4351,8 +4108,6 @@ undefined4 __thiscall FUN_00404af0(void *this,undefined4 *param_1)
   return 1;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 FUN_00404b70(void)
@@ -4380,8 +4135,6 @@ undefined4 FUN_00404b70(void)
   }
   return 0;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -4411,8 +4164,6 @@ undefined4 * __thiscall FUN_00404c40(void *this,CWnd *param_1)
   return (undefined4 *)this;
 }
 
-
-
 CDialog * __thiscall FUN_00404cd0(void *this,byte param_1)
 
 {
@@ -4422,8 +4173,6 @@ CDialog * __thiscall FUN_00404cd0(void *this,byte param_1)
   }
   return (CDialog *)this;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -4457,8 +4206,6 @@ void __fastcall FUN_00404cf0(CDialog *param_1)
   *in_FS_OFFSET = local_c;
   return;
 }
-
-
 
 undefined4 __fastcall FUN_00404dd0(CDialog *param_1)
 
@@ -4503,8 +4250,6 @@ undefined4 __fastcall FUN_00404dd0(CDialog *param_1)
   return 1;
 }
 
-
-
 BOOL __thiscall FUN_00404eb0(void *this,CDC *param_1)
 
 {
@@ -4535,8 +4280,6 @@ BOOL __thiscall FUN_00404eb0(void *this,CDC *param_1)
   return BVar2;
 }
 
-
-
 void __fastcall FUN_00404fe0(CWnd *param_1)
 
 {
@@ -4546,8 +4289,6 @@ void __fastcall FUN_00404fe0(CWnd *param_1)
   }
   return;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -4580,8 +4321,6 @@ undefined4 * __fastcall FUN_00405000(undefined4 *param_1)
   return param_1;
 }
 
-
-
 undefined4 * __thiscall FUN_00405080(void *this,byte param_1)
 
 {
@@ -4591,8 +4330,6 @@ undefined4 * __thiscall FUN_00405080(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_004050a0(undefined4 *param_1)
 
@@ -4613,8 +4350,6 @@ void __fastcall FUN_004050a0(undefined4 *param_1)
   *in_FS_OFFSET = local_c;
   return;
 }
-
-
 
 uint __thiscall FUN_00405110(void *this,int *param_1,char param_2)
 
@@ -4647,8 +4382,6 @@ uint __thiscall FUN_00405110(void *this,int *param_1,char param_2)
   return uVar3 & 0xffffff00;
 }
 
-
-
 void __thiscall FUN_00405180(void *this,uchar *param_1)
 
 {
@@ -4673,8 +4406,6 @@ void __thiscall FUN_00405180(void *this,uchar *param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00405200(void *this,int param_1)
 
 {
@@ -4687,8 +4418,6 @@ void __thiscall FUN_00405200(void *this,int param_1)
   }
   return;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -4804,8 +4533,6 @@ void __fastcall FUN_00405580(CWnd *param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00405800(void *this,int param_1)
 
 {
@@ -4816,8 +4543,6 @@ void __thiscall FUN_00405800(void *this,int param_1)
   *(int *)((int)this + 0x74) = param_1;
   return;
 }
-
-
 
 void __thiscall FUN_00405820(void *this,int param_1)
 
@@ -4835,8 +4560,6 @@ void __thiscall FUN_00405820(void *this,int param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00405860(void *this,int param_1)
 
 {
@@ -4852,8 +4575,6 @@ void __thiscall FUN_00405860(void *this,int param_1)
   return;
 }
 
-
-
 void __thiscall FUN_004058c0(void *this,int param_1)
 
 {
@@ -4868,8 +4589,6 @@ void __thiscall FUN_004058c0(void *this,int param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00405920(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
@@ -4878,8 +4597,6 @@ void __thiscall FUN_00405920(void *this,undefined4 param_1,undefined4 param_2,un
   return;
 }
 
-
-
 void __thiscall FUN_00405950(void *this,undefined4 param_1)
 
 {
@@ -4887,8 +4604,6 @@ void __thiscall FUN_00405950(void *this,undefined4 param_1)
   InvalidateRect(*(HWND *)((int)this + 0x20),(RECT *)0x0,1);
   return;
 }
-
-
 
 void __thiscall FUN_00405970(void *this,undefined4 param_1,undefined4 param_2)
 
@@ -4899,8 +4614,6 @@ void __thiscall FUN_00405970(void *this,undefined4 param_1,undefined4 param_2)
   return;
 }
 
-
-
 void __thiscall FUN_00405990(void *this,undefined param_1,undefined param_2)
 
 {
@@ -4909,8 +4622,6 @@ void __thiscall FUN_00405990(void *this,undefined param_1,undefined param_2)
   return;
 }
 
-
-
 undefined4 * __fastcall FUN_004059d0(undefined4 *param_1)
 
 {
@@ -4918,8 +4629,6 @@ undefined4 * __fastcall FUN_004059d0(undefined4 *param_1)
   *param_1 = 0x416100;
   return param_1;
 }
-
-
 
 CWinApp * __thiscall FUN_004059f0(void *this,byte param_1)
 
@@ -4930,8 +4639,6 @@ CWinApp * __thiscall FUN_004059f0(void *this,byte param_1)
   }
   return (CWinApp *)this;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -4944,16 +4651,12 @@ void __thiscall _CWinApp(CWinApp *this)
   return;
 }
 
-
-
 void FUN_00405a30(void)
 
 {
   FUN_004059d0((undefined4 *)&DAT_004217d8);
   return;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -5082,8 +4785,6 @@ undefined4 __fastcall FUN_00405a60(CWinApp *param_1)
   return 0;
 }
 
-
-
 void __fastcall FUN_00405d90(undefined4 *param_1)
 
 {
@@ -5104,8 +4805,6 @@ void __fastcall FUN_00405d90(undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00405df0(void *this,byte param_1)
 
 {
@@ -5115,8 +4814,6 @@ undefined4 * __thiscall FUN_00405df0(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -5225,8 +4922,6 @@ void __fastcall FUN_00405e10(CDialog *param_1)
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
 undefined4 * __thiscall FUN_004060e0(void *this,CWnd *param_1)
@@ -5327,8 +5022,6 @@ undefined4 * __thiscall FUN_004060e0(void *this,CWnd *param_1)
   return (undefined4 *)this;
 }
 
-
-
 CDialog * __thiscall FUN_00406380(void *this,byte param_1)
 
 {
@@ -5338,8 +5031,6 @@ CDialog * __thiscall FUN_00406380(void *this,byte param_1)
   }
   return (CDialog *)this;
 }
-
-
 
 void __thiscall FUN_004063a0(void *this,CDataExchange *param_1)
 
@@ -5361,8 +5052,6 @@ void __thiscall FUN_004063a0(void *this,CDataExchange *param_1)
   DDX_Text(param_1,0x3ef,(CString *)((int)this + 0x508));
   return;
 }
-
-
 
 BOOL __thiscall FUN_00406940(void *this,CDC *param_1)
 
@@ -5393,8 +5082,6 @@ BOOL __thiscall FUN_00406940(void *this,CDC *param_1)
   *in_FS_OFFSET = local_c;
   return BVar2;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -5450,8 +5137,6 @@ void __fastcall FUN_00406ae0(void *param_1)
   *in_FS_OFFSET = uStack16;
   return;
 }
-
-
 
 void __fastcall FUN_00406c20(void *param_1)
 
@@ -5519,8 +5204,6 @@ void __fastcall FUN_00406c20(void *param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00406cf0(void *this,char *param_1)
 
 {
@@ -5554,8 +5237,6 @@ void __thiscall FUN_00406cf0(void *this,char *param_1)
   *in_FS_OFFSET = local_c;
   return;
 }
-
-
 
 void __fastcall FUN_00406dc0(int param_1)
 
@@ -5619,8 +5300,6 @@ void __fastcall FUN_00406dc0(int param_1)
   }
   return;
 }
-
-
 
 void __thiscall FUN_00406f80(void *this,undefined4 param_1,undefined param_2,undefined4 param_3)
 
@@ -5845,8 +5524,6 @@ void __thiscall FUN_00406f80(void *this,undefined4 param_1,undefined param_2,und
   return;
 }
 
-
-
 void __fastcall FUN_00407640(undefined4 *param_1)
 
 {
@@ -5854,8 +5531,6 @@ void __fastcall FUN_00407640(undefined4 *param_1)
   param_1[1] = 0;
   return;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -5995,8 +5670,6 @@ void __thiscall FUN_004076a0(void *this,undefined4 param_1,undefined4 param_2,in
   return;
 }
 
-
-
 void __fastcall FUN_004079c0(int param_1)
 
 {
@@ -6055,8 +5728,6 @@ void __fastcall FUN_004079c0(int param_1)
   return;
 }
 
-
-
 void __fastcall FUN_00407c30(int param_1)
 
 {
@@ -6099,8 +5770,6 @@ void __fastcall FUN_00407c30(int param_1)
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
 void FUN_00407cb0(void)
@@ -6142,8 +5811,6 @@ void FUN_00407cb0(void)
   return;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void FUN_00407db0(void)
@@ -6184,8 +5851,6 @@ void FUN_00407db0(void)
   *in_FS_OFFSET = local_c;
   return;
 }
-
-
 
 void FUN_00407e80(void)
 
@@ -6242,8 +5907,6 @@ void FUN_00407e80(void)
   SystemParametersInfoW(0x14,0,&puStack1568,1);
   return;
 }
-
-
 
 void __fastcall FUN_00407f80(int param_1)
 
@@ -6343,8 +6006,6 @@ void __fastcall FUN_00407f80(int param_1)
   }
   return;
 }
-
-
 
 void __fastcall FUN_004080c0(void *param_1)
 
@@ -6453,8 +6114,6 @@ void __fastcall FUN_004080c0(void *param_1)
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
 WPARAM __thiscall FUN_004082c0(void *this,int param_1)
@@ -6561,8 +6220,6 @@ LAB_00408562:
   return WVar2;
 }
 
-
-
 CButton * __thiscall FUN_00408580(void *this,byte param_1)
 
 {
@@ -6573,8 +6230,6 @@ CButton * __thiscall FUN_00408580(void *this,byte param_1)
   return (CButton *)this;
 }
 
-
-
 CRichEditCtrl * __thiscall FUN_004085a0(void *this,byte param_1)
 
 {
@@ -6584,8 +6239,6 @@ CRichEditCtrl * __thiscall FUN_004085a0(void *this,byte param_1)
   }
   return (CRichEditCtrl *)this;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -6641,8 +6294,6 @@ undefined4 * __fastcall FUN_004085c0(undefined4 *param_1)
   *in_FS_OFFSET = local_c;
   return param_1;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -6822,8 +6473,6 @@ void __fastcall FUN_004086e0(int *param_1)
   return;
 }
 
-
-
 // WARNING: Could not reconcile some variable overlaps
 
 void __fastcall FUN_00408b40(undefined4 *param_1)
@@ -6873,8 +6522,6 @@ void __fastcall FUN_00408b40(undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00408c20(void *this,byte param_1)
 
 {
@@ -6884,8 +6531,6 @@ undefined4 * __thiscall FUN_00408c20(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void FUN_00408d70(CDC **param_1,int *param_2,int *param_3,uint param_4,float param_5)
 
@@ -7022,8 +6667,6 @@ void FUN_00408d70(CDC **param_1,int *param_2,int *param_3,uint param_4,float par
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00409770(void *this,byte param_1)
 
 {
@@ -7033,8 +6676,6 @@ undefined4 * __thiscall FUN_00409770(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_00409790(undefined4 *param_1)
 
@@ -7054,8 +6695,6 @@ void __fastcall FUN_00409790(undefined4 *param_1)
   *in_FS_OFFSET = local_c;
   return;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -7088,8 +6727,6 @@ void __fastcall FUN_004097e0(undefined4 *param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00409870(void *this,undefined4 param_1)
 
 {
@@ -7103,8 +6740,6 @@ void __thiscall FUN_00409870(void *this,undefined4 param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_004098a0(void *this,byte param_1)
 
 {
@@ -7114,8 +6749,6 @@ undefined4 * __thiscall FUN_004098a0(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_004098c0(undefined4 *param_1)
 
@@ -7139,8 +6772,6 @@ void __fastcall FUN_004098c0(undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00409920(void *this,byte param_1)
 
 {
@@ -7150,8 +6781,6 @@ undefined4 * __thiscall FUN_00409920(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_00409940(undefined4 *param_1)
 
@@ -7175,8 +6804,6 @@ void __fastcall FUN_00409940(undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_004099a0(void *this,byte param_1)
 
 {
@@ -7186,8 +6813,6 @@ undefined4 * __thiscall FUN_004099a0(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_004099c0(undefined4 *param_1)
 
@@ -7211,8 +6836,6 @@ void __fastcall FUN_004099c0(undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00409a20(void *this,byte param_1)
 
 {
@@ -7222,8 +6845,6 @@ undefined4 * __thiscall FUN_00409a20(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void FUN_00409a40(int **param_1,int *param_2,undefined4 param_3,int *param_4)
 
@@ -7258,8 +6879,6 @@ void FUN_00409a40(int **param_1,int *param_2,undefined4 param_3,int *param_4)
   return;
 }
 
-
-
 long __thiscall FUN_00409b80(void *this,undefined4 param_1)
 
 {
@@ -7274,8 +6893,6 @@ long __thiscall FUN_00409b80(void *this,undefined4 param_1)
   return lVar2;
 }
 
-
-
 long __thiscall FUN_00409bb0(void *this,undefined4 param_1)
 
 {
@@ -7289,8 +6906,6 @@ long __thiscall FUN_00409bb0(void *this,undefined4 param_1)
   lVar2 = Default((CWnd *)this);
   return lVar2;
 }
-
-
 
 int * FUN_00409d40(int *param_1,int param_2,int *param_3)
 
@@ -7335,8 +6950,6 @@ int * FUN_00409d40(int *param_1,int param_2,int *param_3)
   return param_1;
 }
 
-
-
 void __fastcall FUN_00409df0(undefined4 *param_1)
 
 {
@@ -7344,8 +6957,6 @@ void __fastcall FUN_00409df0(undefined4 *param_1)
   *param_1 = 0x415a30;
   return;
 }
-
-
 
 undefined4 * __thiscall FUN_00409e00(void *this,byte param_1)
 
@@ -7356,8 +6967,6 @@ undefined4 * __thiscall FUN_00409e00(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_00409e20(undefined4 *param_1)
 
@@ -7378,8 +6987,6 @@ void __fastcall FUN_00409e20(undefined4 *param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00409e70(void *this,int param_1,int param_2,int param_3)
 
 {
@@ -7390,8 +6997,6 @@ void __thiscall FUN_00409e70(void *this,int param_1,int param_2,int param_3)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_00409ea0(void *this,byte param_1)
 
 {
@@ -7401,8 +7006,6 @@ undefined4 * __thiscall FUN_00409ea0(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_00409ec0(undefined4 *param_1)
 
@@ -7423,8 +7026,6 @@ void __fastcall FUN_00409ec0(undefined4 *param_1)
   return;
 }
 
-
-
 void __thiscall FUN_00409f10(void *this,int param_1)
 
 {
@@ -7435,8 +7036,6 @@ void __thiscall FUN_00409f10(void *this,int param_1)
   SelectGdiObject(*(HDC__ **)((int)this + 4),*(void **)(param_1 + 4));
   return;
 }
-
-
 
 void __thiscall
 FUN_00409f80(void *this,int param_1,int param_2,int param_3,int param_4,HDC param_5,int param_6,
@@ -7450,8 +7049,6 @@ FUN_00409f80(void *this,int param_1,int param_2,int param_3,int param_4,HDC para
   return;
 }
 
-
-
 void __fastcall FUN_0040a110(undefined4 *param_1)
 
 {
@@ -7459,8 +7056,6 @@ void __fastcall FUN_0040a110(undefined4 *param_1)
   *param_1 = 0x41a230;
   return;
 }
-
-
 
 undefined4 * __thiscall FUN_0040a120(void *this,byte param_1)
 
@@ -7472,16 +7067,12 @@ undefined4 * __thiscall FUN_0040a120(void *this,byte param_1)
   return (undefined4 *)this;
 }
 
-
-
 void __fastcall FUN_0040a140(undefined4 *param_1)
 
 {
   *param_1 = 0x41a230;
   return;
 }
-
-
 
 void __thiscall
 FUN_0040a150(void *this,undefined4 *param_1,undefined4 *param_2,int param_3,uint param_4)
@@ -7726,8 +7317,6 @@ LAB_0040a576:
   return;
 }
 
-
-
 void __thiscall FUN_0040a610(void *this,byte *param_1,byte *param_2)
 
 {
@@ -7814,8 +7403,6 @@ void __thiscall FUN_0040a610(void *this,byte *param_1,byte *param_2)
                     // WARNING: Subroutine does not return
   _CxxThrowException(local_c,(ThrowInfo *)&pThrowInfo_0041c9c0);
 }
-
-
 
 void __thiscall FUN_0040a9d0(void *this,uint *param_1,byte *param_2)
 
@@ -7907,8 +7494,6 @@ void __thiscall FUN_0040a9d0(void *this,uint *param_1,byte *param_2)
                     // WARNING: Subroutine does not return
   _CxxThrowException(local_c,(ThrowInfo *)&pThrowInfo_0041c9c0);
 }
-
-
 
 void __thiscall FUN_0040adc0(void *this,uint *param_1,byte *param_2)
 
@@ -8032,8 +7617,6 @@ void __thiscall FUN_0040adc0(void *this,uint *param_1,byte *param_2)
   return;
 }
 
-
-
 void __thiscall FUN_0040b0c0(void *this,uint *param_1,byte *param_2)
 
 {
@@ -8155,8 +7738,6 @@ void __thiscall FUN_0040b0c0(void *this,uint *param_1,byte *param_2)
   FUN_0040a9d0(this,param_1,param_2);
   return;
 }
-
-
 
 void __thiscall FUN_0040b3c0(void *this,uint *param_1,byte *param_2,uint param_3,uint param_4)
 
@@ -8288,8 +7869,6 @@ void __thiscall FUN_0040b3c0(void *this,uint *param_1,byte *param_2,uint param_3
   _CxxThrowException(local_c,(ThrowInfo *)&pThrowInfo_0041c9c0);
 }
 
-
-
 void __cdecl FUN_0040b620(LPCWSTR param_1,int param_2)
 
 {
@@ -8310,8 +7889,6 @@ void __cdecl FUN_0040b620(LPCWSTR param_1,int param_2)
   }
   return;
 }
-
-
 
 uint __cdecl FUN_0040b6a0(LPCSTR param_1,LPCSTR param_2,char *param_3)
 
@@ -8358,8 +7935,6 @@ uint __cdecl FUN_0040b6a0(LPCSTR param_1,LPCSTR param_2,char *param_3)
   uVar4 = FUN_00412a00(piVar2);
   return CONCAT31((int3)((uint)uVar4 >> 8),1);
 }
-
-
 
 uint __cdecl FUN_0040b780(LPCSTR param_1,LPCSTR param_2)
 
@@ -8409,8 +7984,6 @@ uint __cdecl FUN_0040b780(LPCSTR param_1,LPCSTR param_2)
   }
   return uVar2 & 0xffffff00;
 }
-
-
 
 uint FUN_0040b840(void)
 
@@ -8497,8 +8070,6 @@ uint FUN_0040b840(void)
   return CONCAT31((int3)((uint)BVar3 >> 8),1);
 }
 
-
-
 int FUN_0040ba10(void)
 
 {
@@ -8516,8 +8087,6 @@ int FUN_0040ba10(void)
   iVar1 = (**(code **)(*DAT_00422210 + 4))(s_127_0_0_1_00421514,0x235a,1);
   return -(uint)(iVar1 != 0);
 }
-
-
 
 undefined4 FUN_0040ba60(undefined4 param_1)
 
@@ -8549,8 +8118,6 @@ undefined4 FUN_0040ba60(undefined4 param_1)
   (**(code **)(*DAT_00422210 + 0xc))();
   return 0xffffffff;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -8836,8 +8403,6 @@ code_r0x0040be25:
   goto LAB_0040bdf8;
 }
 
-
-
 undefined4 __cdecl FUN_0040be90(char *param_1,char *param_2,char *param_3)
 
 {
@@ -8846,8 +8411,6 @@ undefined4 __cdecl FUN_0040be90(char *param_1,char *param_2,char *param_3)
   strncpy((char *)&_Dest_004221ac,param_3,99);
   return 0;
 }
-
-
 
 undefined4 __cdecl FUN_0040bed0(char *param_1,undefined4 *param_2,undefined param_3,void *param_4)
 
@@ -8931,8 +8494,6 @@ undefined4 __cdecl FUN_0040bed0(char *param_1,undefined4 *param_2,undefined para
   return 0;
 }
 
-
-
 WPARAM FUN_0040c060(void)
 
 {
@@ -9008,8 +8569,6 @@ LAB_0040c221:
   *in_FS_OFFSET = in_stack_000023fc;
   return wParam;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -9108,8 +8667,6 @@ LAB_0040c4cc:
   return wParam;
 }
 
-
-
 undefined4 FUN_0040c4f0(void)
 
 {
@@ -9168,8 +8725,6 @@ undefined4 FUN_0040c4f0(void)
   return 0xffffffff;
 }
 
-
-
 void FUN_0040c670(void)
 
 {
@@ -9182,8 +8737,6 @@ void FUN_0040c670(void)
   }
   return;
 }
-
-
 
 void __thiscall FUN_0040c740(void *this,int *param_1,int *param_2)
 
@@ -9214,8 +8767,6 @@ void __thiscall FUN_0040c740(void *this,int *param_1,int *param_2)
   return;
 }
 
-
-
 void __thiscall FUN_0040c7b0(void *this,char param_1)
 
 {
@@ -9236,8 +8787,6 @@ void __thiscall FUN_0040c7b0(void *this,char param_1)
   *(undefined4 *)((int)this + 0xc) = 0;
   return;
 }
-
-
 
 void __thiscall FUN_0040c800(void *this,void **param_1,void *param_2,undefined *param_3)
 
@@ -9264,8 +8813,6 @@ void __thiscall FUN_0040c800(void *this,void **param_1,void *param_2,undefined *
   *(void ***)param_1 = ppvVar1;
   return;
 }
-
-
 
 void __thiscall FUN_0040c860(void *this,int **param_1,int *param_2,int *param_3)
 
@@ -9303,8 +8850,6 @@ void __thiscall FUN_0040c860(void *this,int **param_1,int *param_2,int *param_3)
   return;
 }
 
-
-
 void FUN_0040c8f0(void **param_1,void *param_2)
 
 {
@@ -9322,8 +8867,6 @@ void FUN_0040c8f0(void **param_1,void *param_2)
   *(void ***)(ppvVar1 + 1) = ppvVar1;
   return;
 }
-
-
 
 void * __thiscall FUN_0040c920(void *this,undefined4 *param_1,uint param_2)
 
@@ -9376,8 +8919,6 @@ LAB_0040c990:
   *(undefined *)(param_2 + *(int *)((int)this + 4)) = 0;
   return this;
 }
-
-
 
 void __thiscall FUN_0040c9c0(void *this,uint param_1)
 
@@ -9459,8 +9000,6 @@ void __thiscall FUN_0040c9c0(void *this,uint param_1)
   return;
 }
 
-
-
 undefined * Catch_0040ca19(void)
 
 {
@@ -9477,8 +9016,6 @@ undefined * Catch_0040ca19(void)
   *(void **)(unaff_EBP + 8) = pvVar2;
   return &DAT_0040ca3a;
 }
-
-
 
 // WARNING: Removing unreachable block (ram,0x0040cb20)
 
@@ -9579,8 +9116,6 @@ void __cdecl FUN_0040cad0(undefined *param_1,undefined *param_2)
   return;
 }
 
-
-
 void __thiscall FUN_0040cc40(void *this,int param_1)
 
 {
@@ -9588,8 +9123,6 @@ void __thiscall FUN_0040cc40(void *this,int param_1)
   *(undefined *)(*(int *)((int)this + 4) + param_1) = 0;
   return;
 }
-
-
 
 uint __thiscall FUN_0040cc60(void *this,uint param_1,char param_2)
 
@@ -9669,8 +9202,6 @@ LAB_0040cd72:
   return CONCAT31((int3)((uint)puVar2 >> 8),1);
 }
 
-
-
 void __fastcall FUN_0040cd80(void *param_1)
 
 {
@@ -9747,8 +9278,6 @@ LAB_0040ce27:
   return;
 }
 
-
-
 void * __thiscall FUN_0040ce50(void *this,byte param_1)
 
 {
@@ -9774,8 +9303,6 @@ void * __thiscall FUN_0040ce50(void *this,byte param_1)
   return this;
 }
 
-
-
 undefined4 * __fastcall FUN_0040cee0(undefined4 *param_1)
 
 {
@@ -9797,8 +9324,6 @@ undefined4 * __fastcall FUN_0040cee0(undefined4 *param_1)
   return param_1;
 }
 
-
-
 undefined4 * __thiscall FUN_0040cf10(void *this,byte param_1)
 
 {
@@ -9809,16 +9334,12 @@ undefined4 * __thiscall FUN_0040cf10(void *this,byte param_1)
   return (undefined4 *)this;
 }
 
-
-
 void __fastcall FUN_0040cf30(undefined4 *param_1)
 
 {
   *param_1 = 0x41ba40;
   return;
 }
-
-
 
 undefined4 __thiscall FUN_0040d0a0(void *this,undefined param_1,undefined param_2)
 
@@ -9857,8 +9378,6 @@ undefined4 __thiscall FUN_0040d0a0(void *this,undefined param_1,undefined param_
   FUN_0040d5a0(this,(undefined4 *)((int)local_1f4 + iVar1));
   return 0;
 }
-
-
 
 undefined4 __thiscall
 FUN_0040d150(void *this,undefined param_1,undefined param_2,undefined param_3,int *param_4)
@@ -9931,8 +9450,6 @@ FUN_0040d150(void *this,undefined param_1,undefined param_2,undefined param_3,in
   return 0xffffffff;
 }
 
-
-
 void __thiscall FUN_0040d2b0(void *this,int param_1,int param_2)
 
 {
@@ -9953,8 +9470,6 @@ void __thiscall FUN_0040d2b0(void *this,int param_1,int param_2)
   }
   return;
 }
-
-
 
 int __thiscall FUN_0040d300(void *this,undefined4 *param_1,uint param_2,char param_3,char param_4)
 
@@ -10060,8 +9575,6 @@ int __thiscall FUN_0040d300(void *this,undefined4 *param_1,uint param_2,char par
   return iVar6;
 }
 
-
-
 int __thiscall FUN_0040d4c0(void *this,int param_1,int *param_2,char param_3)
 
 {
@@ -10113,8 +9626,6 @@ int __thiscall FUN_0040d4c0(void *this,int param_1,int *param_2,char param_3)
   return iVar5;
 }
 
-
-
 void __thiscall FUN_0040d5a0(void *this,undefined4 *param_1)
 
 {
@@ -10134,23 +9645,17 @@ void __thiscall FUN_0040d5a0(void *this,undefined4 *param_1)
   return;
 }
 
-
-
 int __fastcall FUN_0040d5c0(int param_1)
 
 {
   return param_1 + 8;
 }
 
-
-
 undefined __fastcall FUN_0040d5d0(int param_1)
 
 {
   return *(undefined *)(param_1 + 0x27);
 }
-
-
 
 undefined4 * __fastcall FUN_0040d5e0(undefined4 *param_1)
 
@@ -10173,8 +9678,6 @@ undefined4 * __fastcall FUN_0040d5e0(undefined4 *param_1)
   return param_1;
 }
 
-
-
 undefined4 * __thiscall FUN_0040d630(void *this,byte param_1)
 
 {
@@ -10184,8 +9687,6 @@ undefined4 * __thiscall FUN_0040d630(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_0040d650(undefined4 *param_1)
 
@@ -10205,8 +9706,6 @@ void __fastcall FUN_0040d650(undefined4 *param_1)
   *in_FS_OFFSET = local_c;
   return;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -10319,8 +9818,6 @@ LAB_0040daa6:
   return 0xffffffff;
 }
 
-
-
 void __fastcall FUN_0040dad0(int param_1)
 
 {
@@ -10358,8 +9855,6 @@ void __fastcall FUN_0040dad0(int param_1)
   return;
 }
 
-
-
 undefined4 * __thiscall FUN_0040dbb0(void *this,undefined4 param_1)
 
 {
@@ -10368,8 +9863,6 @@ undefined4 * __thiscall FUN_0040dbb0(void *this,undefined4 param_1)
   FUN_0040dd50((int)this);
   return (undefined4 *)this;
 }
-
-
 
 undefined4 * __thiscall FUN_0040dbd0(void *this,byte param_1)
 
@@ -10380,8 +9873,6 @@ undefined4 * __thiscall FUN_0040dbd0(void *this,byte param_1)
   }
   return (undefined4 *)this;
 }
-
-
 
 void __fastcall FUN_0040dbf0(undefined4 *param_1)
 
@@ -10396,8 +9887,6 @@ void __fastcall FUN_0040dbf0(undefined4 *param_1)
   FUN_0040dd50((int)param_1);
   return;
 }
-
-
 
 void __thiscall FUN_0040dc00(void *this,undefined4 *param_1,char *param_2)
 
@@ -10472,8 +9961,6 @@ void __thiscall FUN_0040dc00(void *this,undefined4 *param_1,char *param_2)
   return;
 }
 
-
-
 void __thiscall FUN_0040dd00(void *this,undefined4 *param_1)
 
 {
@@ -10493,23 +9980,17 @@ void __thiscall FUN_0040dd00(void *this,undefined4 *param_1)
   return;
 }
 
-
-
 undefined4 __fastcall FUN_0040dd30(int param_1)
 
 {
   return *(undefined4 *)(param_1 + 4);
 }
 
-
-
 undefined4 __fastcall FUN_0040dd40(int param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x1008);
 }
-
-
 
 void __fastcall FUN_0040dd50(int param_1)
 
@@ -10519,8 +10000,6 @@ void __fastcall FUN_0040dd50(int param_1)
   *(undefined4 *)(param_1 + 0x1008) = 0;
   return;
 }
-
-
 
 int __cdecl FUN_0040dda0(int param_1,int param_2,int param_3)
 
@@ -10621,8 +10100,6 @@ int __cdecl FUN_0040dda0(int param_1,int param_2,int param_3)
   return param_3;
 }
 
-
-
 void __cdecl
 FUN_0040def0(undefined param_1,undefined param_2,undefined4 param_3,undefined4 param_4,int param_5)
 
@@ -10639,8 +10116,6 @@ FUN_0040def0(undefined param_1,undefined param_2,undefined4 param_3,undefined4 p
   }
   return;
 }
-
-
 
 void __cdecl FUN_0040df30(uint param_1,byte **param_2,int param_3)
 
@@ -11000,16 +10475,12 @@ LAB_0040e4d8:
   } while( true );
 }
 
-
-
 void __cdecl FUN_0040e700(undefined4 param_1,int param_2)
 
 {
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1);
   return;
 }
-
-
 
 void __cdecl FUN_0040e720(int *param_1,int param_2,int *param_3)
 
@@ -11037,8 +10508,6 @@ void __cdecl FUN_0040e720(int *param_1,int param_2,int *param_3)
   }
   return;
 }
-
-
 
 int * __cdecl FUN_0040e7a0(int param_1,int param_2,int param_3)
 
@@ -11069,8 +10538,6 @@ int * __cdecl FUN_0040e7a0(int param_1,int param_2,int param_3)
   FUN_0040e720(piVar1,param_1,(int *)0x0);
   return piVar1;
 }
-
-
 
 void __cdecl FUN_0040e840(uint *param_1,byte **param_2,int param_3)
 
@@ -11602,8 +11069,6 @@ switchD_0040e8a3_caseD_40f39b:
   } while( true );
 }
 
-
-
 undefined4 __cdecl FUN_0040f450(int *param_1,int param_2)
 
 {
@@ -11613,8 +11078,6 @@ undefined4 __cdecl FUN_0040f450(int *param_1,int param_2)
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1);
   return 0;
 }
-
-
 
 // WARNING: Could not reconcile some variable overlaps
 
@@ -11871,8 +11334,6 @@ FUN_0040f490(int *param_1,uint param_2,uint param_3,int param_4,int param_5,uint
   return 0;
 }
 
-
-
 int __cdecl FUN_0040f950(int *param_1,uint *param_2,uint *param_3,int param_4,int param_5)
 
 {
@@ -11898,8 +11359,6 @@ int __cdecl FUN_0040f950(int *param_1,uint *param_2,uint *param_3,int param_4,in
   (**(code **)(param_5 + 0x24))(*(undefined4 *)(param_5 + 0x28),puVar1);
   return iVar2;
 }
-
-
 
 int __cdecl
 FUN_0040fa00(uint param_1,uint param_2,int *param_3,uint *param_4,uint *param_5,uint *param_6,
@@ -11962,8 +11421,6 @@ LAB_0040fb76:
   return iVar2;
 }
 
-
-
 undefined4 __cdecl
 FUN_0040fb90(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
 
@@ -11974,8 +11431,6 @@ FUN_0040fb90(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefin
   *param_4 = 0x41b2a8;
   return 0;
 }
-
-
 
 undefined4 __cdecl
 FUN_0040fbc0(int param_1,byte *param_2,int param_3,int param_4,int param_5,byte **param_6)
@@ -12191,8 +11646,6 @@ LAB_0040ff48:
   } while( true );
 }
 
-
-
 uint __cdecl FUN_0040ff90(uint param_1,byte *param_2,uint param_3)
 
 {
@@ -12227,8 +11680,6 @@ uint __cdecl FUN_0040ff90(uint param_1,byte *param_2,uint param_3)
   return ~param_1;
 }
 
-
-
 void __cdecl FUN_004100d0(uint *param_1,uint param_2)
 
 {
@@ -12242,8 +11693,6 @@ void __cdecl FUN_004100d0(uint *param_1,uint param_2)
   return;
 }
 
-
-
 uint __cdecl FUN_00410130(int param_1)
 
 {
@@ -12252,8 +11701,6 @@ uint __cdecl FUN_00410130(int param_1)
   uVar1 = *(uint *)(param_1 + 8) & 0xfffd | 2;
   return (uVar1 ^ 1) * uVar1 >> 8 & 0xff;
 }
-
-
 
 uint __cdecl FUN_00410150(uint *param_1,uint param_2)
 
@@ -12266,8 +11713,6 @@ uint __cdecl FUN_00410150(uint *param_1,uint param_2)
   uVar1 = FUN_004100d0(param_1,param_2);
   return uVar1 & 0xffffff00 | (uint)(byte)param_2;
 }
-
-
 
 undefined4 __cdecl FUN_004102e0(int param_1)
 
@@ -12285,8 +11730,6 @@ undefined4 __cdecl FUN_004102e0(int param_1)
   return 0xfffffffe;
 }
 
-
-
 undefined4 __cdecl FUN_00410330(int param_1)
 
 {
@@ -12303,8 +11746,6 @@ undefined4 __cdecl FUN_00410330(int param_1)
   }
   return 0xfffffffe;
 }
-
-
 
 // WARNING: Removing unreachable block (ram,0x00410454)
 
@@ -12344,8 +11785,6 @@ undefined4 __cdecl FUN_00410380(int param_1)
   }
   return 0xfffffffc;
 }
-
-
 
 uint __cdecl FUN_00410460(byte **param_1,int param_2)
 
@@ -12561,8 +12000,6 @@ switchD_004104ad_caseD_4107d5:
   return 2;
 }
 
-
-
 undefined * __cdecl FUN_004108a0(LPCSTR param_1,undefined4 param_2,int param_3,undefined4 *param_4)
 
 {
@@ -12621,8 +12058,6 @@ LAB_00410938:
   return puVar2;
 }
 
-
-
 undefined4 __cdecl FUN_004109c0(void *param_1)
 
 {
@@ -12636,8 +12071,6 @@ undefined4 __cdecl FUN_004109c0(void *param_1)
   return 0;
 }
 
-
-
 undefined4 __cdecl FUN_004109f0(char *param_1)
 
 {
@@ -12646,8 +12079,6 @@ undefined4 __cdecl FUN_004109f0(char *param_1)
   }
   return 0;
 }
-
-
 
 int __cdecl FUN_00410a10(char *param_1)
 
@@ -12665,8 +12096,6 @@ int __cdecl FUN_00410a10(char *param_1)
   }
   return *(int *)(param_1 + 0x1c);
 }
-
-
 
 undefined4 __cdecl FUN_00410a50(char *param_1,int param_2,DWORD param_3)
 
@@ -12700,8 +12129,6 @@ undefined4 __cdecl FUN_00410a50(char *param_1,int param_2,DWORD param_3)
   *(int *)(param_1 + 0x1c) = *(int *)(param_1 + 0x1c) + param_2;
   return 0;
 }
-
-
 
 uint __cdecl FUN_00410af0(undefined4 *param_1,uint param_2,int param_3,char *param_4)
 
@@ -12744,8 +12171,6 @@ uint __cdecl FUN_00410af0(undefined4 *param_1,uint param_2,int param_3,char *par
   return nNumberOfBytesToRead / param_2;
 }
 
-
-
 int __cdecl FUN_00410b70(char *param_1,uint *param_2)
 
 {
@@ -12762,8 +12187,6 @@ int __cdecl FUN_00410b70(char *param_1,uint *param_2)
   iVar3 = FUN_004109f0(pcVar1);
   return -(uint)(iVar3 != 0);
 }
-
-
 
 void __cdecl FUN_00410bb0(char *param_1,char **param_2)
 
@@ -12785,8 +12208,6 @@ void __cdecl FUN_00410bb0(char *param_1,char **param_2)
   *param_2 = (char *)0x0;
   return;
 }
-
-
 
 void __cdecl FUN_00410c00(char *param_1,char **param_2)
 
@@ -12818,8 +12239,6 @@ void __cdecl FUN_00410c00(char *param_1,char **param_2)
   *param_2 = (char *)0x0;
   return;
 }
-
-
 
 int __cdecl FUN_00410c90(char *param_1)
 
@@ -12884,8 +12303,6 @@ int __cdecl FUN_00410c90(char *param_1)
   free(_Memory);
   return local_8;
 }
-
-
 
 // WARNING: Removing unreachable block (ram,0x00410de9)
 
@@ -12978,8 +12395,6 @@ char ** __cdecl FUN_00410dc0(char *param_1)
   return (char **)0x0;
 }
 
-
-
 undefined4 __cdecl FUN_00410f70(void **param_1)
 
 {
@@ -12994,8 +12409,6 @@ undefined4 __cdecl FUN_00410f70(void **param_1)
   return 0;
 }
 
-
-
 void __cdecl FUN_00410fb0(uint param_1,int *param_2)
 
 {
@@ -13007,8 +12420,6 @@ void __cdecl FUN_00410fb0(uint param_1,int *param_2)
   *param_2 = (param_1 & 0x1f) << 1;
   return;
 }
-
-
 
 // WARNING: Type propagation algorithm not settling
 
@@ -13184,8 +12595,6 @@ LAB_00411294:
   return iVar4;
 }
 
-
-
 void __cdecl
 FUN_00411350(char **param_1,char **param_2,undefined4 *param_3,uint param_4,undefined4 *param_5,
             uint param_6,undefined4 *param_7,char *param_8)
@@ -13194,8 +12603,6 @@ FUN_00411350(char **param_1,char **param_2,undefined4 *param_3,uint param_4,unde
   FUN_00411000(param_1,param_2,(char **)0x0,param_3,param_4,param_5,param_6,param_7,param_8);
   return;
 }
-
-
 
 int __cdecl FUN_00411390(char **param_1)
 
@@ -13212,8 +12619,6 @@ int __cdecl FUN_00411390(char **param_1)
   param_1[6] = (char *)(uint)(iVar1 == 0);
   return iVar1;
 }
-
-
 
 int __cdecl FUN_004113e0(char **param_1)
 
@@ -13236,8 +12641,6 @@ int __cdecl FUN_004113e0(char **param_1)
   param_1[6] = (char *)(uint)(iVar1 == 0);
   return iVar1;
 }
-
-
 
 int __cdecl FUN_00411460(char **param_1,char **param_2,char **param_3,char **param_4)
 
@@ -13340,8 +12743,6 @@ int __cdecl FUN_00411460(char **param_1,char **param_2,char **param_3,char **par
   return iVar5;
 }
 
-
-
 undefined4 __cdecl FUN_00411660(char **param_1,byte *param_2)
 
 {
@@ -13427,8 +12828,6 @@ undefined4 __cdecl FUN_00411660(char **param_1,byte *param_2)
   *(void ***)(ppcVar2 + 0x1f) = _Memory;
   return 0;
 }
-
-
 
 uint __cdecl FUN_00411810(int param_1,int param_2,uint param_3,undefined *param_4)
 
@@ -13568,8 +12967,6 @@ uint __cdecl FUN_00411810(int param_1,int param_2,uint param_3,undefined *param_
   return 0xffffff9c;
 }
 
-
-
 undefined4 __cdecl FUN_00411ac0(int param_1)
 
 {
@@ -13601,8 +12998,6 @@ undefined4 __cdecl FUN_00411ac0(int param_1)
   return uVar1;
 }
 
-
-
 ulonglong __cdecl FUN_00411b50(uint param_1)
 
 {
@@ -13612,8 +13007,6 @@ ulonglong __cdecl FUN_00411b50(uint param_1)
                    10000000,0);
   return uVar1;
 }
-
-
 
 _FILETIME __cdecl FUN_00411b80(uint param_1,uint param_2)
 
@@ -13631,8 +13024,6 @@ _FILETIME __cdecl FUN_00411b80(uint param_1,uint param_2)
   SystemTimeToFileTime(&local_10,(LPFILETIME)&local_18);
   return local_18;
 }
-
-
 
 char ** __thiscall FUN_00411c00(void *this,LPCSTR param_1,undefined4 param_2,int param_3)
 
@@ -13718,8 +13109,6 @@ char ** __thiscall FUN_00411c00(void *this,LPCSTR param_1,undefined4 param_2,int
   *(char ***)this = ppcVar4;
   return (char **)((-(uint)(ppcVar4 != (char **)0x0) & 0xfffffe00) + 0x200);
 }
-
-
 
 undefined4 __thiscall FUN_00411cf0(void *this,char *param_1,char **param_2)
 
@@ -14034,8 +13423,6 @@ LAB_00412100:
   return 0;
 }
 
-
-
 void __cdecl FUN_00412250(LPCSTR param_1,undefined4 *param_2)
 
 {
@@ -14158,8 +13545,6 @@ void __cdecl FUN_00412250(LPCSTR param_1,undefined4 *param_2)
   }
   return;
 }
-
-
 
 int __thiscall FUN_00412360(void *this,char *param_1,undefined4 *param_2,uint param_3,int param_4)
 
@@ -14349,8 +13734,6 @@ LAB_00412765:
   return (int)local_33c;
 }
 
-
-
 undefined4 __fastcall FUN_004127a0(void **param_1)
 
 {
@@ -14364,8 +13747,6 @@ undefined4 __fastcall FUN_004127a0(void **param_1)
   *param_1 = (void *)0x0;
   return 0;
 }
-
-
 
 undefined4 * __cdecl FUN_004127e0(LPCSTR param_1,undefined4 param_2,int param_3,char *param_4)
 
@@ -14459,16 +13840,12 @@ undefined4 * __cdecl FUN_004127e0(LPCSTR param_1,undefined4 param_2,int param_3,
   return (undefined4 *)0x0;
 }
 
-
-
 void __cdecl FUN_00412920(LPCSTR param_1,char *param_2)
 
 {
   FUN_004127e0(param_1,0,2,param_2);
   return;
 }
-
-
 
 void __cdecl FUN_00412940(int *param_1,char *param_2,char **param_3)
 
@@ -14488,8 +13865,6 @@ void __cdecl FUN_00412940(int *param_1,char *param_2,char **param_3)
   return;
 }
 
-
-
 void __cdecl FUN_00412990(int *param_1,char *param_2,undefined4 *param_3,uint param_4,int param_5)
 
 {
@@ -14505,16 +13880,12 @@ void __cdecl FUN_00412990(int *param_1,char *param_2,undefined4 *param_3,uint pa
   return;
 }
 
-
-
 void __cdecl FUN_004129e0(int *param_1,char *param_2,undefined4 *param_3)
 
 {
   FUN_00412990(param_1,param_2,param_3,0,2);
   return;
 }
-
-
 
 undefined4 __cdecl FUN_00412a00(int *param_1)
 
@@ -14546,8 +13917,6 @@ undefined4 __cdecl FUN_00412a00(int *param_1)
   return DAT_004220dc;
 }
 
-
-
 void __cdecl FUN_00412a90(size_t param_1)
 
 {
@@ -14555,16 +13924,12 @@ void __cdecl FUN_00412a90(size_t param_1)
   return;
 }
 
-
-
 void __cdecl FUN_00412aa0(void *param_1,size_t param_2)
 
 {
   realloc(param_1,param_2);
   return;
 }
-
-
 
 void __cdecl FUN_00412ac0(undefined4 *param_1,char param_2,uint param_3)
 
@@ -14593,8 +13958,6 @@ void __cdecl FUN_00412ac0(undefined4 *param_1,char param_2,uint param_3)
   return;
 }
 
-
-
 uint __cdecl FUN_00412b00(ushort *param_1,uint param_2)
 
 {
@@ -14620,8 +13983,6 @@ uint __cdecl FUN_00412b00(ushort *param_1,uint param_2)
   return ~((uVar2 >> 0x10) + uVar2);
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall OnOK(CDialog *this)
@@ -14632,8 +13993,6 @@ void __thiscall OnOK(CDialog *this)
   OnOK();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14648,8 +14007,6 @@ int __thiscall DoModal(CDialog *this)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 long __thiscall DefWindowProcA(CWnd *this,uint param_1,uint param_2,long param_3)
@@ -14662,8 +14019,6 @@ long __thiscall DefWindowProcA(CWnd *this,uint param_1,uint param_2,long param_3
   lVar1 = DefWindowProcA();
   return lVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14678,8 +14033,6 @@ int __thiscall OnNotify(CWnd *this,uint param_1,long param_2,long *param_3)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall PreSubclassWindow(CWnd *this)
@@ -14690,8 +14043,6 @@ void __thiscall PreSubclassWindow(CWnd *this)
   PreSubclassWindow();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14704,8 +14055,6 @@ void __thiscall _CDialog(CDialog *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CWnd(CWnd *this)
@@ -14716,8 +14065,6 @@ void __thiscall CWnd(CWnd *this)
   CWnd();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14730,8 +14077,6 @@ void __thiscall CDialog(CDialog *this,uint param_1,CWnd *param_2)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl operator_delete(void *param_1)
@@ -14742,8 +14087,6 @@ void __cdecl operator_delete(void *param_1)
   operator_delete();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14756,8 +14099,6 @@ void __thiscall _CProgressCtrl(CProgressCtrl *this)
   return;
 }
 
-
-
 void DDX_Control(CDataExchange *param_1,int param_2,CWnd *param_3)
 
 {
@@ -14766,8 +14107,6 @@ void DDX_Control(CDataExchange *param_1,int param_2,CWnd *param_3)
   DDX_Control(param_1,param_2,param_3);
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14779,8 +14118,6 @@ void __thiscall CString(CString *this,char *param_1)
   CString();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14795,8 +14132,6 @@ int __thiscall OnInitDialog(CDialog *this)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall PreTranslateMessage(CDialog *this,tagMSG *param_1)
@@ -14809,8 +14144,6 @@ int __thiscall PreTranslateMessage(CDialog *this,tagMSG *param_1)
   iVar1 = PreTranslateMessage();
   return iVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14825,8 +14158,6 @@ long __thiscall Default(CWnd *this)
   return lVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall _CString(CString *this)
@@ -14837,8 +14168,6 @@ void __thiscall _CString(CString *this)
   _CString();
   return;
 }
-
-
 
 int AfxMessageBox(char *param_1,uint param_2,uint param_3)
 
@@ -14851,8 +14180,6 @@ int AfxMessageBox(char *param_1,uint param_2,uint param_3)
   return iVar1;
 }
 
-
-
 CString operator_(CString *param_1,char *param_2)
 
 {
@@ -14863,8 +14190,6 @@ CString operator_(CString *param_1,char *param_2)
   CVar1 = operator_(param_1,param_2);
   return CVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14877,8 +14202,6 @@ void __thiscall OnDestroy(CWnd *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall OnCancel(CDialog *this)
@@ -14890,8 +14213,6 @@ void __thiscall OnCancel(CDialog *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall SetWindowTextA(CWnd *this,char *param_1)
@@ -14902,8 +14223,6 @@ void __thiscall SetWindowTextA(CWnd *this,char *param_1)
   SetWindowTextA();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14918,8 +14237,6 @@ CWnd * __thiscall GetDlgItem(CWnd *this,int param_1)
   return pCVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl operator_new(uint param_1)
@@ -14933,8 +14250,6 @@ void * __cdecl operator_new(uint param_1)
   return pvVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall _CListCtrl(CListCtrl *this)
@@ -14946,8 +14261,6 @@ void __thiscall _CListCtrl(CListCtrl *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall _CComboBox(CComboBox *this)
@@ -14958,8 +14271,6 @@ void __thiscall _CComboBox(CComboBox *this)
   _CComboBox();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14973,8 +14284,6 @@ int __thiscall DeleteObject(CGdiObject *this)
   iVar1 = DeleteObject();
   return iVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -14990,8 +14299,6 @@ InsertColumn(CListCtrl *this,int param_1,char *param_2,int param_3,int param_4,i
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall Attach(CGdiObject *this,void *param_1)
@@ -15004,8 +14311,6 @@ int __thiscall Attach(CGdiObject *this,void *param_1)
   iVar1 = Attach();
   return iVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15020,8 +14325,6 @@ int __thiscall GetDlgCtrlID(CWnd *this)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 CBrush * __thiscall SelectObject(CDC *this,CBrush *param_1)
@@ -15035,8 +14338,6 @@ CBrush * __thiscall SelectObject(CDC *this,CBrush *param_1)
   return pCVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CBrush(CBrush *this,ulong param_1)
@@ -15047,8 +14348,6 @@ void __thiscall CBrush(CBrush *this,ulong param_1)
   CBrush();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15062,8 +14361,6 @@ CString __thiscall GetItemText(CListCtrl *this,int param_1,int param_2)
   CVar1 = (CString)GetItemText();
   return CVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15080,8 +14377,6 @@ InsertItem(CListCtrl *this,uint param_1,int param_2,char *param_3,uint param_4,u
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall EnableWindow(CWnd *this,int param_1)
@@ -15095,8 +14390,6 @@ int __thiscall EnableWindow(CWnd *this,int param_1)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall _CStatic(CStatic *this)
@@ -15107,8 +14400,6 @@ void __thiscall _CStatic(CStatic *this)
   _CStatic();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15123,8 +14414,6 @@ CString * __thiscall operator_(CString *this,CString *param_1)
   return pCVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 CString * __thiscall operator_(CString *this,char *param_1)
@@ -15138,8 +14427,6 @@ CString * __thiscall operator_(CString *this,char *param_1)
   return pCVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CString(CString *this)
@@ -15151,8 +14438,6 @@ void __thiscall CString(CString *this)
   return;
 }
 
-
-
 CWnd * FromHandle(HWND__ *param_1)
 
 {
@@ -15163,8 +14448,6 @@ CWnd * FromHandle(HWND__ *param_1)
   pCVar1 = FromHandle(param_1);
   return pCVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15179,8 +14462,6 @@ int __thiscall Find(CString *this,char *param_1,int param_2)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall _CPaintDC(CPaintDC *this)
@@ -15191,8 +14472,6 @@ void __thiscall _CPaintDC(CPaintDC *this)
   _CPaintDC();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15207,8 +14486,6 @@ int __thiscall SetBkMode(CDC *this,int param_1)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 CFont * __thiscall SelectObject(CDC *this,CFont *param_1)
@@ -15222,8 +14499,6 @@ CFont * __thiscall SelectObject(CDC *this,CFont *param_1)
   return pCVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CPaintDC(CPaintDC *this,CWnd *param_1)
@@ -15235,8 +14510,6 @@ void __thiscall CPaintDC(CPaintDC *this,CWnd *param_1)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall GetWindowTextA(CWnd *this,CString *param_1)
@@ -15247,8 +14520,6 @@ void __thiscall GetWindowTextA(CWnd *this,CString *param_1)
   GetWindowTextA();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15263,8 +14534,6 @@ int __thiscall ModifyStyle(CWnd *this,ulong param_1,ulong param_2,uint param_3)
   return iVar1;
 }
 
-
-
 CGdiObject * FromHandle(void *param_1)
 
 {
@@ -15275,8 +14544,6 @@ CGdiObject * FromHandle(void *param_1)
   pCVar1 = FromHandle(param_1);
   return pCVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15289,8 +14556,6 @@ void __thiscall _CClientDC(CClientDC *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CClientDC(CClientDC *this,CWnd *param_1)
@@ -15302,8 +14567,6 @@ void __thiscall CClientDC(CClientDC *this,CWnd *param_1)
   return;
 }
 
-
-
 void DDV_MaxChars(CDataExchange *param_1,CString *param_2,int param_3)
 
 {
@@ -15313,8 +14576,6 @@ void DDV_MaxChars(CDataExchange *param_1,CString *param_2,int param_3)
   return;
 }
 
-
-
 void DDX_Text(CDataExchange *param_1,int param_2,CString *param_3)
 
 {
@@ -15323,8 +14584,6 @@ void DDX_Text(CDataExchange *param_1,int param_2,CString *param_3)
   DDX_Text(param_1,param_2,param_3);
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15336,8 +14595,6 @@ void __thiscall Format(CString *this,char *param_1,...)
   Format();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15352,8 +14609,6 @@ int __thiscall UpdateData(CWnd *this,int param_1)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall _CDC(CDC *this)
@@ -15364,8 +14619,6 @@ void __thiscall _CDC(CDC *this)
   _CDC();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15380,8 +14633,6 @@ int __thiscall DeleteDC(CDC *this)
   return iVar1;
 }
 
-
-
 CGdiObject * SelectGdiObject(HDC__ *param_1,void *param_2)
 
 {
@@ -15392,8 +14643,6 @@ CGdiObject * SelectGdiObject(HDC__ *param_1,void *param_2)
   pCVar1 = SelectGdiObject(param_1,param_2);
   return pCVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15408,8 +14657,6 @@ int __thiscall Attach(CDC *this,HDC__ *param_1)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CDC(CDC *this)
@@ -15421,8 +14668,6 @@ void __thiscall CDC(CDC *this)
   return;
 }
 
-
-
 AFX_MODULE_STATE * AfxGetModuleState(void)
 
 {
@@ -15433,8 +14678,6 @@ AFX_MODULE_STATE * AfxGetModuleState(void)
   pAVar1 = AfxGetModuleState();
   return pAVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15450,8 +14693,6 @@ SetWindowPos(CWnd *this,CWnd *param_1,int param_2,int param_3,int param_4,int pa
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CWinApp(CWinApp *this,char *param_1)
@@ -15462,8 +14703,6 @@ void __thiscall CWinApp(CWinApp *this,char *param_1)
   CWinApp();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15476,8 +14715,6 @@ void __thiscall _CWinApp(CWinApp *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall _CButton(CButton *this)
@@ -15488,8 +14725,6 @@ void __thiscall _CButton(CButton *this)
   _CButton();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15502,8 +14737,6 @@ void __thiscall _CRichEditCtrl(CRichEditCtrl *this)
   return;
 }
 
-
-
 int AfxInitRichEdit(void)
 
 {
@@ -15514,8 +14747,6 @@ int AfxInitRichEdit(void)
   iVar1 = AfxInitRichEdit();
   return iVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15530,8 +14761,6 @@ int __thiscall Enable3dControls(CWinApp *this)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl AfxEnableControlContainer(COccManager *param_1)
@@ -15542,8 +14771,6 @@ void __cdecl AfxEnableControlContainer(COccManager *param_1)
   AfxEnableControlContainer();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15556,8 +14783,6 @@ void __thiscall _CDWordArray(CDWordArray *this)
   return;
 }
 
-
-
 HINSTANCE__ * AfxFindResourceHandle(char *param_1,char *param_2)
 
 {
@@ -15568,8 +14793,6 @@ HINSTANCE__ * AfxFindResourceHandle(char *param_1,char *param_2)
   pHVar1 = AfxFindResourceHandle(param_1,param_2);
   return pHVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15582,8 +14805,6 @@ void __thiscall _CFile(CFile *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall Close(CFile *this)
@@ -15595,8 +14816,6 @@ void __thiscall Close(CFile *this)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CFile(CFile *this,char *param_1,uint param_2)
@@ -15607,8 +14826,6 @@ void __thiscall CFile(CFile *this,char *param_1,uint param_2)
   CFile();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15623,8 +14840,6 @@ int __thiscall SetSelectionCharFormat(CRichEditCtrl *this,_charformat *param_1)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall SetSize(CDWordArray *this,int param_1,int param_2)
@@ -15636,8 +14851,6 @@ void __thiscall SetSize(CDWordArray *this,int param_1,int param_2)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CString(CString *this,CString *param_1)
@@ -15648,8 +14861,6 @@ void __thiscall CString(CString *this,CString *param_1)
   CString();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15664,8 +14875,6 @@ int __thiscall Replace(CString *this,char param_1,char param_2)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 CString * __thiscall operator__(CString *this,CString *param_1)
@@ -15678,8 +14887,6 @@ CString * __thiscall operator__(CString *this,CString *param_1)
   pCVar1 = (CString *)operator__();
   return pCVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15694,8 +14901,6 @@ CString * __thiscall operator__(CString *this,char *param_1)
   return pCVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 CString __thiscall Mid(CString *this,int param_1,int param_2)
@@ -15709,8 +14914,6 @@ CString __thiscall Mid(CString *this,int param_1,int param_2)
   return CVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CDWordArray(CDWordArray *this)
@@ -15721,8 +14924,6 @@ void __thiscall CDWordArray(CDWordArray *this)
   CDWordArray();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15737,8 +14938,6 @@ ulong __thiscall GetStyle(CWnd *this)
   return uVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall DeflateRect(CRect *this,tagRECT *param_1)
@@ -15750,8 +14949,6 @@ void __thiscall DeflateRect(CRect *this,tagRECT *param_1)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall FillSolidRect(CDC *this,tagRECT *param_1,ulong param_2)
@@ -15762,8 +14959,6 @@ void __thiscall FillSolidRect(CDC *this,tagRECT *param_1,ulong param_2)
   FillSolidRect();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15778,8 +14973,6 @@ CPoint __thiscall SetWindowOrg(CDC *this,int param_1,int param_2)
   return CVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall GetRange(CProgressCtrl *this,int *param_1,int *param_2)
@@ -15790,8 +14983,6 @@ void __thiscall GetRange(CProgressCtrl *this,int *param_1,int *param_2)
   GetRange();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15806,8 +14997,6 @@ uint __thiscall SetTextAlign(CDC *this,uint param_1)
   return uVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall SelectClipRgn(CDC *this,CRgn *param_1)
@@ -15820,8 +15009,6 @@ int __thiscall SelectClipRgn(CDC *this,CRgn *param_1)
   iVar1 = SelectClipRgn();
   return iVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15836,8 +15023,6 @@ int __cdecl fclose(FILE *_File)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 FILE * __cdecl fopen(char *_Filename,char *_Mode)
@@ -15850,8 +15035,6 @@ FILE * __cdecl fopen(char *_Filename,char *_Mode)
   pFVar1 = (FILE *)fopen();
   return pFVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15866,8 +15049,6 @@ int __cdecl sprintf(char *_Dest,char *_Format,...)
   return iVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl rand(void)
@@ -15880,8 +15061,6 @@ int __cdecl rand(void)
   iVar1 = rand();
   return iVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -15896,8 +15075,6 @@ size_t __cdecl fwrite(void *_Str,size_t _Size,size_t _Count,FILE *_File)
   return sVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 time_t __cdecl time(time_t *_Time)
@@ -15911,8 +15088,6 @@ time_t __cdecl time(time_t *_Time)
   return tVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl srand(uint _Seed)
@@ -15924,8 +15099,6 @@ void __cdecl srand(uint _Seed)
   return;
 }
 
-
-
 void _ftol(void)
 
 {
@@ -15935,8 +15108,6 @@ void _ftol(void)
   return;
 }
 
-
-
 void _local_unwind2(void)
 
 {
@@ -15945,8 +15116,6 @@ void _local_unwind2(void)
   _local_unwind2();
   return;
 }
-
-
 
 // WARNING: Unable to track spacebase fully for stack
 
@@ -15968,8 +15137,6 @@ void FUN_00413060(void)
   return;
 }
 
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void __cdecl FUN_0041308f(_onexit_t param_1)
@@ -15983,8 +15150,6 @@ void __cdecl FUN_0041308f(_onexit_t param_1)
   return;
 }
 
-
-
 int __cdecl FUN_004130bb(_onexit_t param_1)
 
 {
@@ -15993,8 +15158,6 @@ int __cdecl FUN_004130bb(_onexit_t param_1)
   iVar1 = FUN_0041308f(param_1);
   return (uint)(iVar1 != 0) - 1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16007,8 +15170,6 @@ void __thiscall exception(exception *this,char **param_1)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void _CxxThrowException(void *pExceptionObject,ThrowInfo *pThrowInfo)
@@ -16019,8 +15180,6 @@ void _CxxThrowException(void *pExceptionObject,ThrowInfo *pThrowInfo)
   _CxxThrowException();
   return;
 }
-
-
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
@@ -16101,8 +15260,6 @@ LAB_004131f5:
   exit(local_6c);
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 char * __cdecl strtok(char *_Str,char *_Delim)
@@ -16115,8 +15272,6 @@ char * __cdecl strtok(char *_Str,char *_Delim)
   pcVar1 = (char *)strtok();
   return pcVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16131,8 +15286,6 @@ char * __cdecl strncpy(char *_Dest,char *_Source,size_t _Count)
   return pcVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl memmove(void *_Dst,void *_Src,size_t _Size)
@@ -16146,8 +15299,6 @@ void * __cdecl memmove(void *_Dst,void *_Src,size_t _Size)
   return pvVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl free(void *_Memory)
@@ -16158,8 +15309,6 @@ void __cdecl free(void *_Memory)
   free();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16174,8 +15323,6 @@ void * __cdecl calloc(size_t _Count,size_t _Size)
   return pvVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl malloc(size_t _Size)
@@ -16188,8 +15335,6 @@ void * __cdecl malloc(size_t _Size)
   pvVar1 = (void *)malloc();
   return pvVar1;
 }
-
-
 
 // Library Function - Single Match
 // Name: __allmul
@@ -16207,8 +15352,6 @@ ulonglong __allmul(uint param_1,uint param_2,uint param_3,uint param_4)
          param_2 * param_3 + param_1 * param_4) << 0x20;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 uchar * __cdecl _mbsstr(uchar *_Str,uchar *_Substr)
@@ -16221,8 +15364,6 @@ uchar * __cdecl _mbsstr(uchar *_Str,uchar *_Substr)
   puVar1 = (uchar *)_mbsstr();
   return puVar1;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16237,8 +15378,6 @@ void * __cdecl realloc(void *_Memory,size_t _NewSize)
   return pvVar1;
 }
 
-
-
 void __dllonexit(void)
 
 {
@@ -16247,8 +15386,6 @@ void __dllonexit(void)
   __dllonexit();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16261,8 +15398,6 @@ void __thiscall _type_info(type_info *this)
   return;
 }
 
-
-
 void _initterm(void)
 
 {
@@ -16272,8 +15407,6 @@ void _initterm(void)
   return;
 }
 
-
-
 void FUN_004133b2(void)
 
 {
@@ -16281,15 +15414,11 @@ void FUN_004133b2(void)
   return;
 }
 
-
-
 void FUN_004133c7(void)
 
 {
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16304,8 +15433,6 @@ uint __cdecl _controlfp(uint _NewValue,uint _Mask)
   return uVar1;
 }
 
-
-
 HRESULT URLDownloadToFileA(LPUNKNOWN param_1,LPCSTR param_2,LPCSTR param_3,DWORD param_4,
                           LPBINDSTATUSCALLBACK param_5)
 
@@ -16318,8 +15445,6 @@ HRESULT URLDownloadToFileA(LPUNKNOWN param_1,LPCSTR param_2,LPCSTR param_3,DWORD
   return HVar1;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _Xran(void)
@@ -16330,8 +15455,6 @@ void __cdecl _Xran(void)
   _Xran();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16344,8 +15467,6 @@ void __cdecl _Xlen(void)
   return;
 }
 
-
-
 void Ordinal_151(void)
 
 {
@@ -16354,8 +15475,6 @@ void Ordinal_151(void)
   Ordinal_151();
   return;
 }
-
-
 
 int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdShow)
 
@@ -16366,8 +15485,6 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdS
                     );
   return iVar1;
 }
-
-
 
 undefined4 FUN_004133fe(int param_1,undefined4 param_2)
 
@@ -16383,8 +15500,6 @@ undefined4 FUN_004133fe(int param_1,undefined4 param_2)
   return 1;
 }
 
-
-
 int AfxWinMain(HINSTANCE__ *param_1,HINSTANCE__ *param_2,char *param_3,int param_4)
 
 {
@@ -16396,8 +15511,6 @@ int AfxWinMain(HINSTANCE__ *param_1,HINSTANCE__ *param_2,char *param_3,int param
   return iVar1;
 }
 
-
-
 void Unwind_00413450(void)
 
 {
@@ -16406,8 +15519,6 @@ void Unwind_00413450(void)
   _CDialog(*(CDialog **)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_00413470(void)
 
@@ -16418,8 +15529,6 @@ void Unwind_00413470(void)
   return;
 }
 
-
-
 void Unwind_00413490(void)
 
 {
@@ -16428,8 +15537,6 @@ void Unwind_00413490(void)
   FUN_00404690((undefined4 *)(unaff_EBP + -0x9cc));
   return;
 }
-
-
 
 void Unwind_0041349b(void)
 
@@ -16440,8 +15547,6 @@ void Unwind_0041349b(void)
   return;
 }
 
-
-
 void Unwind_004134b0(void)
 
 {
@@ -16450,8 +15555,6 @@ void Unwind_004134b0(void)
   _CString((CString *)(unaff_EBP + -0xa30));
   return;
 }
-
-
 
 void Unwind_004134bb(void)
 
@@ -16462,8 +15565,6 @@ void Unwind_004134bb(void)
   return;
 }
 
-
-
 void Unwind_004134d0(void)
 
 {
@@ -16472,8 +15573,6 @@ void Unwind_004134d0(void)
   _CString((CString *)(unaff_EBP + 4));
   return;
 }
-
-
 
 void Unwind_004134f0(void)
 
@@ -16484,8 +15583,6 @@ void Unwind_004134f0(void)
   return;
 }
 
-
-
 void Unwind_004134fb(void)
 
 {
@@ -16494,8 +15591,6 @@ void Unwind_004134fb(void)
   FUN_00404690((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x2c));
   return;
 }
-
-
 
 void Unwind_00413510(void)
 
@@ -16506,8 +15601,6 @@ void Unwind_00413510(void)
   return;
 }
 
-
-
 void Unwind_0041351b(void)
 
 {
@@ -16517,8 +15610,6 @@ void Unwind_0041351b(void)
   return;
 }
 
-
-
 void Unwind_00413526(void)
 
 {
@@ -16527,8 +15618,6 @@ void Unwind_00413526(void)
   FUN_0040a140((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x54));
   return;
 }
-
-
 
 void Unwind_00413540(void)
 
@@ -16557,8 +15646,6 @@ void Unwind_00413540(void)
   return;
 }
 
-
-
 void Unwind_0041354b(void)
 
 {
@@ -16586,8 +15673,6 @@ void Unwind_0041354b(void)
   return;
 }
 
-
-
 // WARNING: Exceeded maximum restarts with more pending
 
 void Unwind_00413556(void)
@@ -16600,8 +15685,6 @@ void Unwind_00413556(void)
             ();
   return;
 }
-
-
 
 // WARNING: Exceeded maximum restarts with more pending
 
@@ -16616,16 +15699,12 @@ void Unwind_00413562(void)
   return;
 }
 
-
-
 void Unwind_00413580(void)
 
 {
   FUN_00401080();
   return;
 }
-
-
 
 void Unwind_004135a0(void)
 
@@ -16636,8 +15715,6 @@ void Unwind_004135a0(void)
   return;
 }
 
-
-
 void Unwind_004135a8(void)
 
 {
@@ -16646,8 +15723,6 @@ void Unwind_004135a8(void)
   _CListCtrl((CListCtrl *)(*(int *)(unaff_EBP + -0x10) + 0x60));
   return;
 }
-
-
 
 void Unwind_004135c0(void)
 
@@ -16658,8 +15733,6 @@ void Unwind_004135c0(void)
   return;
 }
 
-
-
 void Unwind_004135c8(void)
 
 {
@@ -16668,8 +15741,6 @@ void Unwind_004135c8(void)
   _CListCtrl((CListCtrl *)(*(int *)(unaff_EBP + -0x14) + 0x60));
   return;
 }
-
-
 
 void Unwind_004135d3(void)
 
@@ -16680,8 +15751,6 @@ void Unwind_004135d3(void)
   return;
 }
 
-
-
 void Unwind_004135e1(void)
 
 {
@@ -16690,8 +15759,6 @@ void Unwind_004135e1(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0xe0));
   return;
 }
-
-
 
 void Unwind_004135ef(void)
 
@@ -16702,8 +15769,6 @@ void Unwind_004135ef(void)
   return;
 }
 
-
-
 void Unwind_004135f7(void)
 
 {
@@ -16712,8 +15777,6 @@ void Unwind_004135f7(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413610(void)
 
@@ -16724,8 +15787,6 @@ void Unwind_00413610(void)
   return;
 }
 
-
-
 void Unwind_00413618(void)
 
 {
@@ -16734,8 +15795,6 @@ void Unwind_00413618(void)
   *(undefined4 *)(unaff_EBP + -0x24) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413630(void)
 
@@ -16746,8 +15805,6 @@ void Unwind_00413630(void)
   return;
 }
 
-
-
 void Unwind_0041363b(void)
 
 {
@@ -16756,8 +15813,6 @@ void Unwind_0041363b(void)
   _CString((CString *)(unaff_EBP + -0x2f0));
   return;
 }
-
-
 
 void Unwind_00413646(void)
 
@@ -16768,8 +15823,6 @@ void Unwind_00413646(void)
   return;
 }
 
-
-
 void Unwind_00413651(void)
 
 {
@@ -16778,8 +15831,6 @@ void Unwind_00413651(void)
   _CString((CString *)(unaff_EBP + -0x2e4));
   return;
 }
-
-
 
 void Unwind_00413670(void)
 
@@ -16790,8 +15841,6 @@ void Unwind_00413670(void)
   return;
 }
 
-
-
 void Unwind_00413690(void)
 
 {
@@ -16800,8 +15849,6 @@ void Unwind_00413690(void)
   FUN_00401f30((undefined4 *)(unaff_EBP + -0x4e4));
   return;
 }
-
-
 
 void Unwind_004136b0(void)
 
@@ -16812,8 +15859,6 @@ void Unwind_004136b0(void)
   return;
 }
 
-
-
 void Unwind_004136d0(void)
 
 {
@@ -16822,8 +15867,6 @@ void Unwind_004136d0(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_004136f0(void)
 
@@ -16834,8 +15877,6 @@ void Unwind_004136f0(void)
   return;
 }
 
-
-
 void Unwind_00413710(void)
 
 {
@@ -16844,8 +15885,6 @@ void Unwind_00413710(void)
   _CStatic(*(CStatic **)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_00413718(void)
 
@@ -16856,8 +15895,6 @@ void Unwind_00413718(void)
   return;
 }
 
-
-
 void Unwind_00413723(void)
 
 {
@@ -16866,8 +15903,6 @@ void Unwind_00413723(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x10) + 0x44));
   return;
 }
-
-
 
 void Unwind_0041372e(void)
 
@@ -16878,8 +15913,6 @@ void Unwind_0041372e(void)
   return;
 }
 
-
-
 void Unwind_00413750(void)
 
 {
@@ -16888,8 +15921,6 @@ void Unwind_00413750(void)
   _CStatic(*(CStatic **)(unaff_EBP + -0x14));
   return;
 }
-
-
 
 void Unwind_00413758(void)
 
@@ -16900,8 +15931,6 @@ void Unwind_00413758(void)
   return;
 }
 
-
-
 void Unwind_00413763(void)
 
 {
@@ -16910,8 +15939,6 @@ void Unwind_00413763(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x14) + 0x44));
   return;
 }
-
-
 
 void Unwind_0041376e(void)
 
@@ -16922,8 +15949,6 @@ void Unwind_0041376e(void)
   return;
 }
 
-
-
 void Unwind_00413780(void)
 
 {
@@ -16932,8 +15957,6 @@ void Unwind_00413780(void)
   _CString((CString *)(unaff_EBP + 4));
   return;
 }
-
-
 
 void Unwind_004137a0(void)
 
@@ -16944,8 +15967,6 @@ void Unwind_004137a0(void)
   return;
 }
 
-
-
 void Unwind_004137c0(void)
 
 {
@@ -16954,8 +15975,6 @@ void Unwind_004137c0(void)
   _CClientDC((CClientDC *)(unaff_EBP + -0x20));
   return;
 }
-
-
 
 void Unwind_004137e0(void)
 
@@ -16966,8 +15985,6 @@ void Unwind_004137e0(void)
   return;
 }
 
-
-
 void Unwind_004137e8(void)
 
 {
@@ -16976,8 +15993,6 @@ void Unwind_004137e8(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x10) + 0x60));
   return;
 }
-
-
 
 void Unwind_004137f3(void)
 
@@ -16988,8 +16003,6 @@ void Unwind_004137f3(void)
   return;
 }
 
-
-
 void Unwind_004137fe(void)
 
 {
@@ -16998,8 +16011,6 @@ void Unwind_004137fe(void)
   FUN_00404000((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x70));
   return;
 }
-
-
 
 void Unwind_00413820(void)
 
@@ -17010,8 +16021,6 @@ void Unwind_00413820(void)
   return;
 }
 
-
-
 void Unwind_00413828(void)
 
 {
@@ -17020,8 +16029,6 @@ void Unwind_00413828(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x14) + 0x60));
   return;
 }
-
-
 
 void Unwind_00413833(void)
 
@@ -17032,8 +16039,6 @@ void Unwind_00413833(void)
   return;
 }
 
-
-
 void Unwind_0041383e(void)
 
 {
@@ -17042,8 +16047,6 @@ void Unwind_0041383e(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413846(void)
 
@@ -17054,8 +16057,6 @@ void Unwind_00413846(void)
   return;
 }
 
-
-
 void Unwind_00413860(void)
 
 {
@@ -17064,8 +16065,6 @@ void Unwind_00413860(void)
   FUN_00403f90((undefined4 *)(unaff_EBP + -0x24));
   return;
 }
-
-
 
 void Unwind_00413868(void)
 
@@ -17076,8 +16075,6 @@ void Unwind_00413868(void)
   return;
 }
 
-
-
 void Unwind_00413880(void)
 
 {
@@ -17086,8 +16083,6 @@ void Unwind_00413880(void)
   _CStatic(*(CStatic **)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_00413888(void)
 
@@ -17098,8 +16093,6 @@ void Unwind_00413888(void)
   return;
 }
 
-
-
 void Unwind_004138a0(void)
 
 {
@@ -17108,8 +16101,6 @@ void Unwind_004138a0(void)
   _CStatic(*(CStatic **)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_004138c0(void)
 
@@ -17120,8 +16111,6 @@ void Unwind_004138c0(void)
   return;
 }
 
-
-
 void Unwind_004138c8(void)
 
 {
@@ -17130,8 +16119,6 @@ void Unwind_004138c8(void)
   _CString((CString *)(unaff_EBP + -0x1c));
   return;
 }
-
-
 
 void Unwind_004138d0(void)
 
@@ -17142,8 +16129,6 @@ void Unwind_004138d0(void)
   return;
 }
 
-
-
 void Unwind_004138d8(void)
 
 {
@@ -17152,8 +16137,6 @@ void Unwind_004138d8(void)
   _CString((CString *)(unaff_EBP + -0x1c));
   return;
 }
-
-
 
 void Unwind_004138e0(void)
 
@@ -17164,8 +16147,6 @@ void Unwind_004138e0(void)
   return;
 }
 
-
-
 void Unwind_004138e8(void)
 
 {
@@ -17174,8 +16155,6 @@ void Unwind_004138e8(void)
   _CString((CString *)(unaff_EBP + -0x24));
   return;
 }
-
-
 
 void Unwind_004138f0(void)
 
@@ -17186,8 +16165,6 @@ void Unwind_004138f0(void)
   return;
 }
 
-
-
 void Unwind_004138f8(void)
 
 {
@@ -17196,8 +16173,6 @@ void Unwind_004138f8(void)
   _CString((CString *)(unaff_EBP + -0x18));
   return;
 }
-
-
 
 void Unwind_00413900(void)
 
@@ -17208,8 +16183,6 @@ void Unwind_00413900(void)
   return;
 }
 
-
-
 void Unwind_00413908(void)
 
 {
@@ -17218,8 +16191,6 @@ void Unwind_00413908(void)
   _CString((CString *)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_00413910(void)
 
@@ -17230,8 +16201,6 @@ void Unwind_00413910(void)
   return;
 }
 
-
-
 void Unwind_00413930(void)
 
 {
@@ -17240,8 +16209,6 @@ void Unwind_00413930(void)
   _CPaintDC((CPaintDC *)(unaff_EBP + -0x60));
   return;
 }
-
-
 
 void Unwind_00413938(void)
 
@@ -17252,8 +16219,6 @@ void Unwind_00413938(void)
   return;
 }
 
-
-
 void Unwind_00413950(void)
 
 {
@@ -17262,8 +16227,6 @@ void Unwind_00413950(void)
   FUN_00405e10((CDialog *)(unaff_EBP + -0x8a4));
   return;
 }
-
-
 
 void Unwind_0041395b(void)
 
@@ -17274,8 +16237,6 @@ void Unwind_0041395b(void)
   return;
 }
 
-
-
 void Unwind_00413966(void)
 
 {
@@ -17284,8 +16245,6 @@ void Unwind_00413966(void)
   _CComboBox((CComboBox *)(unaff_EBP + -0x844));
   return;
 }
-
-
 
 void Unwind_00413971(void)
 
@@ -17296,8 +16255,6 @@ void Unwind_00413971(void)
   return;
 }
 
-
-
 void Unwind_0041397c(void)
 
 {
@@ -17306,8 +16263,6 @@ void Unwind_0041397c(void)
   _CButton((CButton *)(unaff_EBP + -0x7c4));
   return;
 }
-
-
 
 void Unwind_00413987(void)
 
@@ -17318,8 +16273,6 @@ void Unwind_00413987(void)
   return;
 }
 
-
-
 void Unwind_00413992(void)
 
 {
@@ -17328,8 +16281,6 @@ void Unwind_00413992(void)
   FUN_00405d90((undefined4 *)(unaff_EBP + -0x700));
   return;
 }
-
-
 
 void Unwind_0041399d(void)
 
@@ -17340,8 +16291,6 @@ void Unwind_0041399d(void)
   return;
 }
 
-
-
 void Unwind_004139a8(void)
 
 {
@@ -17350,8 +16299,6 @@ void Unwind_004139a8(void)
   FUN_00404170((undefined4 *)(unaff_EBP + -0x614));
   return;
 }
-
-
 
 void Unwind_004139b3(void)
 
@@ -17362,8 +16309,6 @@ void Unwind_004139b3(void)
   return;
 }
 
-
-
 void Unwind_004139be(void)
 
 {
@@ -17372,8 +16317,6 @@ void Unwind_004139be(void)
   FUN_00404170((undefined4 *)(unaff_EBP + -0x544));
   return;
 }
-
-
 
 void Unwind_004139c9(void)
 
@@ -17384,8 +16327,6 @@ void Unwind_004139c9(void)
   return;
 }
 
-
-
 void Unwind_004139d4(void)
 
 {
@@ -17394,8 +16335,6 @@ void Unwind_004139d4(void)
   FUN_004050a0((undefined4 *)(unaff_EBP + -0x460));
   return;
 }
-
-
 
 void Unwind_004139df(void)
 
@@ -17406,8 +16345,6 @@ void Unwind_004139df(void)
   return;
 }
 
-
-
 void Unwind_004139ea(void)
 
 {
@@ -17416,8 +16353,6 @@ void Unwind_004139ea(void)
   _CString((CString *)(unaff_EBP + -0x3a4));
   return;
 }
-
-
 
 void Unwind_004139f5(void)
 
@@ -17428,8 +16363,6 @@ void Unwind_004139f5(void)
   return;
 }
 
-
-
 void Unwind_00413a00(void)
 
 {
@@ -17438,8 +16371,6 @@ void Unwind_00413a00(void)
   _CString((CString *)(unaff_EBP + -0x39c));
   return;
 }
-
-
 
 void Unwind_00413a0b(void)
 
@@ -17450,8 +16381,6 @@ void Unwind_00413a0b(void)
   return;
 }
 
-
-
 void Unwind_00413a16(void)
 
 {
@@ -17460,8 +16389,6 @@ void Unwind_00413a16(void)
   FUN_00403f90((undefined4 *)(unaff_EBP + -0x74));
   return;
 }
-
-
 
 void Unwind_00413a1e(void)
 
@@ -17472,8 +16399,6 @@ void Unwind_00413a1e(void)
   return;
 }
 
-
-
 void Unwind_00413a26(void)
 
 {
@@ -17482,8 +16407,6 @@ void Unwind_00413a26(void)
   FUN_00403f90((undefined4 *)(unaff_EBP + -100));
   return;
 }
-
-
 
 void Unwind_00413a2e(void)
 
@@ -17494,8 +16417,6 @@ void Unwind_00413a2e(void)
   return;
 }
 
-
-
 void Unwind_00413a36(void)
 
 {
@@ -17504,8 +16425,6 @@ void Unwind_00413a36(void)
   FUN_00403f90((undefined4 *)(unaff_EBP + -0x54));
   return;
 }
-
-
 
 void Unwind_00413a3e(void)
 
@@ -17516,8 +16435,6 @@ void Unwind_00413a3e(void)
   return;
 }
 
-
-
 void Unwind_00413a46(void)
 
 {
@@ -17526,8 +16443,6 @@ void Unwind_00413a46(void)
   FUN_00403f90((undefined4 *)(unaff_EBP + -0x44));
   return;
 }
-
-
 
 void Unwind_00413a4e(void)
 
@@ -17538,8 +16453,6 @@ void Unwind_00413a4e(void)
   return;
 }
 
-
-
 void Unwind_00413a56(void)
 
 {
@@ -17548,8 +16461,6 @@ void Unwind_00413a56(void)
   FUN_00403f90((undefined4 *)(unaff_EBP + -0x34));
   return;
 }
-
-
 
 void Unwind_00413a5e(void)
 
@@ -17560,8 +16471,6 @@ void Unwind_00413a5e(void)
   return;
 }
 
-
-
 void Unwind_00413a66(void)
 
 {
@@ -17570,8 +16479,6 @@ void Unwind_00413a66(void)
   FUN_00404000((undefined4 *)(unaff_EBP + -0x24));
   return;
 }
-
-
 
 void Unwind_00413a6e(void)
 
@@ -17582,8 +16489,6 @@ void Unwind_00413a6e(void)
   return;
 }
 
-
-
 void Unwind_00413a80(void)
 
 {
@@ -17592,8 +16497,6 @@ void Unwind_00413a80(void)
   _CProgressCtrl(*(CProgressCtrl **)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_00413aa0(void)
 
@@ -17604,8 +16507,6 @@ void Unwind_00413aa0(void)
   return;
 }
 
-
-
 void Unwind_00413aa8(void)
 
 {
@@ -17614,8 +16515,6 @@ void Unwind_00413aa8(void)
   _CComboBox((CComboBox *)(*(int *)(unaff_EBP + -0x14) + 0x60));
   return;
 }
-
-
 
 void Unwind_00413ab3(void)
 
@@ -17626,8 +16525,6 @@ void Unwind_00413ab3(void)
   return;
 }
 
-
-
 void Unwind_00413ac1(void)
 
 {
@@ -17636,8 +16533,6 @@ void Unwind_00413ac1(void)
   _CButton((CButton *)(*(int *)(unaff_EBP + -0x14) + 0xe0));
   return;
 }
-
-
 
 void Unwind_00413acf(void)
 
@@ -17648,8 +16543,6 @@ void Unwind_00413acf(void)
   return;
 }
 
-
-
 void Unwind_00413add(void)
 
 {
@@ -17658,8 +16551,6 @@ void Unwind_00413add(void)
   FUN_00405d90((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x1a4));
   return;
 }
-
-
 
 void Unwind_00413aeb(void)
 
@@ -17670,8 +16561,6 @@ void Unwind_00413aeb(void)
   return;
 }
 
-
-
 void Unwind_00413af9(void)
 
 {
@@ -17680,8 +16569,6 @@ void Unwind_00413af9(void)
   FUN_00404170((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x290));
   return;
 }
-
-
 
 void Unwind_00413b07(void)
 
@@ -17692,8 +16579,6 @@ void Unwind_00413b07(void)
   return;
 }
 
-
-
 void Unwind_00413b15(void)
 
 {
@@ -17702,8 +16587,6 @@ void Unwind_00413b15(void)
   FUN_00404170((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x360));
   return;
 }
-
-
 
 void Unwind_00413b23(void)
 
@@ -17714,8 +16597,6 @@ void Unwind_00413b23(void)
   return;
 }
 
-
-
 void Unwind_00413b31(void)
 
 {
@@ -17724,8 +16605,6 @@ void Unwind_00413b31(void)
   FUN_004050a0((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x444));
   return;
 }
-
-
 
 void Unwind_00413b3f(void)
 
@@ -17736,8 +16615,6 @@ void Unwind_00413b3f(void)
   return;
 }
 
-
-
 void Unwind_00413b4d(void)
 
 {
@@ -17746,8 +16623,6 @@ void Unwind_00413b4d(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x14) + 0x500));
   return;
 }
-
-
 
 void Unwind_00413b5b(void)
 
@@ -17758,8 +16633,6 @@ void Unwind_00413b5b(void)
   return;
 }
 
-
-
 void Unwind_00413b69(void)
 
 {
@@ -17768,8 +16641,6 @@ void Unwind_00413b69(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x14) + 0x508));
   return;
 }
-
-
 
 void Unwind_00413b77(void)
 
@@ -17780,8 +16651,6 @@ void Unwind_00413b77(void)
   return;
 }
 
-
-
 void Unwind_00413b85(void)
 
 {
@@ -17790,8 +16659,6 @@ void Unwind_00413b85(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x830));
   return;
 }
-
-
 
 void Unwind_00413b93(void)
 
@@ -17802,8 +16669,6 @@ void Unwind_00413b93(void)
   return;
 }
 
-
-
 void Unwind_00413ba1(void)
 
 {
@@ -17812,8 +16677,6 @@ void Unwind_00413ba1(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x840));
   return;
 }
-
-
 
 void Unwind_00413baf(void)
 
@@ -17824,8 +16687,6 @@ void Unwind_00413baf(void)
   return;
 }
 
-
-
 void Unwind_00413bbd(void)
 
 {
@@ -17834,8 +16695,6 @@ void Unwind_00413bbd(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x850));
   return;
 }
-
-
 
 void Unwind_00413bcb(void)
 
@@ -17846,8 +16705,6 @@ void Unwind_00413bcb(void)
   return;
 }
 
-
-
 void Unwind_00413bd9(void)
 
 {
@@ -17856,8 +16713,6 @@ void Unwind_00413bd9(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x860));
   return;
 }
-
-
 
 void Unwind_00413be7(void)
 
@@ -17868,8 +16723,6 @@ void Unwind_00413be7(void)
   return;
 }
 
-
-
 void Unwind_00413bf5(void)
 
 {
@@ -17878,8 +16731,6 @@ void Unwind_00413bf5(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x870));
   return;
 }
-
-
 
 void Unwind_00413c03(void)
 
@@ -17890,8 +16741,6 @@ void Unwind_00413c03(void)
   return;
 }
 
-
-
 void Unwind_00413c11(void)
 
 {
@@ -17900,8 +16749,6 @@ void Unwind_00413c11(void)
   FUN_00404000((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 0x880));
   return;
 }
-
-
 
 void Unwind_00413c1f(void)
 
@@ -17912,8 +16759,6 @@ void Unwind_00413c1f(void)
   return;
 }
 
-
-
 void Unwind_00413c2d(void)
 
 {
@@ -17922,8 +16767,6 @@ void Unwind_00413c2d(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413c35(void)
 
@@ -17934,8 +16777,6 @@ void Unwind_00413c35(void)
   return;
 }
 
-
-
 void Unwind_00413c3d(void)
 
 {
@@ -17944,8 +16785,6 @@ void Unwind_00413c3d(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413c45(void)
 
@@ -17956,8 +16795,6 @@ void Unwind_00413c45(void)
   return;
 }
 
-
-
 void Unwind_00413c4d(void)
 
 {
@@ -17966,8 +16803,6 @@ void Unwind_00413c4d(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413c55(void)
 
@@ -17978,8 +16813,6 @@ void Unwind_00413c55(void)
   return;
 }
 
-
-
 void Unwind_00413c5d(void)
 
 {
@@ -17988,8 +16821,6 @@ void Unwind_00413c5d(void)
   _CProgressCtrl(*(CProgressCtrl **)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_00413c70(void)
 
@@ -18000,8 +16831,6 @@ void Unwind_00413c70(void)
   return;
 }
 
-
-
 void Unwind_00413c78(void)
 
 {
@@ -18010,8 +16839,6 @@ void Unwind_00413c78(void)
   _CComboBox((CComboBox *)(*(int *)(unaff_EBP + -0x10) + 0x60));
   return;
 }
-
-
 
 void Unwind_00413c83(void)
 
@@ -18022,8 +16849,6 @@ void Unwind_00413c83(void)
   return;
 }
 
-
-
 void Unwind_00413c91(void)
 
 {
@@ -18032,8 +16857,6 @@ void Unwind_00413c91(void)
   _CButton((CButton *)(*(int *)(unaff_EBP + -0x10) + 0xe0));
   return;
 }
-
-
 
 void Unwind_00413c9f(void)
 
@@ -18044,8 +16867,6 @@ void Unwind_00413c9f(void)
   return;
 }
 
-
-
 void Unwind_00413cad(void)
 
 {
@@ -18054,8 +16875,6 @@ void Unwind_00413cad(void)
   FUN_00405d90((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x1a4));
   return;
 }
-
-
 
 void Unwind_00413cbb(void)
 
@@ -18066,8 +16885,6 @@ void Unwind_00413cbb(void)
   return;
 }
 
-
-
 void Unwind_00413cc9(void)
 
 {
@@ -18076,8 +16893,6 @@ void Unwind_00413cc9(void)
   FUN_00404170((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x290));
   return;
 }
-
-
 
 void Unwind_00413cd7(void)
 
@@ -18088,8 +16903,6 @@ void Unwind_00413cd7(void)
   return;
 }
 
-
-
 void Unwind_00413ce5(void)
 
 {
@@ -18098,8 +16911,6 @@ void Unwind_00413ce5(void)
   FUN_00404170((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x360));
   return;
 }
-
-
 
 void Unwind_00413cf3(void)
 
@@ -18110,8 +16921,6 @@ void Unwind_00413cf3(void)
   return;
 }
 
-
-
 void Unwind_00413d01(void)
 
 {
@@ -18120,8 +16929,6 @@ void Unwind_00413d01(void)
   FUN_004050a0((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x444));
   return;
 }
-
-
 
 void Unwind_00413d0f(void)
 
@@ -18132,8 +16939,6 @@ void Unwind_00413d0f(void)
   return;
 }
 
-
-
 void Unwind_00413d1d(void)
 
 {
@@ -18142,8 +16947,6 @@ void Unwind_00413d1d(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x10) + 0x500));
   return;
 }
-
-
 
 void Unwind_00413d2b(void)
 
@@ -18154,8 +16957,6 @@ void Unwind_00413d2b(void)
   return;
 }
 
-
-
 void Unwind_00413d39(void)
 
 {
@@ -18164,8 +16965,6 @@ void Unwind_00413d39(void)
   _CString((CString *)(*(int *)(unaff_EBP + -0x10) + 0x508));
   return;
 }
-
-
 
 void Unwind_00413d47(void)
 
@@ -18176,8 +16975,6 @@ void Unwind_00413d47(void)
   return;
 }
 
-
-
 void Unwind_00413d55(void)
 
 {
@@ -18186,8 +16983,6 @@ void Unwind_00413d55(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x830));
   return;
 }
-
-
 
 void Unwind_00413d63(void)
 
@@ -18198,8 +16993,6 @@ void Unwind_00413d63(void)
   return;
 }
 
-
-
 void Unwind_00413d71(void)
 
 {
@@ -18208,8 +17001,6 @@ void Unwind_00413d71(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x840));
   return;
 }
-
-
 
 void Unwind_00413d7f(void)
 
@@ -18220,8 +17011,6 @@ void Unwind_00413d7f(void)
   return;
 }
 
-
-
 void Unwind_00413d8d(void)
 
 {
@@ -18230,8 +17019,6 @@ void Unwind_00413d8d(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x850));
   return;
 }
-
-
 
 void Unwind_00413d9b(void)
 
@@ -18242,8 +17029,6 @@ void Unwind_00413d9b(void)
   return;
 }
 
-
-
 void Unwind_00413da9(void)
 
 {
@@ -18252,8 +17037,6 @@ void Unwind_00413da9(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x860));
   return;
 }
-
-
 
 void Unwind_00413db7(void)
 
@@ -18264,8 +17047,6 @@ void Unwind_00413db7(void)
   return;
 }
 
-
-
 void Unwind_00413dc5(void)
 
 {
@@ -18274,8 +17055,6 @@ void Unwind_00413dc5(void)
   FUN_00403f90((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x870));
   return;
 }
-
-
 
 void Unwind_00413dd3(void)
 
@@ -18286,8 +17065,6 @@ void Unwind_00413dd3(void)
   return;
 }
 
-
-
 void Unwind_00413de1(void)
 
 {
@@ -18296,8 +17073,6 @@ void Unwind_00413de1(void)
   FUN_00404000((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x880));
   return;
 }
-
-
 
 void Unwind_00413def(void)
 
@@ -18308,8 +17083,6 @@ void Unwind_00413def(void)
   return;
 }
 
-
-
 void Unwind_00413dfd(void)
 
 {
@@ -18318,8 +17091,6 @@ void Unwind_00413dfd(void)
   FUN_00404000((undefined4 *)(*(int *)(unaff_EBP + -0x10) + 0x890));
   return;
 }
-
-
 
 void Unwind_00413e20(void)
 
@@ -18330,8 +17101,6 @@ void Unwind_00413e20(void)
   return;
 }
 
-
-
 void Unwind_00413e28(void)
 
 {
@@ -18340,8 +17109,6 @@ void Unwind_00413e28(void)
   *(undefined4 *)(unaff_EBP + -0x24) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413e40(void)
 
@@ -18352,8 +17119,6 @@ void Unwind_00413e40(void)
   return;
 }
 
-
-
 void Unwind_00413e4b(void)
 
 {
@@ -18362,8 +17127,6 @@ void Unwind_00413e4b(void)
   _CString((CString *)(unaff_EBP + -0x114));
   return;
 }
-
-
 
 void Unwind_00413e56(void)
 
@@ -18374,8 +17137,6 @@ void Unwind_00413e56(void)
   return;
 }
 
-
-
 void Unwind_00413e70(void)
 
 {
@@ -18384,8 +17145,6 @@ void Unwind_00413e70(void)
   _CFile((CFile *)(unaff_EBP + -0x1c));
   return;
 }
-
-
 
 void Unwind_00413e90(void)
 
@@ -18396,8 +17155,6 @@ void Unwind_00413e90(void)
   return;
 }
 
-
-
 void Unwind_00413eb0(void)
 
 {
@@ -18406,8 +17163,6 @@ void Unwind_00413eb0(void)
   _CString((CString *)(unaff_EBP + -0x98));
   return;
 }
-
-
 
 void Unwind_00413ed0(void)
 
@@ -18418,8 +17173,6 @@ void Unwind_00413ed0(void)
   return;
 }
 
-
-
 void Unwind_00413edb(void)
 
 {
@@ -18428,8 +17181,6 @@ void Unwind_00413edb(void)
   _CString((CString *)(unaff_EBP + -0x8c));
   return;
 }
-
-
 
 void Unwind_00413ee6(void)
 
@@ -18440,8 +17191,6 @@ void Unwind_00413ee6(void)
   return;
 }
 
-
-
 void Unwind_00413ef1(void)
 
 {
@@ -18450,8 +17199,6 @@ void Unwind_00413ef1(void)
   _CString((CString *)(unaff_EBP + -0x24));
   return;
 }
-
-
 
 void Unwind_00413ef9(void)
 
@@ -18462,8 +17209,6 @@ void Unwind_00413ef9(void)
   return;
 }
 
-
-
 void Unwind_00413f01(void)
 
 {
@@ -18472,8 +17217,6 @@ void Unwind_00413f01(void)
   **(undefined4 **)(unaff_EBP + -0x88) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413f0c(void)
 
@@ -18484,8 +17227,6 @@ void Unwind_00413f0c(void)
   return;
 }
 
-
-
 void Unwind_00413f30(void)
 
 {
@@ -18494,8 +17235,6 @@ void Unwind_00413f30(void)
   FUN_004031a0((CDialog *)(unaff_EBP + -0x104));
   return;
 }
-
-
 
 void Unwind_00413f3b(void)
 
@@ -18506,8 +17245,6 @@ void Unwind_00413f3b(void)
   return;
 }
 
-
-
 void Unwind_00413f46(void)
 
 {
@@ -18516,8 +17253,6 @@ void Unwind_00413f46(void)
   _CListCtrl((CListCtrl *)(unaff_EBP + -0xa4));
   return;
 }
-
-
 
 void Unwind_00413f51(void)
 
@@ -18528,8 +17263,6 @@ void Unwind_00413f51(void)
   return;
 }
 
-
-
 void Unwind_00413f59(void)
 
 {
@@ -18538,8 +17271,6 @@ void Unwind_00413f59(void)
   FUN_00403f90((undefined4 *)(unaff_EBP + -0x24));
   return;
 }
-
-
 
 void Unwind_00413f61(void)
 
@@ -18550,8 +17281,6 @@ void Unwind_00413f61(void)
   return;
 }
 
-
-
 void Unwind_00413f6c(void)
 
 {
@@ -18560,8 +17289,6 @@ void Unwind_00413f6c(void)
   **(undefined4 **)(unaff_EBP + -0x108) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00413f90(void)
 
@@ -18572,8 +17299,6 @@ void Unwind_00413f90(void)
   return;
 }
 
-
-
 void Unwind_00413f9b(void)
 
 {
@@ -18582,8 +17307,6 @@ void Unwind_00413f9b(void)
   _CDialog((CDialog *)(unaff_EBP + -0xc4));
   return;
 }
-
-
 
 void Unwind_00413fb0(void)
 
@@ -18594,8 +17317,6 @@ void Unwind_00413fb0(void)
   return;
 }
 
-
-
 void Unwind_00413fb8(void)
 
 {
@@ -18604,8 +17325,6 @@ void Unwind_00413fb8(void)
   _CString((CString *)(unaff_EBP + -0x98));
   return;
 }
-
-
 
 void Unwind_00413fc3(void)
 
@@ -18616,8 +17335,6 @@ void Unwind_00413fc3(void)
   return;
 }
 
-
-
 void Unwind_00413fe0(void)
 
 {
@@ -18626,8 +17343,6 @@ void Unwind_00413fe0(void)
   _CProgressCtrl(*(CProgressCtrl **)(unaff_EBP + -0x10));
   return;
 }
-
-
 
 void Unwind_00413fe8(void)
 
@@ -18638,8 +17353,6 @@ void Unwind_00413fe8(void)
   return;
 }
 
-
-
 void Unwind_00414000(void)
 
 {
@@ -18648,8 +17361,6 @@ void Unwind_00414000(void)
   _CPaintDC((CPaintDC *)(unaff_EBP + -0x78));
   return;
 }
-
-
 
 void Unwind_00414008(void)
 
@@ -18660,8 +17371,6 @@ void Unwind_00414008(void)
   return;
 }
 
-
-
 void Unwind_00414013(void)
 
 {
@@ -18670,8 +17379,6 @@ void Unwind_00414013(void)
   FUN_00409e20((undefined4 *)(unaff_EBP + -0xe4));
   return;
 }
-
-
 
 void Unwind_0041401e(void)
 
@@ -18682,8 +17389,6 @@ void Unwind_0041401e(void)
   return;
 }
 
-
-
 void Unwind_00414029(void)
 
 {
@@ -18692,8 +17397,6 @@ void Unwind_00414029(void)
   _CDC((CDC *)(unaff_EBP + -0xf4));
   return;
 }
-
-
 
 void Unwind_00414034(void)
 
@@ -18704,8 +17407,6 @@ void Unwind_00414034(void)
   return;
 }
 
-
-
 void Unwind_0041403f(void)
 
 {
@@ -18714,8 +17415,6 @@ void Unwind_0041403f(void)
   _CDC((CDC *)(unaff_EBP + -0xf4));
   return;
 }
-
-
 
 void Unwind_0041404a(void)
 
@@ -18726,8 +17425,6 @@ void Unwind_0041404a(void)
   return;
 }
 
-
-
 void Unwind_00414060(void)
 
 {
@@ -18736,8 +17433,6 @@ void Unwind_00414060(void)
   _CDC(*(CDC **)(unaff_EBP + -0x14));
   return;
 }
-
-
 
 void Unwind_00414068(void)
 
@@ -18748,8 +17443,6 @@ void Unwind_00414068(void)
   return;
 }
 
-
-
 void Unwind_00414073(void)
 
 {
@@ -18758,8 +17451,6 @@ void Unwind_00414073(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00414090(void)
 
@@ -18770,8 +17461,6 @@ void Unwind_00414090(void)
   return;
 }
 
-
-
 void Unwind_00414098(void)
 
 {
@@ -18780,8 +17469,6 @@ void Unwind_00414098(void)
   *(undefined4 *)(unaff_EBP + -0x44) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_004140b0(void)
 
@@ -18792,8 +17479,6 @@ void Unwind_004140b0(void)
   return;
 }
 
-
-
 void Unwind_004140bb(void)
 
 {
@@ -18802,8 +17487,6 @@ void Unwind_004140bb(void)
   *(undefined4 *)(unaff_EBP + -0x90) = 0x416794;
   return;
 }
-
-
 
 void Unwind_004140c6(void)
 
@@ -18814,8 +17497,6 @@ void Unwind_004140c6(void)
   return;
 }
 
-
-
 void Unwind_004140d1(void)
 
 {
@@ -18824,8 +17505,6 @@ void Unwind_004140d1(void)
   FUN_004097e0((undefined4 *)(unaff_EBP + -0x90));
   return;
 }
-
-
 
 void Unwind_004140dc(void)
 
@@ -18836,8 +17515,6 @@ void Unwind_004140dc(void)
   return;
 }
 
-
-
 void Unwind_004140e4(void)
 
 {
@@ -18846,8 +17523,6 @@ void Unwind_004140e4(void)
   FUN_00409940((undefined4 *)(unaff_EBP + -0x7c));
   return;
 }
-
-
 
 void Unwind_004140ec(void)
 
@@ -18858,8 +17533,6 @@ void Unwind_004140ec(void)
   return;
 }
 
-
-
 void Unwind_004140f4(void)
 
 {
@@ -18868,8 +17541,6 @@ void Unwind_004140f4(void)
   FUN_004098c0((undefined4 *)(unaff_EBP + -0x5c));
   return;
 }
-
-
 
 void Unwind_004140fc(void)
 
@@ -18880,8 +17551,6 @@ void Unwind_004140fc(void)
   return;
 }
 
-
-
 void Unwind_00414104(void)
 
 {
@@ -18890,8 +17559,6 @@ void Unwind_00414104(void)
   FUN_004099c0((undefined4 *)(unaff_EBP + -0x68));
   return;
 }
-
-
 
 void Unwind_0041410c(void)
 
@@ -18902,8 +17569,6 @@ void Unwind_0041410c(void)
   return;
 }
 
-
-
 void Unwind_00414117(void)
 
 {
@@ -18912,8 +17577,6 @@ void Unwind_00414117(void)
   *(undefined4 *)(unaff_EBP + -0x68) = 0x416794;
   return;
 }
-
-
 
 void Unwind_0041411f(void)
 
@@ -18924,8 +17587,6 @@ void Unwind_0041411f(void)
   return;
 }
 
-
-
 void Unwind_00414127(void)
 
 {
@@ -18934,8 +17595,6 @@ void Unwind_00414127(void)
   *(undefined4 *)(unaff_EBP + -0x7c) = 0x416794;
   return;
 }
-
-
 
 void Unwind_0041412f(void)
 
@@ -18946,8 +17605,6 @@ void Unwind_0041412f(void)
   return;
 }
 
-
-
 void Unwind_0041413a(void)
 
 {
@@ -18956,8 +17613,6 @@ void Unwind_0041413a(void)
   FUN_00409790((undefined4 *)(unaff_EBP + -0x88));
   return;
 }
-
-
 
 void Unwind_00414145(void)
 
@@ -18968,8 +17623,6 @@ void Unwind_00414145(void)
   return;
 }
 
-
-
 void Unwind_00414160(void)
 
 {
@@ -18978,8 +17631,6 @@ void Unwind_00414160(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00414180(void)
 
@@ -18990,8 +17641,6 @@ void Unwind_00414180(void)
   return;
 }
 
-
-
 void Unwind_00414188(void)
 
 {
@@ -19000,8 +17649,6 @@ void Unwind_00414188(void)
   FUN_00409790((undefined4 *)(*(int *)(unaff_EBP + -0x14) + 8));
   return;
 }
-
-
 
 void Unwind_00414193(void)
 
@@ -19012,8 +17659,6 @@ void Unwind_00414193(void)
   return;
 }
 
-
-
 void Unwind_004141b0(void)
 
 {
@@ -19022,8 +17667,6 @@ void Unwind_004141b0(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x416794;
   return;
 }
-
-
 
 void Unwind_004141d0(void)
 
@@ -19034,8 +17677,6 @@ void Unwind_004141d0(void)
   return;
 }
 
-
-
 void Unwind_004141f0(void)
 
 {
@@ -19044,8 +17685,6 @@ void Unwind_004141f0(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x416794;
   return;
 }
-
-
 
 void Unwind_00414210(void)
 
@@ -19056,8 +17695,6 @@ void Unwind_00414210(void)
   return;
 }
 
-
-
 void Unwind_00414218(void)
 
 {
@@ -19066,8 +17703,6 @@ void Unwind_00414218(void)
   *(undefined4 *)(unaff_EBP + -0x24) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00414230(void)
 
@@ -19078,8 +17713,6 @@ void Unwind_00414230(void)
   return;
 }
 
-
-
 void Unwind_00414250(void)
 
 {
@@ -19088,8 +17721,6 @@ void Unwind_00414250(void)
   **(undefined4 **)(unaff_EBP + -0x10) = 0x415bec;
   return;
 }
-
-
 
 void Unwind_00414270(void)
 
@@ -19116,8 +17747,6 @@ void Unwind_00414270(void)
   return;
 }
 
-
-
 void Unwind_0041427b(void)
 
 {
@@ -19141,8 +17770,6 @@ void Unwind_0041427b(void)
   return;
 }
 
-
-
 void Unwind_00414290(void)
 
 {
@@ -19151,8 +17778,6 @@ void Unwind_00414290(void)
   operator_delete(*(void **)(unaff_EBP + -0x268));
   return;
 }
-
-
 
 void Unwind_004142b0(void)
 
