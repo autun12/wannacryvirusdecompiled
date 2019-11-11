@@ -12,6 +12,7 @@ FILES
 KILLSWITCH URL
 004313d0	http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com	http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com
 
+004312fc	mssecsvc2.0	mssecsvc2.0
 
 ----------------------1831.BIN.C----------------------
 
